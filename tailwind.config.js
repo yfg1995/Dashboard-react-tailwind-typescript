@@ -5,8 +5,10 @@ const customColors = {
   brandOnyxBlack: "#1E1E1E",
   brandElectricBlue: "#2D44BC",
   brandTextGray: "#aba9a9",
-  brandGreen: "#3ca643",
+  brandGreen: "#51b045",
   brandRed: "#d42626",
+  brandLightPurple: "#c205e8",
+  brandPurple: "#620175",
 };
 
 module.exports = {

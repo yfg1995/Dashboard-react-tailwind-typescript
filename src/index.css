@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --clr-light-purple: #c205e8;
+  --clr-purple: #620175;
+  --clr-charcoal-black: #171717;
+  --clr-text-grey: #aba9a9;
+}
