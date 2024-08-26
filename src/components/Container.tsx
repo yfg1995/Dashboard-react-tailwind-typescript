@@ -8,10 +8,7 @@ interface IContainer extends PropsWithChildren {
 export const Container: FC<IContainer> = ({ className, children }) => {
   return (
     <div
-      className={cn(
-        "flex justify-center max-w-[1376px] mx-auto w-full overflow-hidden px-[40px] py-16",
-        className
-      )}
+      className={cn("max-w-[1376px] w-full overflow-hidden m-16", className)}
     >
       {children}
     </div>

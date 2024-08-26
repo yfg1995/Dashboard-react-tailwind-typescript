@@ -12,7 +12,7 @@ export const ContainerBorderRounded: FC<IContainerBorderRounded> = ({
   return (
     <div
       className={cn(
-        "border border-[#c8d0dd] rounded-[10px] p-10 overflow-hidden",
+        "flex flex-col justify-center border rounded-[12px] overflow-hidden w-full",
         className
       )}
     >
