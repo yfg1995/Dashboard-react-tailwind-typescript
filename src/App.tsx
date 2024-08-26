@@ -1,5 +1,4 @@
-import { DashboardUsersProfitUpdates } from "./components/Dashboard/DashboardUsersProfitUpdates";
-import { Test } from "./components/Test";
+import { Dashboard } from "./components/Dashboard/Dashboard";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -13,7 +12,7 @@ function App() {
     // </QueryClientProvider>
 
     <main className="bg-brandOnyxBlack h-[100vh]">
-      <DashboardUsersProfitUpdates />
+      <Dashboard />
     </main>
   );
 }

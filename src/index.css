@@ -7,4 +7,14 @@
   --clr-purple: #620175;
   --clr-charcoal-black: #171717;
   --clr-text-grey: #aba9a9;
+  --clr-green: #51b045;
+  --clr-red: #d42626;
+}
+
+body {
+  color: white;
+}
+
+.flex-items-center {
+  @apply flex items-center;
 }

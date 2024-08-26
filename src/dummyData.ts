@@ -104,3 +104,26 @@ export const UsersProfitUpdate = [
     },
   },
 ];
+
+export const countries = [
+  {
+    country: "USA",
+    price: 21547.24,
+    imgSrc: "/usa-flag.jpg",
+  },
+  {
+    country: "Ireland",
+    price: 9547.24,
+    imgSrc: "/ireland-flag.jpg",
+  },
+  {
+    country: "Ukraine",
+    price: 19547.24,
+    imgSrc: "/ukraine-flag.jpg",
+  },
+  {
+    country: "Sweden",
+    price: 12547.24,
+    imgSrc: "/sweden-flag.jpg",
+  },
+];
