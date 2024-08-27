@@ -2,8 +2,7 @@ import { FC } from "react";
 import { Title } from "../Title";
 import { PlusCircle } from "../../svg/PlusCircle";
 import { countries } from "../../dummyData";
-import { ArrowDown } from "../../svg/ArrowDown";
-import { ArrowUp } from "../../svg/ArrowUp";
+import { Arrow } from "../../svg/Arrow";
 import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
 import { formatNumberWithCommas } from "../../helpers/helpers";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
@@ -44,19 +43,16 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
               <div className="flex-items-center gap-2">
                 <span>{formatNumberWithCommas(country.price)}</span>
 
-                {country.price < 15000 ? (
-                  <ArrowDown
-                    width={16}
-                    height={16}
-                    strokeColor="var(--clr-red)"
-                  />
-                ) : (
-                  <ArrowUp
-                    width={16}
-                    height={16}
-                    strokeColor="var(--clr-green)"
-                  />
-                )}
+                <Arrow
+                  width={16}
+                  height={16}
+                  strokeColor={
+                    country.price < 15000
+                      ? "var(--clr-red)"
+                      : "var(--clr-green)"
+                  }
+                  className={country.price < 15000 ? "rotate-180" : ""}
+                />
 
                 <TwoDotsVertical
                   width={12}
