@@ -9,6 +9,7 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = () => {
   return (
     <ContainerBorderRounded className="max-w-[1080px]">
       <Title title="Your Work Summary" />
+
       <SmoothedLineChart />
     </ContainerBorderRounded>
   );
