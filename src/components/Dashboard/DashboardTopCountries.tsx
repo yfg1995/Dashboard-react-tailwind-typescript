@@ -5,12 +5,14 @@ import { countries } from "../../dummyData";
 import { ArrowDown } from "../../svg/ArrowDown";
 import { ArrowUp } from "../../svg/ArrowUp";
 import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
+import { formatNumberWithCommas } from "../../helpers/helpers";
+import { ContainerBorderRounded } from "../ContainerBorderRounded";
 
 export interface IDashboardTopCountries {}
 
 export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
   return (
-    <div className="max-w-[550px] w-full bg-brandOnyxBlack">
+    <ContainerBorderRounded className="max-w-[550px]">
       <div className="flex-items-center justify-between">
         <Title title="Top Countries" />
 
@@ -40,7 +42,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
               </div>
 
               <div className="flex-items-center gap-2">
-                <span>{country.price}</span>
+                <span>{formatNumberWithCommas(country.price)}</span>
 
                 {country.price < 15000 ? (
                   <ArrowDown
@@ -71,6 +73,6 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
       <div className="grid place-content-center text-brandTextGray mt-4 cursor-pointer">
         Check All
       </div>
-    </div>
+    </ContainerBorderRounded>
   );
 };

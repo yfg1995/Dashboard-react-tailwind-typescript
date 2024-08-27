@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { UsersProfitUpdate } from "../../dummyData";
 import { Checkmark } from "../../svg/Checkmark";
@@ -6,50 +6,26 @@ import { TrendingUp } from "../../svg/TrendingUp";
 import { TrendingDown } from "../../svg/TrendingDown";
 import { cn } from "../../utils/utils";
 import { StepsCompleted } from "../StepsCompleted";
-import { animate, motion, useMotionValue } from "framer-motion";
-import useMeasure from "react-use-measure";
 import { Title } from "../Title";
+import { EmblaOptionsType } from "embla-carousel";
+import { CarouselAutoplay } from "../CarouselAutoplay";
 
 export interface IDashboardUsersProfitUpdates {}
 
 export const DashboardUsersProfitUpdates: FC<
   IDashboardUsersProfitUpdates
 > = () => {
-  let [ref, { width }] = useMeasure();
-
-  const xTranslation = useMotionValue(0);
-  const itemsToShow = 3;
-
-  useEffect(() => {
-    let controls;
-    const finalPosition = -width * 0.5 - itemsToShow;
-
-    controls = animate(xTranslation, [0, finalPosition], {
-      ease: "linear",
-      duration: 20,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0,
-    });
-
-    return controls.stop;
-  }, [xTranslation, width]);
+  const OPTIONS: EmblaOptionsType = {
+    loop: true,
+  };
+  const slideCount = UsersProfitUpdate.length;
 
   return (
-    <motion.div
-      className="flex-items-center gap-10 w-full"
-      ref={ref}
-      style={{ x: xTranslation }}
-    >
+    <CarouselAutoplay options={OPTIONS}>
       {UsersProfitUpdate.map(
         (user, index) =>
-          index < itemsToShow && (
-            <ContainerBorderRounded
-              className={`p-3 h-32 bg-brandCharcoalBlack border-none w-${
-                100 / itemsToShow
-              }%`}
-              key={user.id}
-            >
+          index < slideCount && (
+            <ContainerBorderRounded className="embla__slide" key={user.id}>
               <div className="flex-items-center justify-between">
                 <div className="flex flex-col gap-2">
                   <div className="flex-items-center">
@@ -127,6 +103,6 @@ export const DashboardUsersProfitUpdates: FC<
             </ContainerBorderRounded>
           )
       )}
-    </motion.div>
+    </CarouselAutoplay>
   );
 };

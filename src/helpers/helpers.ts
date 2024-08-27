@@ -6,3 +6,7 @@ export const generateRandomUniqueIdNum = (): number => {
 
 export const generateRandomUniqueIdStr = (): string =>
   Date.now().toString(36) + Math.random().toString(36).slice(2);
+
+export const formatNumberWithCommas = (number: number): string => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};

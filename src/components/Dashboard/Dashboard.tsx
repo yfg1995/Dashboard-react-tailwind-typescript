@@ -5,13 +5,14 @@ import { DashboardTopCountries } from "./DashboardTopCountries";
 import { DashboardSegmentation } from "./DashboardSegmentation";
 import { DashboardSatisfication } from "./DashboardSatisfication";
 import { DashboardNewComponent } from "./DashboardNewComponent";
+import { Container } from "../Container";
 
 export interface IDashboard {}
 
 export const Dashboard: FC<IDashboard> = () => {
   return (
-    <div className="max-w-[1700px] w-full">
-      {/* <DashboardUsersProfitUpdates /> */}
+    <Container className="max-w-[1700px] w-full">
+      <DashboardUsersProfitUpdates />
 
       <div className="flex-items-center">
         <DashboardWorkSummary />
@@ -23,6 +24,6 @@ export const Dashboard: FC<IDashboard> = () => {
         <DashboardSatisfication />
         <DashboardNewComponent />
       </div>
-    </div>
+    </Container>
   );
 };
