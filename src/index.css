@@ -9,6 +9,7 @@
   --clr-text-grey: #aba9a9;
   --clr-green: #51b045;
   --clr-red: #d42626;
+  --clr-cerulean-blue: #2f49d1;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 }
 
 .embla {
-  max-width: 100%;
+  width: 100%;
   margin: auto;
   --slide-spacing: 20px;
   --slide-size: 33.33%;
@@ -30,7 +31,7 @@ body {
 }
 .embla__container {
   display: flex;
-  gap: 20px;
+  gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
 .embla__slide {

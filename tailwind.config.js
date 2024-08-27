@@ -10,6 +10,7 @@ const customColors = {
   brandRed: "#d42626",
   brandLightPurple: "#c205e8",
   brandPurple: "#620175",
+  brandCeruleanBlue: "#2F49D1",
 };
 
 module.exports = {
