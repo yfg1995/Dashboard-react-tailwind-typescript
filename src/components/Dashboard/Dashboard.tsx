@@ -14,7 +14,7 @@ export const Dashboard: FC<IDashboard> = () => {
     <Container className="max-w-[1700px] w-full">
       <DashboardUsersProfitUpdates />
 
-      <div className="flex-items-center">
+      <div className="flex-items-center h-full">
         <DashboardWorkSummary />
         <DashboardTopCountries />
       </div>

@@ -11,6 +11,24 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const chart = echarts.init(ref.current);
 
       const option = {
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "line",
+            lineStyle: {
+              color: "#353535",
+            },
+          },
+          backgroundColor: "#353535",
+          textStyle: {
+            color: "#fff",
+          },
+          borderWidth: 0,
+          formatter: function (params: any) {
+            const dataPoint = params[0];
+            return `$${dataPoint.value}`;
+          },
+        },
         xAxis: {
           data: [
             "Nov",
@@ -27,7 +45,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             show: true,
             lineStyle: {
               color: "#333",
-              width: 5,
+              width: 6,
             },
           },
         },
@@ -38,7 +56,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         },
         series: [
           {
-            data: [150, 550, 600, 450, 700, 750, 650, 350, 500],
+            data: [150, 550, 800, 1150, 700, 750, 350, 850, 500],
             type: "line",
             smooth: true,
             lineStyle: {
@@ -46,7 +64,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
                 { offset: 0, color: "#c205e8" },
                 { offset: 1, color: "#620175" },
               ]),
-              width: 3,
+              width: 4,
             },
             showSymbol: false,
           },
@@ -61,5 +79,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, []);
 
-  return <div className="h-full" ref={ref} />;
+  return <div className="h-[350px]" ref={ref} />;
 };
