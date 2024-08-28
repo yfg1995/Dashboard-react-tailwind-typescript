@@ -19,8 +19,12 @@ body {
 .embla {
   width: 100%;
   margin: auto;
-  --slide-spacing: 20px;
-  --slide-size: 33.33%;
+  --slide-spacing: 0px;
+  --slide-count: 3;
+  --slide-size: calc(
+    (100% - (var(--slide-count) + 1) * var(--slide-spacing)) /
+      var(--slide-count)
+  );
 }
 .embla__viewport {
   overflow: hidden;
@@ -32,7 +36,7 @@ body {
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 calc(var(--slide-size) - var(--slide-spacing));
+  flex: 0 0 calc(var(--slide-size));
   min-width: 0;
-  padding-left: var(--slide-spacing);
+  margin-right: var(--slide-spacing);
 }

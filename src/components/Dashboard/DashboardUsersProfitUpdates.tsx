@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { UsersProfitUpdate } from "../../dummyData";
 import { Checkmark } from "../../svg/Checkmark";
@@ -15,18 +15,21 @@ export interface IDashboardUsersProfitUpdates {}
 export const DashboardUsersProfitUpdates: FC<
   IDashboardUsersProfitUpdates
 > = () => {
-  const OPTIONS: EmblaOptionsType = {
+  const options: EmblaOptionsType = {
     loop: true,
   };
   const slideCount = UsersProfitUpdate.length;
 
   return (
-    <CarouselAutoplay options={OPTIONS}>
+    <CarouselAutoplay options={options}>
       {UsersProfitUpdate.map(
         (user, index) =>
           index < slideCount && (
-            <ContainerBorderRounded className="embla__slide" key={user.id}>
-              <div className="flex items-center justify-between">
+            <ContainerBorderRounded
+              className="embla__slide max-w-[550px] bg-brandOnyxBlack"
+              key={user.id}
+            >
+              <div className="flex items-center justify-between px-2 rounded-[12px] h-32 bg-brandCharcoalBlack">
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center">
                     <div className="flex items-center overflow-hidden w-10 h-10 rounded-full mr-2">
