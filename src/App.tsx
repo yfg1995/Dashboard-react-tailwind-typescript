@@ -1,19 +1,16 @@
 import { Dashboard } from "./components/Dashboard/Dashboard";
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
-// const queryClient = new QueryClient();
 
 function App() {
   return (
-    // <QueryClientProvider client={queryClient}>
-    // <Test />
-    // <ReactQueryDevtools />
-    // </QueryClientProvider>
+    <>
+      <div className="fixed top-0 left-0 max-w-[225px] w-full h-screen bg-brandCharcoalBlack py-[24px] px-[12px] flex flex-col items-center">
+        asd
+      </div>
 
-    <main className="bg-brandOnyxBlack h-[100vh]">
-      <Dashboard />
-    </main>
+      <main className="bg-brandOnyxBlack h-full pl-56">
+        <Dashboard />
+      </main>
+    </>
   );
 }
 

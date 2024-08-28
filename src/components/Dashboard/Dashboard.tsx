@@ -11,15 +11,15 @@ export interface IDashboard {}
 
 export const Dashboard: FC<IDashboard> = () => {
   return (
-    <Container className="max-w-[1700px] w-full flex flex-col gap-6 justify-center">
+    <Container className="max-w-[1700px] flex flex-col gap-4 justify-center">
       <DashboardUsersProfitUpdates />
 
-      <div className="flex gap-10">
+      <div className="flex gap-5">
         <DashboardWorkSummary />
         <DashboardTopCountries />
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex gap-5">
         <div className="flex gap-5">
           <DashboardSegmentation />
           <DashboardSatisfication />

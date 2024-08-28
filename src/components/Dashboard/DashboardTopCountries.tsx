@@ -40,10 +40,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
                 <span>{index + 1}</span>
 
                 <div className="w-8 h-8 rounded-full overflow-hidden">
-                  <img
-                    src={`countries/${country.imgSrc}`}
-                    alt={country.country}
-                  />
+                  <img src={`countries/${country.imgSrc}`} alt="" />
                 </div>
 
                 <span className="text-brandTextGray">{country.country}</span>
