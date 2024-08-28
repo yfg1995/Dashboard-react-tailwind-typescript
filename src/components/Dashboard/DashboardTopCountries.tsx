@@ -6,6 +6,7 @@ import { Arrow } from "../../svg/Arrow";
 import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
 import { formatNumberWithCommas } from "../../helpers/helpers";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
+import { cn } from "../../utils/utils";
 
 export interface IDashboardTopCountries {}
 
@@ -33,7 +34,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
 
       <ul className="overflow-y-auto mt-4 max-h-[300px] h-full">
         {displayedCountries.map((country, index) => (
-          <li className="my-4" key={country.country}>
+          <li className={cn("my-4", showAll && "mr-3")} key={country.country}>
             <div className="flex-items-center justify-between text-brandTextGray">
               <div className="flex-items-center gap-2.5">
                 <span>{index + 1}</span>
