@@ -5,6 +5,7 @@ export interface IQuestionMarkCircle {
   height: number;
   strokeColor: string;
   className?: string;
+  fill?: string;
   onClick?: () => void;
 }
 
@@ -12,6 +13,7 @@ export const QuestionMarkCircle: FC<IQuestionMarkCircle> = ({
   width,
   height,
   strokeColor,
+  fill = "#333",
   className,
   onClick,
 }) => {
@@ -21,7 +23,7 @@ export const QuestionMarkCircle: FC<IQuestionMarkCircle> = ({
         className={className}
         width={width}
         height={height}
-        fill="none"
+        fill={fill}
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke={strokeColor}

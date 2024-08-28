@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Title } from "../Title";
 import { PlusCircle } from "../../svg/PlusCircle";
 import { countries } from "../../dummyData";
@@ -10,8 +10,16 @@ import { ContainerBorderRounded } from "../ContainerBorderRounded";
 export interface IDashboardTopCountries {}
 
 export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedCountries = showAll ? countries : countries.slice(0, 4);
+
+  const handleToggle = () => {
+    setShowAll(!showAll);
+  };
+
   return (
-    <ContainerBorderRounded className="max-w-[550px]">
+    <ContainerBorderRounded className="max-w-[550px] flex flex-col">
       <div className="flex-items-center justify-between">
         <Title title="Top Countries" />
 
@@ -23,8 +31,8 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         />
       </div>
 
-      <ul>
-        {countries.map((country, index) => (
+      <ul className="overflow-y-auto mt-4 max-h-[300px] h-full">
+        {displayedCountries.map((country, index) => (
           <li className="my-4" key={country.country}>
             <div className="flex-items-center justify-between text-brandTextGray">
               <div className="flex-items-center gap-2.5">
@@ -66,8 +74,11 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         ))}
       </ul>
 
-      <div className="grid place-content-center text-brandTextGray mt-4 cursor-pointer">
-        Check All
+      <div
+        className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
+        onClick={handleToggle}
+      >
+        {showAll ? "Show Less" : "Check All"}
       </div>
     </ContainerBorderRounded>
   );

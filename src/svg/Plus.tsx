@@ -3,8 +3,8 @@ import { FC } from "react";
 export interface IPlus {
   width: number;
   height: number;
-  strokeColor: string;
   className?: string;
+  strokeColor: string;
 }
 
 export const Plus: FC<IPlus> = ({ width, height, strokeColor, className }) => {
