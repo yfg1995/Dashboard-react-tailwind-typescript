@@ -43,6 +43,9 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             "June",
             "July",
           ],
+          axisLabel: {
+            fontSize: 15,
+          },
           splitLine: {
             show: true,
             lineStyle: {
@@ -55,6 +58,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           splitLine: {
             show: false,
           },
+          axisLabel: {
+            fontSize: 16,
+            padding: [0, 12, 0, 0],
+          },
         },
         series: [
           {
@@ -63,8 +70,8 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             smooth: true,
             lineStyle: {
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                { offset: 0, color: "#c205e8" },
-                { offset: 1, color: "#620175" },
+                { offset: 0, color: "#42c2dd" },
+                { offset: 1, color: "#2f49d0" },
               ]),
               width: 4,
             },

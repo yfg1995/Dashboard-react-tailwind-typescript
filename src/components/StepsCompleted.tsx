@@ -19,7 +19,7 @@ export const StepsCompleted: FC<TStepsCompleted> = ({
             key={index}
             className={`h-[5px] ${
               index < completedTasks
-                ? "bg-[var(--clr-purple)]"
+                ? "bg-[var(--clr-blue)]"
                 : "bg-brandTextGray"
             } mx-0.5 ${
               index === 0

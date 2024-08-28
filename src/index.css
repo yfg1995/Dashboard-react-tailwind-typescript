@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --clr-light-purple: #c205e8;
-  --clr-purple: #620175;
+  --clr-light-blue: #42c2dd;
+  --clr-blue: #2f49d0;
   --clr-charcoal-black: #171717;
   --clr-text-grey: #aba9a9;
   --clr-green: #51b045;

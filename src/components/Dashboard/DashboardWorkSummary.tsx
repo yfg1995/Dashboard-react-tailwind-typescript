@@ -11,7 +11,10 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = () => {
   return (
     <ContainerBorderRounded className="max-w-[1080px]">
       <div className="flex items-center justify-between">
-        <Title title="Your Work Summary" />
+        <div>
+          <Title title="Your Work Summary" />
+          <div className="text-brandTextGray">Nov - July</div>
+        </div>
 
         <div className="flex items-center gap-4">
           <GradientCircle width={16} height={16} />

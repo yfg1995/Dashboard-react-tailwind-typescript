@@ -9,7 +9,10 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = () => {
   return (
     <ContainerBorderRounded className="max-w-[535px]">
       <div className="flex items-center justify-between">
-        <Title title="Segmentation" />
+        <div>
+          <Title title="Segmentation" />
+          <div className="text-brandTextGray">All users</div>
+        </div>
 
         <TwoDotsVertical
           width={12}

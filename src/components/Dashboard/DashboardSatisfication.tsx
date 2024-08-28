@@ -9,7 +9,10 @@ export const DashboardSatisfication: FC<IDashboardSatisfication> = () => {
   return (
     <ContainerBorderRounded className="max-w-[535px]">
       <div className="flex items-center justify-between">
-        <Title title="Satiscfication" />
+        <div>
+          <Title title="Satiscfication" />
+          <div className="text-brandTextGray">From all projects</div>
+        </div>
 
         <TwoDotsVertical
           width={12}
