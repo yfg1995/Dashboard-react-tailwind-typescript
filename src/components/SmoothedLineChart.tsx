@@ -5,10 +5,12 @@ export interface ISmoothedLineChart {}
 
 export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const chartRef = useRef<echarts.EChartsType | null>(null);
 
   useEffect(() => {
     if (ref.current) {
       const chart = echarts.init(ref.current);
+      chartRef.current = chart;
 
       const option = {
         tooltip: {
@@ -73,8 +75,19 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       chart.setOption(option);
 
+      const handleResize = () => {
+        if (chartRef.current) {
+          chartRef.current.resize();
+        }
+      };
+
+      window.addEventListener("resize", handleResize);
+
       return () => {
-        chart.dispose();
+        if (chartRef.current) {
+          chartRef.current.dispose();
+        }
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, []);
