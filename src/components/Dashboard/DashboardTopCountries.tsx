@@ -21,25 +21,20 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
 
   return (
     <ContainerBorderRounded className="max-w-[550px] flex flex-col">
-      <div className="flex-items-center justify-between">
+      <div className="flex items-center justify-between">
         <div>
           <Title title="Top Countries" />
           {!showAll && <div className="text-brandTextGray">Favorites</div>}
         </div>
 
-        <PlusCircle
-          width={20}
-          height={20}
-          strokeColor="var(--clr-text-grey)"
-          fill="#333"
-        />
+        <PlusCircle width={22} height={22} strokeColor="white" fill="#333" />
       </div>
 
       <ul className="overflow-y-auto mt-4 max-h-[300px] h-full">
         {displayedCountries.map((country, index) => (
           <li className={cn("my-4", showAll && "mr-3")} key={country.country}>
-            <div className="flex-items-center justify-between text-brandTextGray">
-              <div className="flex-items-center gap-2.5">
+            <div className="flex items-center justify-between text-brandTextGray">
+              <div className="flex items-center gap-2.5">
                 <span>{index + 1}</span>
 
                 <div className="w-8 h-8 rounded-full overflow-hidden">
@@ -49,7 +44,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
                 <span className="text-brandTextGray">{country.country}</span>
               </div>
 
-              <div className="flex-items-center gap-2">
+              <div className="flex items-center gap-2">
                 <span>{formatNumberWithCommas(country.price)}</span>
 
                 <Arrow

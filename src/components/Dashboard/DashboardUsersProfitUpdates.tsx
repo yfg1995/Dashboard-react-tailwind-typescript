@@ -26,10 +26,10 @@ export const DashboardUsersProfitUpdates: FC<
         (user, index) =>
           index < slideCount && (
             <ContainerBorderRounded className="embla__slide" key={user.id}>
-              <div className="flex-items-center justify-between">
+              <div className="flex items-center justify-between">
                 <div className="flex flex-col gap-2">
-                  <div className="flex-items-center">
-                    <div className="flex-items-center overflow-hidden w-10 h-10 rounded-full mr-2">
+                  <div className="flex items-center">
+                    <div className="flex items-center overflow-hidden w-10 h-10 rounded-full mr-2">
                       <img
                         src={`users/${user.imgSrc}`}
                         alt={`User - ${user.profile.userName}`}
@@ -37,7 +37,7 @@ export const DashboardUsersProfitUpdates: FC<
                     </div>
 
                     <div className="flex flex-col">
-                      <div className="flex-items-center">
+                      <div className="flex items-center">
                         <Title title={user.profile.userName} className="mr-2" />
 
                         {user.profile.verified && (

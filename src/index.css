@@ -16,10 +16,6 @@ body {
   color: white;
 }
 
-.flex-items-center {
-  @apply flex items-center;
-}
-
 .embla {
   width: 100%;
   margin: auto;

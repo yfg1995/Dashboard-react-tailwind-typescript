@@ -8,7 +8,7 @@ export interface IDashboardSatisfication {}
 export const DashboardSatisfication: FC<IDashboardSatisfication> = () => {
   return (
     <ContainerBorderRounded className="max-w-[535px]">
-      <div className="flex-items-center justify-between">
+      <div className="flex items-center justify-between">
         <Title title="Satiscfication" />
 
         <TwoDotsVertical

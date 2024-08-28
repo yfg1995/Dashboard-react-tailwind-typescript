@@ -10,10 +10,10 @@ export interface IDashboardWorkSummary {}
 export const DashboardWorkSummary: FC<IDashboardWorkSummary> = () => {
   return (
     <ContainerBorderRounded className="max-w-[1080px]">
-      <div className="flex-items-center justify-between">
+      <div className="flex items-center justify-between">
         <Title title="Your Work Summary" />
 
-        <div className="flex-items-center gap-4">
+        <div className="flex items-center gap-4">
           <GradientCircle width={16} height={16} />
           <span>Last 9 months</span>
           <QuestionMarkCircle width={20} height={20} strokeColor="#fff" />
