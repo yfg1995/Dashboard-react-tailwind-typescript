@@ -11,9 +11,8 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
   options,
   children,
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 3000 }),
-  ]);
+  const autoplayRef = useRef(Autoplay({ playOnInit: true, delay: 3000 }));
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplayRef.current]);
 
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
@@ -24,12 +23,14 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
       if (viewportRef.current) {
         viewportRef.current.style.cursor = "grabbing";
       }
+      autoplayRef.current.stop();
     };
 
     const onDragEnd = () => {
       if (viewportRef.current) {
         viewportRef.current.style.cursor = "grab";
       }
+      autoplayRef.current.play();
     };
 
     emblaApi.on("pointerDown", onDragStart);
@@ -49,9 +50,9 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
     <div className="embla">
       <div
         className="embla__viewport"
-        ref={(el) => {
-          emblaRef(el);
-          viewportRef.current = el;
+        ref={(e) => {
+          emblaRef(e);
+          viewportRef.current = e;
         }}
       >
         <div className="embla__container">{children}</div>

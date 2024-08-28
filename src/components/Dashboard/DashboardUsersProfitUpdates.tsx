@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { UsersProfitUpdate } from "../../dummyData";
 import { Checkmark } from "../../svg/Checkmark";
@@ -26,7 +26,7 @@ export const DashboardUsersProfitUpdates: FC<
         (user, index) =>
           index < slideCount && (
             <ContainerBorderRounded
-              className="embla__slide max-w-[550px] bg-brandOnyxBlack"
+              className="embla__slide max-w-[550px] bg-brandOnyxBlack select-none"
               key={user.id}
             >
               <div className="flex items-center justify-between px-2 rounded-[12px] h-32 bg-brandCharcoalBlack">
