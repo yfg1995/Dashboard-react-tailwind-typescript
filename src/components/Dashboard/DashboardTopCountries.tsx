@@ -22,7 +22,10 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
   return (
     <ContainerBorderRounded className="max-w-[550px] flex flex-col">
       <div className="flex-items-center justify-between">
-        <Title title="Top Countries" />
+        <div>
+          <Title title="Top Countries" />
+          {!showAll && <div className="text-brandTextGray">Favorites</div>}
+        </div>
 
         <PlusCircle
           width={20}
@@ -76,7 +79,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
         onClick={handleToggle}
       >
-        {showAll ? "Show Less" : "Check All"}
+        {showAll ? "Show Less" : "Show All"}
       </div>
     </ContainerBorderRounded>
   );
