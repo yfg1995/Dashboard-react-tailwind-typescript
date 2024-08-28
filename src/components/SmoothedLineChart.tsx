@@ -16,10 +16,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         tooltip: {
           trigger: "axis",
           axisPointer: {
-            type: "line",
-            lineStyle: {
-              color: "#353535",
-            },
+            type: "none",
           },
           backgroundColor: "#353535",
           textStyle: {
@@ -76,6 +73,12 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
               type: "dashed",
             },
             showSymbol: false,
+            emphasis: {
+              focus: "none", // No emphasis (no dots on hover)
+              itemStyle: {
+                opacity: 0, // Make sure any potential symbols remain invisible
+              },
+            },
           },
           {
             data: [150, 550, 800, 1150, 700, 750, 350, 850, 500],
