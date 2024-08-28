@@ -7,5 +7,5 @@ export interface ITitle {
 }
 
 export const Title: FC<ITitle> = ({ title, className }) => {
-  return <div className={cn("font-bold text-white", className)}>{title}</div>;
+  return <div className={cn("font-bold", className)}>{title}</div>;
 };
