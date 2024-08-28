@@ -43,8 +43,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             "June",
             "July",
           ],
+
           axisLabel: {
             fontSize: 15,
+            padding: [7, 0, 0, -90],
           },
           splitLine: {
             show: true,
@@ -64,6 +66,17 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           },
         },
         series: [
+          {
+            data: [300, 450, 600, 900, 500, 650, 300, 700, 450],
+            type: "line",
+            smooth: true,
+            lineStyle: {
+              color: "#333",
+              width: 3,
+              type: "dashed",
+            },
+            showSymbol: false,
+          },
           {
             data: [150, 550, 800, 1150, 700, 750, 350, 850, 500],
             type: "line",
