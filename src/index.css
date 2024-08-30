@@ -4,7 +4,7 @@
 
 :root {
   --clr-light-blue: #8e76ef;
-  --clr-blue: #3912d2;
+  --clr-blue: #334ed8;
   --clr-blackk: #353535;
   --clr-charcoal-black: #171717;
   --clr-text-grey: #aba9a9;
@@ -24,6 +24,7 @@ body {
   background: var(--clr-blackk);
 }
 
+/* EMBLA CAROUSEL */
 .embla {
   width: 100%;
   margin: auto;
@@ -50,6 +51,8 @@ body {
   min-width: 0;
   margin-right: var(--slide-spacing);
 }
+
+/* SATISFICATION PROGRESS */
 
 .satiscfication {
   --progress: 0;

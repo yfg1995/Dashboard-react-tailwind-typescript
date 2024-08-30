@@ -1,0 +1,36 @@
+import { FC } from "react";
+
+export interface ICardBg {}
+
+export const CardBg: FC<ICardBg> = () => {
+  return (
+    <svg width="80" height="112" viewBox="0 0 80 112" fill="none">
+      <g clipPath="url(#clip0)">
+        <path d="M80 0H0V112H80V0Z" fill="#2F49D1" />
+        <path
+          d="M48.2857 113.12C62.6864 69.8671 18.2857 45.92 14 0.839996"
+          stroke="#FFFBFB"
+          strokeOpacity="0.1"
+          strokeWidth="2"
+        />
+        <path
+          d="M53.7143 112.56C68.115 69.3071 36.2857 42.84 35.7143 0.559998"
+          stroke="#FFFBFB"
+          strokeOpacity="0.1"
+          strokeWidth="2"
+        />
+        <path
+          d="M60.2857 112C74.6864 68.7471 56.8571 40.6 56.2857 -1.67999"
+          stroke="#FFFBFB"
+          strokeOpacity="0.1"
+          strokeWidth="2"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0">
+          <rect width="80" height="112" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};

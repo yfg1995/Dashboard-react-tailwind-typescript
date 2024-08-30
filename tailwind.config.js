@@ -8,7 +8,7 @@ const customColors = {
   brandGreen: "#51b045",
   brandRed: "#d42626",
   brandLightBlue: "#42c2dd",
-  brandBlue: "#2f49d0",
+  brandBlue: "#334ED8",
   brandCeruleanBlue: "#2F49D1",
 };
 
