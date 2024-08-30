@@ -13,6 +13,11 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       chartRef.current = chart;
 
       const option = {
+        grid: {
+          width: "auto",
+          height: "170px",
+          top: "10%",
+        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -115,5 +120,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, []);
 
-  return <div className="h-full w-full" ref={ref} />;
+  return <div className="max-h-[240px] h-full" ref={ref} />;
 };
