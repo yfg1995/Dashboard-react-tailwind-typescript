@@ -5,7 +5,7 @@
 :root {
   --clr-light-blue: #8e76ef;
   --clr-blue: #334ed8;
-  --clr-blackk: #353535;
+  --clr-charcoal-grey: #353535;
   --clr-charcoal-black: #171717;
   --clr-text-grey: #aba9a9;
   --clr-green: #51b045;
@@ -21,7 +21,7 @@
 
 body {
   color: white;
-  background: var(--clr-blackk);
+  background: var(--clr-charcoal-grey);
 }
 
 /* EMBLA CAROUSEL */
@@ -108,7 +108,7 @@ body {
   --steps: 5;
   --steps-completed: 0;
   --dash-clr: var(--clr-charcoal-black);
-  --main-clr: var(--clr-blackk);
+  --main-clr: var(--clr-charcoal-grey);
   --fill-clr: linear-gradient(
     to right,
     var(--clr-light-blue),

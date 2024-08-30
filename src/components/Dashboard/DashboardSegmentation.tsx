@@ -5,32 +5,33 @@ import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
 import { CardBg } from "../../svg/CardBg";
 import { SelectDropdown } from "../SelectDropdown";
 
+const allUsers = [
+  {
+    title: "Not Specified",
+    textColor: "#363636",
+    value: 800,
+  },
+  {
+    title: "Male",
+    textColor: "#818BB1",
+    value: 441,
+  },
+  {
+    title: "Female",
+    textColor: "#2C365D",
+    value: 233,
+  },
+  {
+    title: "Other",
+    textColor: "#2F49D1",
+    value: 126,
+  },
+];
+
 export interface IDashboardSegmentation
   extends HTMLAttributes<HTMLDivElement> {}
 
 export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
-  const allUsers = [
-    {
-      title: "Not Specified",
-      textColor: "#363636",
-      value: 800,
-    },
-    {
-      title: "Male",
-      textColor: "#818BB1",
-      value: 441,
-    },
-    {
-      title: "Female",
-      textColor: "#2C365D",
-      value: 233,
-    },
-    {
-      title: "Other",
-      textColor: "#2F49D1",
-      value: 126,
-    },
-  ];
   return (
     <div {...props}>
       <ContainerBorderRounded className="h-[var(--c-sec-height)]">

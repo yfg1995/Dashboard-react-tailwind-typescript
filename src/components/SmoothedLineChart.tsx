@@ -34,6 +34,16 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           },
         },
         xAxis: {
+          axisTick: {
+            show: false,
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
+              color: "var(--clr-charcoal-grey)",
+              width: 1,
+            },
+          },
           data: [
             "Nov",
             "Dec",
