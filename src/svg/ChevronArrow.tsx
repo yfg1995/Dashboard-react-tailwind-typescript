@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface IChevronArrow {
   strokeColor: string;
@@ -21,7 +22,7 @@ export const ChevronArrow: FC<IChevronArrow> = ({
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke={strokeColor}
-      className={className}
+      className={cn("transition-all", className)}
     >
       <path
         strokeLinecap="round"

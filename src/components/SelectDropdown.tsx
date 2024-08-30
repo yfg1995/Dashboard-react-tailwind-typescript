@@ -55,7 +55,7 @@ export const SelectDropdown: FC<ISelect> = ({
     >
       <div
         className={cn(
-          "relative flex justify-between gap-2 text-brandTextGray bg-brandOnyxBlack items-center p-2 w-full select-none text-center rounded-lg",
+          "relative flex justify-between gap-2 text-brandTextGray bg-brandCharcoalGrey items-center p-2 w-full select-none text-center rounded-lg",
           className
         )}
         onClick={handleToggle}
@@ -69,11 +69,11 @@ export const SelectDropdown: FC<ISelect> = ({
           width="16"
           height="16"
           strokeColor="var(--clr-text-grey)"
-          className={cn(toggle ? "rotate-180 translate-y-[2px]" : "")}
+          className={cn("mt-0.5", toggle ? "rotate-180" : "")}
         />
       </div>
 
-      {toggle && (
+      {/* {toggle && (
         <div
           className={cn(
             "absolute top-full left-0 border bg-white border-brandStrokeGray rounded-lg overflow-x-hidden overflow-y-auto max-h-[var(--item-height)] divide-y divide-y-brandStrokeGray text-center px-4 w-full",
@@ -100,7 +100,7 @@ export const SelectDropdown: FC<ISelect> = ({
             </div>
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
