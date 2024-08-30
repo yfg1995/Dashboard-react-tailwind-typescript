@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPosts } from "../api/posts";
-import { Container } from "./Container";
 import { CreatePost } from "./CreatePost";
 
 export const Test = () => {
@@ -17,7 +16,7 @@ export const Test = () => {
   if (error) return <div>Error fetching data: {error.message}</div>;
 
   return (
-    <Container>
+    <>
       <CreatePost />
 
       <ul className="max-w-[1000px] w-full">
@@ -36,6 +35,6 @@ export const Test = () => {
           </li>
         ))}
       </ul>
-    </Container>
+    </>
   );
 };

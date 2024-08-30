@@ -26,20 +26,27 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
         <div className="flex justify-between">
           <div>
             <Title title="Top Countries" />
-            {!showAll && <div className="text-brandTextGray">Favorites</div>}
+            <div
+              className={cn(
+                "text-brandTextGray transition-all",
+                showAll ? "opacity-0" : "opacity-100"
+              )}
+            >
+              Favorites
+            </div>
           </div>
 
           <PlusCircle width={22} height={22} strokeColor="white" fill="#333" />
         </div>
 
-        <ul className="overflow-y-auto mt-4 max-h-[300px] h-full">
+        <ul className="overflow-y-auto mt-4 max-h-[300px] h-full space-y-4">
           {displayedCountries.map((country, index) => (
-            <li className={cn("my-4", showAll && "mr-3")} key={country.country}>
+            <li className={cn(showAll && "mr-3")} key={country.country}>
               <div className="flex items-center justify-between text-brandTextGray">
                 <div className="flex items-center gap-2.5">
                   <span>{index + 1}</span>
 
-                  <div className="w-8 h-8 rounded-full overflow-hidden">
+                  <div className="w-6 h-6 rounded-full overflow-hidden">
                     <img src={`countries/${country.imgSrc}`} alt="" />
                   </div>
 

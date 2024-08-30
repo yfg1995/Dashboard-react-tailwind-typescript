@@ -30,7 +30,7 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
       if (viewportRef.current) {
         viewportRef.current.style.cursor = "grab";
       }
-      autoplayRef.current.play();
+      // autoplayRef.current.play();
     };
 
     emblaApi.on("pointerDown", onDragStart);

@@ -1,10 +1,10 @@
 import { CSSProperties, FC, useEffect, useState } from "react";
 
-interface ISatisficationProgress {
+interface ISatisfactionProgress {
   progress: number;
 }
 
-export const SatisficationProgress: FC<ISatisficationProgress> = ({
+export const SatisfactionProgress: FC<ISatisfactionProgress> = ({
   progress,
 }) => {
   const [animatedProgress, setAnimatedProgress] = useState(0);

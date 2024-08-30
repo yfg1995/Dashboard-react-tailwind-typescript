@@ -1,9 +1,8 @@
 import { CSSProperties, FC } from "react";
-import { Container } from "../Container";
 import { DashboardWorkSummary } from "./DashboardWorkSummary";
 import { DashboardTopCountries } from "./DashboardTopCountries";
 import { DashboardSegmentation } from "./DashboardSegmentation";
-import { DashboardSatisfication } from "./DashboardSatisfication";
+import { DashboardSatisfaction } from "./DashboardSatisfaction";
 import { DashboardNewComponent } from "./DashboardNewComponent";
 import { DashboardUsersProfitUpdates } from "./DashboardUsersProfitUpdate";
 
@@ -34,7 +33,7 @@ export const Dashboard: FC<IDashboard> = () => {
       <DashboardTopCountries style={{ gridArea: "c" }} />
 
       <DashboardSegmentation style={{ gridArea: "d" }} />
-      <DashboardSatisfication style={{ gridArea: "e" }} />
+      <DashboardSatisfaction style={{ gridArea: "e" }} />
       <DashboardNewComponent style={{ gridArea: "f" }} />
     </div>
   );
