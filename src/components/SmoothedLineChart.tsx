@@ -15,8 +15,8 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const option = {
         grid: {
           width: "auto",
-          height: "170px",
-          top: "10%",
+          height: "175px",
+          top: "12%",
         },
         tooltip: {
           trigger: "axis",
