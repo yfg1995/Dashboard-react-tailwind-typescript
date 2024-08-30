@@ -1,37 +1,21 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 
 type TStepsCompleted = {
   completedTasks: number;
-  totalTasks: number;
 };
 
-export const StepsCompleted: FC<TStepsCompleted> = ({
-  completedTasks,
-  totalTasks,
-}) => {
-  const stepWidth = 100 / totalTasks;
+export const StepsCompleted: FC<TStepsCompleted> = ({ completedTasks }) => {
+  const ref = useRef<HTMLDivElement>(null);
 
-  return (
-    <div className="flex w-full">
-      {[...Array(totalTasks)].map((_, index) => {
-        return (
-          <div
-            key={index}
-            className={`h-[5px] ${
-              index < completedTasks
-                ? "bg-[var(--clr-blue)]"
-                : "bg-brandTextGray"
-            } mx-0.5 ${
-              index === 0
-                ? "rounded-l-full"
-                : index === totalTasks - 1
-                ? "rounded-r-full"
-                : ""
-            } `}
-            style={{ width: `${stepWidth}%` }}
-          />
-        );
-      })}
-    </div>
-  );
+  useEffect(() => {
+    if (!ref.current) return;
+
+    setTimeout(() => {
+      if (ref.current) {
+        ref.current.style.setProperty("--steps-completed", `${completedTasks}`);
+      }
+    }, 200);
+  }, [ref]);
+
+  return <div ref={ref} className="steps-completed" />;
 };

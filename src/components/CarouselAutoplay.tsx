@@ -11,7 +11,7 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
   options,
   children,
 }) => {
-  const autoplayRef = useRef(Autoplay({ playOnInit: true, delay: 3000 }));
+  const autoplayRef = useRef(Autoplay({ playOnInit: false, delay: 3000 }));
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplayRef.current]);
 
   const viewportRef = useRef<HTMLDivElement | null>(null);

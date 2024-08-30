@@ -1,32 +1,41 @@
-import { FC } from "react";
-import { DashboardUsersProfitUpdates } from "./DashboardUsersProfitUpdates";
+import { CSSProperties, FC } from "react";
+import { Container } from "../Container";
 import { DashboardWorkSummary } from "./DashboardWorkSummary";
 import { DashboardTopCountries } from "./DashboardTopCountries";
 import { DashboardSegmentation } from "./DashboardSegmentation";
 import { DashboardSatisfication } from "./DashboardSatisfication";
 import { DashboardNewComponent } from "./DashboardNewComponent";
-import { Container } from "../Container";
+import { DashboardUsersProfitUpdates } from "./DashboardUsersProfitUpdate";
 
 export interface IDashboard {}
 
 export const Dashboard: FC<IDashboard> = () => {
   return (
-    <Container className="max-w-[1700px] flex flex-col gap-4 justify-center">
-      <DashboardUsersProfitUpdates />
+    <div
+      className="grid h-full p-4"
+      style={
+        {
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateRows: "auto auto auto",
+          gridTemplateAreas: `
+          'a a a'
+          'b b c'
+          'd e f'
+        `,
+          gap: "1rem",
+          "--c-height": "128px",
+          "--c-sec-height": "320px",
+        } as CSSProperties
+      }
+    >
+      <DashboardUsersProfitUpdates style={{ gridArea: "a" }} />
 
-      <div className="flex gap-5">
-        <DashboardWorkSummary />
-        <DashboardTopCountries />
-      </div>
+      <DashboardWorkSummary style={{ gridArea: "b" }} />
+      <DashboardTopCountries style={{ gridArea: "c" }} />
 
-      <div className="flex gap-5">
-        <div className="flex gap-5">
-          <DashboardSegmentation />
-          <DashboardSatisfication />
-        </div>
-
-        <DashboardNewComponent />
-      </div>
-    </Container>
+      <DashboardSegmentation style={{ gridArea: "d" }} />
+      <DashboardSatisfication style={{ gridArea: "e" }} />
+      <DashboardNewComponent style={{ gridArea: "f" }} />
+    </div>
   );
 };

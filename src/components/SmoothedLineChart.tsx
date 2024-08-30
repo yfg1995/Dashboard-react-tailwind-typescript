@@ -40,10 +40,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             "June",
             "July",
           ],
-
+          boundaryGap: false,
           axisLabel: {
             fontSize: 15,
-            padding: [7, 0, 0, -90],
+            padding: [8, 0, 0, 0],
           },
           splitLine: {
             show: true,
@@ -74,9 +74,9 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             },
             showSymbol: false,
             emphasis: {
-              focus: "none", // No emphasis (no dots on hover)
+              focus: "none",
               itemStyle: {
-                opacity: 0, // Make sure any potential symbols remain invisible
+                opacity: 0,
               },
             },
           },
@@ -115,5 +115,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, []);
 
-  return <div className="h-[350px]" ref={ref} />;
+  return <div className="h-full w-full" ref={ref} />;
 };

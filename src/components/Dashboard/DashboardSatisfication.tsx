@@ -1,26 +1,31 @@
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
 import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
+import { SatisficationProgress } from "../SatisficationProgress";
 
-export interface IDashboardSatisfication {}
+export interface IDashboardSatisfication
+  extends HTMLAttributes<HTMLDivElement> {}
 
-export const DashboardSatisfication: FC<IDashboardSatisfication> = () => {
+export const DashboardSatisfication: FC<IDashboardSatisfication> = (props) => {
   return (
-    <ContainerBorderRounded className="max-w-[535px]">
-      <div className="flex items-center justify-between">
-        <div>
+    <div {...props}>
+      <ContainerBorderRounded className="h-[var(--c-sec-height)]">
+        <div className="flex items-center justify-between mb-2">
           <Title title="Satiscfication" />
-          <div className="text-brandTextGray">From all projects</div>
+
+          <TwoDotsVertical
+            width={12}
+            height={12}
+            strokeColor="var(--clr-text-grey)"
+            className="mt-1.5"
+          />
         </div>
 
-        <TwoDotsVertical
-          width={12}
-          height={12}
-          strokeColor="var(--clr-text-grey)"
-          className="mt-1.5"
-        />
-      </div>
-    </ContainerBorderRounded>
+        <div className="text-brandTextGray">From all projects</div>
+
+        <SatisficationProgress progress={80} />
+      </ContainerBorderRounded>
+    </div>
   );
 };
