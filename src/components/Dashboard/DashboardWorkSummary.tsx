@@ -28,7 +28,7 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
               animation="scale"
               delay={[200, 200]}
               content={
-                <div className="bg-brandTextGray px-3 py-2 rounded-lg">
+                <div className="bg-brandCharcoalGrey px-3 py-2 rounded-lg">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Ducimus reiciendis quo minus non et tempora, praesentium
                   corrupti.
