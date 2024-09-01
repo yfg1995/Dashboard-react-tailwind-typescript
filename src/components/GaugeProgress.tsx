@@ -26,13 +26,22 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
             itemStyle: {
               color: "#2f49d1",
             },
+            pointer: {
+              show: true,
+              icon: "circle",
+              width: 10,
+              offsetCenter: [0, -73],
+              itemStyle: {
+                color: "white",
+              },
+            },
             progress: {
               show: true,
               roundCap: true,
               width: 20,
-            },
-            pointer: {
-              show: false,
+              itemStyle: {
+                opacity: 0.7,
+              },
             },
             axisLine: {
               roundCap: true,
