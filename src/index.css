@@ -5,7 +5,7 @@
 :root {
   --clr-light-blue: #8e76ef;
   --clr-blue: #334ed8;
-  --clr-charcoal-grey: #353535;
+  --clr-charcoal-grey: #676767;
   --clr-charcoal-black: #171717;
   --clr-text-grey: #aba9a9;
   --clr-green: #51b045;
@@ -29,7 +29,7 @@ body {
 .embla {
   width: 100%;
   margin: auto;
-  --slide-spacing: 20px;
+  --slide-spacing: 1rem;
   --slide-count: 3;
   --slide-size: calc(
     (100% - (var(--slide-count) + 1) * var(--slide-spacing)) /
@@ -40,16 +40,16 @@ body {
   overflow: hidden;
 }
 .embla__container {
-  width: calc(100% + 2.2rem);
-  margin-left: -1rem;
+  width: calc(100% + 2 * var(--slide-spacing));
+  margin-left: calc(var(--slide-spacing) * -1);
   display: flex;
+  gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 calc(var(--slide-size));
   min-width: 0;
-  margin-right: var(--slide-spacing);
 }
 
 /* STEPS COMPLETED */

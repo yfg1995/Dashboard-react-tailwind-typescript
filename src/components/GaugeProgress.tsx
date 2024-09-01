@@ -26,11 +26,13 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
             itemStyle: {
               color: "#2f49d1",
             },
+            radius: "100%",
             pointer: {
               show: true,
               icon: "circle",
               width: 10,
-              offsetCenter: [0, -73.5],
+              zLevel: 2,
+              offsetCenter: [0, -78.5],
               itemStyle: {
                 color: "white",
               },
@@ -39,8 +41,9 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
               show: true,
               roundCap: true,
               width: 20,
+              zLevel: 1,
               itemStyle: {
-                opacity: 0.7,
+                opacity: 1,
               },
             },
             axisLine: {
@@ -65,7 +68,9 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
             axisLabel: {
               show: false,
             },
+            silent: true,
             detail: {
+              show: true,
               valueAnimation: true,
               formatter: function (value: number) {
                 return `${value.toFixed(2)}%`;
@@ -110,5 +115,5 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
     }
   }, []);
 
-  return <div className="h-[320px] w-full" ref={ref} />;
+  return <div className="ring h-full w-full" ref={ref} />;
 };

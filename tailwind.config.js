@@ -2,7 +2,7 @@
 
 const customColors = {
   brandCharcoalBlack: "#171717",
-  brandCharcoalGrey: "#353535",
+  brandCharcoalGrey: "#676767",
   brandElectricBlue: "#2D44BC",
   brandTextGray: "#aba9a9",
   brandGreen: "#51b045",

@@ -55,7 +55,7 @@ export const SelectDropdown: FC<ISelect> = ({
     >
       <div
         className={cn(
-          "relative flex justify-between gap-2 text-brandTextGray bg-brandCharcoalGrey items-center p-2 w-full select-none text-center rounded-lg",
+          "relative flex justify-between gap-2 text-brandTextGray bg-[#1e1e1e] items-center p-2 w-full select-none text-center rounded-lg",
           className
         )}
         onClick={handleToggle}

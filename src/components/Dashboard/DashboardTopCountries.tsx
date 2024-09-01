@@ -46,7 +46,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
 
         <ul className="overflow-y-auto mt-4 max-h-[300px] h-full space-y-4">
           {displayedCountries.map((country, index) => (
-            <li className={cn(showAll && "mr-3")} key={country.country}>
+            <li className={cn(showAll && "mr-3")} key={country.country + index}>
               <div className="flex items-center justify-between text-brandTextGray">
                 <div className="flex items-center gap-2.5">
                   <span>{index + 1}</span>
