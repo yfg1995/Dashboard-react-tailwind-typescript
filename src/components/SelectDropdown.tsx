@@ -1,6 +1,6 @@
-import { useState, FC, CSSProperties } from "react";
+import { useState, FC } from "react";
 import { cn } from "../utils/utils";
-import { ChevronArrow } from "../svg/ChevronArrow";
+import { ChevronArrowSvg } from "../svg/ChevronArrowSvg";
 
 export type TSelectOption = {
   id: string;
@@ -65,7 +65,7 @@ export const SelectDropdown: FC<ISelect> = ({
             defaultSelectedId}
         </span>
 
-        <ChevronArrow
+        <ChevronArrowSvg
           width="16"
           height="16"
           strokeColor="var(--clr-text-grey)"

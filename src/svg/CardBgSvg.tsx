@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-export interface ICardBg {}
+export interface ICardBgSvg {}
 
-export const CardBg: FC<ICardBg> = () => {
+export const CardBgSvg: FC<ICardBgSvg> = () => {
   return (
     <svg
       width="80"

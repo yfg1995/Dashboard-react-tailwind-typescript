@@ -6,8 +6,8 @@ import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { UsersProfitUpdate } from "../../dummyData";
 import { StepsCompleted } from "../StepsCompleted";
 import { Title } from "../Title";
-import { Checkmark } from "../../svg/Checkmark";
-import { Trending } from "../../svg/Trending";
+import { CheckmarkSvg } from "../../svg/CheckmarkSvg";
+import { TrendingSvg } from "../../svg/TrendingSvg";
 
 export interface IDashboardUsersProfitUpdates
   extends HTMLAttributes<HTMLDivElement> {}
@@ -42,7 +42,7 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
                       <Title title={user.profile.userName} className="mr-2" />
 
                       {user.profile.verified && (
-                        <Checkmark
+                        <CheckmarkSvg
                           className="mt-0.5"
                           width={14}
                           height={14}
@@ -69,9 +69,9 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
 
               <div className="flex flex-col items-center">
                 {user.profit.updatedProfit > 1500 ? (
-                  <Trending width={30} height={30} strokeColor="#51b045" />
+                  <TrendingSvg width={30} height={30} strokeColor="#51b045" />
                 ) : (
-                  <Trending
+                  <TrendingSvg
                     width={30}
                     height={30}
                     strokeColor="#d42626"

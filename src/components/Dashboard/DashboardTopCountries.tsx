@@ -1,9 +1,9 @@
 import { FC, HTMLAttributes, useState } from "react";
 import { Title } from "../Title";
-import { PlusCircle } from "../../svg/PlusCircle";
+import { PlusCircleSvg } from "../../svg/PlusCircleSvg";
 import { countries } from "../../dummyData";
-import { Arrow } from "../../svg/Arrow";
-import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
+import { ArrowSvg } from "../../svg/ArrowSvg";
+import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { formatNumberWithCommas } from "../../helpers/helpers";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { cn } from "../../utils/utils";
@@ -36,7 +36,12 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
             </div>
           </div>
 
-          <PlusCircle width={22} height={22} strokeColor="white" fill="#333" />
+          <PlusCircleSvg
+            width={22}
+            height={22}
+            strokeColor="white"
+            fill="#333"
+          />
         </div>
 
         <ul className="overflow-y-auto mt-4 max-h-[300px] h-full space-y-4">
@@ -56,7 +61,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
                 <div className="flex items-center gap-2">
                   <span>{formatNumberWithCommas(country.price)}</span>
 
-                  <Arrow
+                  <ArrowSvg
                     width={16}
                     height={16}
                     strokeColor={
@@ -67,7 +72,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
                     className={country.price < 15000 ? "rotate-180" : ""}
                   />
 
-                  <TwoDotsVertical
+                  <TwoDotsVerticalSvg
                     width={12}
                     height={12}
                     strokeColor="var(--clr-text-grey)"

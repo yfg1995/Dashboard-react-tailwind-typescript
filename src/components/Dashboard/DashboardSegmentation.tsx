@@ -1,8 +1,8 @@
 import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
-import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
-import { CardBg } from "../../svg/CardBg";
+import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
+import { CardBgSvg } from "../../svg/CardBgSvg";
 import { SelectDropdown } from "../SelectDropdown";
 
 const allUsers = [
@@ -38,7 +38,7 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
         <div className="flex items-center justify-between">
           <Title title="Segmentation" />
 
-          <TwoDotsVertical
+          <TwoDotsVerticalSvg
             width={12}
             height={12}
             strokeColor="var(--clr-text-grey)"
@@ -62,7 +62,7 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
                     className="absolute top-0 right-0 w-20 h-28 rounded-lg overflow-hidden"
                     style={{ background: user.textColor }}
                   >
-                    <CardBg />
+                    <CardBgSvg />
                   </div>
                 ) : (
                   <div

@@ -1,13 +1,13 @@
 import { FC } from "react";
 
-export interface IStar {
+export interface IStarSvg {
   width: string;
   height: string;
   className?: string;
   fill: string;
 }
 
-export const Star: FC<IStar> = ({
+export const StarSvg: FC<IStarSvg> = ({
   width,
   height,
   className,

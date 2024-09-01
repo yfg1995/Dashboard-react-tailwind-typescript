@@ -2,8 +2,8 @@ import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { SmoothedLineChart } from "../SmoothedLineChart";
 import { Title } from "../Title";
-import { GradientCircle } from "../../svg/GradientCircle";
-import { QuestionMarkCircle } from "../../svg/QuestionMarkCircle";
+import { GradientCircleSvg } from "../../svg/GradientCircleSvg";
+import { QuestionMarkCircleSvg } from "../../svg/QuestionMarkCircleSvg";
 import Tippy from "@tippyjs/react";
 
 export interface IDashboardWorkSummary extends HTMLAttributes<HTMLDivElement> {}
@@ -19,7 +19,7 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
           </div>
 
           <div className="flex items-center gap-4">
-            <GradientCircle width={16} height={16} className="mt-0.5" />
+            <GradientCircleSvg width={16} height={16} className="mt-0.5" />
 
             <span>Last 9 months</span>
 
@@ -35,7 +35,11 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
               }
             >
               <span>
-                <QuestionMarkCircle width={20} height={20} strokeColor="#fff" />
+                <QuestionMarkCircleSvg
+                  width={20}
+                  height={20}
+                  strokeColor="#fff"
+                />
               </span>
             </Tippy>
           </div>

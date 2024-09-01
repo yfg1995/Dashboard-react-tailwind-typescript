@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-export interface ISmiley {
+export interface ISmileySvg {
   className?: string;
 }
 
-export const Smiley: FC<ISmiley> = ({ className }) => {
+export const SmileySvg: FC<ISmileySvg> = ({ className }) => {
   return (
     <svg
       width="19.116114mm"

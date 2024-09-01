@@ -1,42 +1,33 @@
 import { FC } from "react";
 
-export interface ISearch {
+export interface IChevronArrowsSvg {
   width: string;
   height: string;
   className?: string;
   strokeColor: string;
 }
 
-export const Search: FC<ISearch> = ({
+export const ChevronArrowsSvg: FC<IChevronArrowsSvg> = ({
   width,
   height,
   className,
-  strokeColor = "#343434",
+  strokeColor,
 }) => {
   return (
     <svg
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 285 284"
+      viewBox="0 0 311 311"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line
-        x1="186.58"
-        y1="185.562"
-        x2="270.375"
-        y2="269.358"
+      <path
+        d="M16.5 295L155 156.5L18 16.5M156 295L295 157.5L156.5 17"
         stroke={strokeColor}
-        strokeWidth="2"
+        strokeWidth="15"
         strokeLinecap="round"
-      />
-      <circle
-        cx="105.75"
-        cy="105.25"
-        r="95.25"
-        stroke={strokeColor}
-        strokeWidth="2"
+        strokeLinejoin="round"
       />
     </svg>
   );

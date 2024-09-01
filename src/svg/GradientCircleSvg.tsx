@@ -1,12 +1,12 @@
 import { FC } from "react";
 
-export interface IGradientCircle {
+export interface IGradientCircleSvg {
   width: number;
   height: number;
   className?: string;
 }
 
-export const GradientCircle: FC<IGradientCircle> = ({
+export const GradientCircleSvg: FC<IGradientCircleSvg> = ({
   width,
   height,
   className,

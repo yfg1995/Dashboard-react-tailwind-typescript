@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export interface IPlusCircle {
+export interface IPlusCircleSvg {
   width: number;
   height: number;
   fill?: string;
@@ -9,7 +9,7 @@ export interface IPlusCircle {
   onClick?: () => void;
 }
 
-export const PlusCircle: FC<IPlusCircle> = ({
+export const PlusCircleSvg: FC<IPlusCircleSvg> = ({
   width,
   height,
   fill,

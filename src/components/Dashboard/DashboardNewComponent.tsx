@@ -1,8 +1,8 @@
 import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
-import { Rocket } from "../../svg/Rocket";
-import { Plus } from "../../svg/Plus";
+import { RocketSvg } from "../../svg/RocketSvg";
+import { PlusSvg } from "../../svg/PlusSvg";
 
 export interface IDashboardNewComponent
   extends HTMLAttributes<HTMLDivElement> {}
@@ -15,7 +15,7 @@ export const DashboardNewComponent: FC<IDashboardNewComponent> = (props) => {
 
         <div className="flex flex-col justify-center items-center p-4 -mt-[60px] gap-4 pb-12">
           <div className="w-[80px] h-[80px] rounded-full bg-brandCharcoalGrey">
-            <Rocket width={80} height={80} />
+            <RocketSvg width={80} height={80} />
           </div>
 
           <Title title="No Components Created Yet" />
@@ -26,7 +26,7 @@ export const DashboardNewComponent: FC<IDashboardNewComponent> = (props) => {
           </div>
 
           <button className="flex items-center gap-4 bg-brandCeruleanBlue rounded-2xl px-3.5 py-2.5">
-            <Plus width={20} height={20} strokeColor="white" />
+            <PlusSvg width={20} height={20} strokeColor="white" />
             <span>Add Component</span>
             <span className="bg-[#4964ED] rounded-xl p-1">100</span>
           </button>

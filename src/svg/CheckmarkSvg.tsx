@@ -1,16 +1,16 @@
 import { FC } from "react";
 
-export interface ITrending {
+export interface ICheckmarkSvg {
   width: number;
   height: number;
-  strokeColor: string;
+  fill: string;
   className?: string;
 }
 
-export const Trending: FC<ITrending> = ({
+export const CheckmarkSvg: FC<ICheckmarkSvg> = ({
   width,
   height,
-  strokeColor,
+  fill,
   className,
 }) => {
   return (
@@ -20,14 +20,13 @@ export const Trending: FC<ITrending> = ({
       height={height}
       viewBox="0 0 24 24"
       fill="none"
-      stroke={strokeColor}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-      <polyline points="16 7 22 7 22 13" />
+      <circle cx="12" cy="12" r="12" fill={fill} />
+      <path
+        d="M10.4168 13.5833L7.2502 10.4167L5.66687 12L10.4168 16.7499L18.3335 8.83333L16.7502 7.25L10.4168 13.5833Z"
+        fill="white"
+      />
     </svg>
   );
 };

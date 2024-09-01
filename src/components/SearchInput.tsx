@@ -1,21 +1,20 @@
 import { FC } from "react";
-import { Search } from "../svg/Search";
+import { SearchSvg } from "../svg/SearchSvg";
 import { Input } from "./Input";
 
 export interface ISearchInput {}
 
 export const SearchInput: FC<ISearchInput> = () => {
   return (
-    <div className="flex max-w-[220px] w-full">
-      <div className="bg-brandCharcoalBlack grid place-items-center rounded-l-lg px-2">
-        <Search width="20" height="20" strokeColor="var(--clr-text-grey)" />
-      </div>
-
-      <Input
-        placeholder="Search"
-        id="search-input"
-        className="rounded-l-none"
+    <div className="flex max-w-[220px] w-full relative">
+      <SearchSvg
+        width="20"
+        height="20"
+        strokeColor="var(--clr-text-grey)"
+        className="absolute left-[10px] top-1/2 -translate-y-[40%]"
       />
+
+      <Input placeholder="Search" id="search-input" className="pl-10" />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export interface ITwoDotsVertical {
+export interface ITwoDotsVerticalSvg {
   width?: number;
   height?: number;
   strokeColor: string;
@@ -8,7 +8,7 @@ export interface ITwoDotsVertical {
   onClick?: () => void;
 }
 
-export const TwoDotsVertical: FC<ITwoDotsVertical> = ({
+export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
   width,
   height,
   strokeColor,
