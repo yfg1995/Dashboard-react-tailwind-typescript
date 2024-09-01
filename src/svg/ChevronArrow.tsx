@@ -23,6 +23,7 @@ export const ChevronArrow: FC<IChevronArrow> = ({
       strokeWidth="1.5"
       stroke={strokeColor}
       className={cn("transition-all", className)}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         strokeLinecap="round"

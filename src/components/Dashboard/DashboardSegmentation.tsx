@@ -48,7 +48,7 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
 
         <div className="text-brandTextGray mb-3">All users</div>
 
-        <ul className="[&>*]:flex [&>*]:items-center [&>*]:justify-between [&>*]:relative [&>*]:space-y-4 mb-5">
+        <ul className="[&>*]:flex [&>*]:items-center [&>*]:justify-between [&>*]:relative [&>*]:space-y-2 mb-5">
           {allUsers.map((user, index) => (
             <li key={user.title}>
               <div style={{ color: user.textColor }}>{user.title}</div>

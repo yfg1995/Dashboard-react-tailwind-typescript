@@ -18,6 +18,7 @@ export const GradientCircle: FC<IGradientCircle> = ({
       height={height}
       viewBox="0 0 158 159"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle
         cx="79.0899"

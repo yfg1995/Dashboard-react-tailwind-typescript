@@ -1,28 +1,33 @@
 import { FC } from "react";
 
-export interface IPlus {
-  width: number;
-  height: number;
+export interface IChevronArrows {
+  width: string;
+  height: string;
   className?: string;
   strokeColor: string;
 }
 
-export const Plus: FC<IPlus> = ({ width, height, strokeColor, className }) => {
+export const ChevronArrows: FC<IChevronArrows> = ({
+  width,
+  height,
+  className,
+  strokeColor,
+}) => {
   return (
     <svg
       className={className}
       width={width}
       height={height}
+      viewBox="0 0 311 311"
       fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke={strokeColor}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        d="M16.5 295L155 156.5L18 16.5M156 295L295 157.5L156.5 17"
+        stroke={strokeColor}
+        strokeWidth="15"
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"
       />
     </svg>
   );

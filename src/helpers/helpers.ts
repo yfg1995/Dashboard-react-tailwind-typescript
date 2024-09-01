@@ -10,3 +10,23 @@ export const generateRandomUniqueIdStr = (): string =>
 export const formatNumberWithCommas = (number: number): string => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+const date = new Date();
+export const day = date.getDate();
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const month = monthNames[date.getMonth()];

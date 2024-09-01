@@ -2,7 +2,8 @@ import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
 import { TwoDotsVertical } from "../../svg/TwoDotsVertical";
-import { SatisfactionProgress } from "../SatisfactionProgress";
+import { GaugeProgress } from "../GaugeProgress";
+import { Smiley } from "../../svg/Smiley";
 
 export interface IDashboardSatisfaction
   extends HTMLAttributes<HTMLDivElement> {}
@@ -24,7 +25,10 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
 
         <div className="text-brandTextGray">From all projects</div>
 
-        <SatisfactionProgress progress={80} />
+        <div className="relative">
+          <GaugeProgress progress={70.36} />
+          <Smiley className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[80%] z-10" />
+        </div>
       </ContainerBorderRounded>
     </div>
   );

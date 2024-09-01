@@ -7,8 +7,7 @@ import { UsersProfitUpdate } from "../../dummyData";
 import { StepsCompleted } from "../StepsCompleted";
 import { Title } from "../Title";
 import { Checkmark } from "../../svg/Checkmark";
-import { TrendingUp } from "../../svg/TrendingUp";
-import { TrendingDown } from "../../svg/TrendingDown";
+import { Trending } from "../../svg/Trending";
 
 export interface IDashboardUsersProfitUpdates
   extends HTMLAttributes<HTMLDivElement> {}
@@ -70,9 +69,14 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
 
               <div className="flex flex-col items-center">
                 {user.profit.updatedProfit > 1500 ? (
-                  <TrendingUp width={30} height={30} strokeColor="#51b045" />
+                  <Trending width={30} height={30} strokeColor="#51b045" />
                 ) : (
-                  <TrendingDown width={30} height={30} strokeColor="#d42626" />
+                  <Trending
+                    width={30}
+                    height={30}
+                    strokeColor="#d42626"
+                    className="-scale-y-100"
+                  />
                 )}
 
                 <div

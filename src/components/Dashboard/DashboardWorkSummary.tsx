@@ -26,7 +26,6 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
             <Tippy
               placement="right"
               animation="scale"
-              delay={[200, 200]}
               content={
                 <div className="bg-brandCharcoalGrey px-3 py-2 rounded-lg">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.

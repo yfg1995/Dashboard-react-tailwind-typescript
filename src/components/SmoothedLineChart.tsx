@@ -14,23 +14,34 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const option = {
         grid: {
-          width: "auto",
+          width: "90%",
           height: "175px",
-          top: "12%",
+          top: "15%",
+          left: "7%",
         },
         tooltip: {
           trigger: "axis",
           axisPointer: {
             type: "none",
           },
-          backgroundColor: "#353535",
+          backgroundColor: "transparent",
           textStyle: {
             color: "#fff",
           },
           borderWidth: 0,
           formatter: function (params: any) {
             const dataPoint = params[0];
-            return `$${dataPoint.value}`;
+            return `<div class="rounded-xl text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
+                      <div class="flex items-center text-center w-full justify-between p-2 bg-[#1d1d1d]">
+                        <div>Revenue</div>
+                      </div>
+
+                      <div class="text-center w-full p-3 bg-brandCharcoalGrey">
+                        <div class="text-white font-bold text-lg">$${dataPoint.value}</div>
+                        <div>Revenue from 230 sales</div>
+                      </div>
+                    </div>
+            `;
           },
         },
         xAxis: {
@@ -130,5 +141,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, []);
 
-  return <div className="max-h-[240px] h-full" ref={ref} />;
+  return <div className="h-[240px]" ref={ref} />;
 };

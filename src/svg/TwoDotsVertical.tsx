@@ -27,6 +27,7 @@ export const TwoDotsVertical: FC<ITwoDotsVertical> = ({
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
       >
         <circle cx="12" cy="2" r="2" width={10} />
         <circle cx="12" cy="15" r="2" width={10} />

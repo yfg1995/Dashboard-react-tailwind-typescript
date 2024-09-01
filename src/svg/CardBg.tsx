@@ -4,7 +4,13 @@ export interface ICardBg {}
 
 export const CardBg: FC<ICardBg> = () => {
   return (
-    <svg width="80" height="112" viewBox="0 0 80 112" fill="none">
+    <svg
+      width="80"
+      height="112"
+      viewBox="0 0 80 112"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g clipPath="url(#clip0)">
         <path d="M80 0H0V112H80V0Z" fill="#2F49D1" />
         <path

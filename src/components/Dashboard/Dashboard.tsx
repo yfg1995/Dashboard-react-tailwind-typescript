@@ -5,6 +5,7 @@ import { DashboardSegmentation } from "./DashboardSegmentation";
 import { DashboardSatisfaction } from "./DashboardSatisfaction";
 import { DashboardNewComponent } from "./DashboardNewComponent";
 import { DashboardUsersProfitUpdates } from "./DashboardUsersProfitUpdate";
+import { DashboardUserHeader } from "./DashboardUserHeader";
 
 export interface IDashboard {}
 
@@ -18,8 +19,9 @@ export const Dashboard: FC<IDashboard> = () => {
           gridTemplateRows: "auto auto auto",
           gridTemplateAreas: `
           'a a a'
-          'b b c'
-          'd e f'
+          'b b b'
+          'c c d'
+          'e f g'
         `,
           gap: "1rem",
           "--c-height": "128px",
@@ -27,14 +29,16 @@ export const Dashboard: FC<IDashboard> = () => {
         } as CSSProperties
       }
     >
-      <DashboardUsersProfitUpdates style={{ gridArea: "a" }} />
+      <DashboardUserHeader style={{ gridArea: "a" }} />
 
-      <DashboardWorkSummary style={{ gridArea: "b" }} />
-      <DashboardTopCountries style={{ gridArea: "c" }} />
+      <DashboardUsersProfitUpdates style={{ gridArea: "b" }} />
 
-      <DashboardSegmentation style={{ gridArea: "d" }} />
-      <DashboardSatisfaction style={{ gridArea: "e" }} />
-      <DashboardNewComponent style={{ gridArea: "f" }} />
+      <DashboardWorkSummary style={{ gridArea: "c" }} />
+      <DashboardTopCountries style={{ gridArea: "d" }} />
+
+      <DashboardSegmentation style={{ gridArea: "e" }} />
+      <DashboardSatisfaction style={{ gridArea: "f" }} />
+      <DashboardNewComponent style={{ gridArea: "g" }} />
     </div>
   );
 };

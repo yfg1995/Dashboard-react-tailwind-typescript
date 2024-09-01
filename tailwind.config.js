@@ -10,6 +10,7 @@ const customColors = {
   brandLightBlue: "#42c2dd",
   brandBlue: "#334ED8",
   brandCeruleanBlue: "#2F49D1",
+  brandYellow: "#f7b91c",
 };
 
 module.exports = {
