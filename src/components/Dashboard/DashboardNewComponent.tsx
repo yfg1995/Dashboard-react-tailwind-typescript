@@ -10,11 +10,11 @@ export interface IDashboardNewComponent
 export const DashboardNewComponent: FC<IDashboardNewComponent> = (props) => {
   return (
     <div {...props}>
-      <ContainerBorderRounded className="h-[var(--c-sec-height)] text-center p-0">
+      <ContainerBorderRounded className="h-[var(--c-lg-height)] text-center p-0">
         <div className="w-full h-20 bg-black" />
 
         <div className="flex flex-col justify-center items-center p-4 -mt-[60px] gap-4 pb-12">
-          <div className="w-[80px] h-[80px] rounded-full bg-brandOnyxBlack">
+          <div className="w-[80px] h-[80px] rounded-full bg-brandCharcoalGrey">
             <Rocket width={80} height={80} />
           </div>
 

@@ -36,7 +36,7 @@ export const Input: FC<IInput> = ({
       id={id}
       type="text"
       className={cn(
-        "focus:outline-none w-full px-2 py-2.5 h-full bg-brandCharcoalBlack rounded-lg",
+        "w-full px-2 py-2.5 h-full bg-brandCharcoalBlack rounded-lg",
         disabled && "opacity-50 pointer-events-none",
         className
       )}

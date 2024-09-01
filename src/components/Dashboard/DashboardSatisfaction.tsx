@@ -11,7 +11,7 @@ export interface IDashboardSatisfaction
 export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
   return (
     <div {...props}>
-      <ContainerBorderRounded className="h-[var(--c-sec-height)]">
+      <ContainerBorderRounded className="h-[var(--c-lg-height)]">
         <div className="flex items-center justify-between mb-2">
           <Title title="Satisfaction" />
 
@@ -25,9 +25,9 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
 
         <div className="text-brandTextGray">From all projects</div>
 
-        <div className="relative">
+        <div className="relative h-full">
           <GaugeProgress progress={70.36} />
-          <Smiley className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[80%] z-10" />
+          <Smiley className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[70%] z-10" />
         </div>
       </ContainerBorderRounded>
     </div>

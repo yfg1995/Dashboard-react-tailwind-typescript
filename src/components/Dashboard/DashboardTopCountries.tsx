@@ -22,7 +22,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
 
   return (
     <div {...props}>
-      <ContainerBorderRounded className="flex flex-col h-[var(--c-sec-height)]">
+      <ContainerBorderRounded className="flex flex-col h-[var(--c-lg-height)]">
         <div className="flex justify-between">
           <div>
             <Title title="Top Countries" />

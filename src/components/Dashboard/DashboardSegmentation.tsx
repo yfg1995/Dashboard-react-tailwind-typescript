@@ -34,7 +34,7 @@ export interface IDashboardSegmentation
 export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
   return (
     <div {...props}>
-      <ContainerBorderRounded className="h-[var(--c-sec-height)]">
+      <ContainerBorderRounded className="h-[var(--c-lg-height)]">
         <div className="flex items-center justify-between">
           <Title title="Segmentation" />
 

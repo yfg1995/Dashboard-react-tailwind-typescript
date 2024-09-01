@@ -11,7 +11,7 @@ export interface IDashboardWorkSummary extends HTMLAttributes<HTMLDivElement> {}
 export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
   return (
     <div {...props}>
-      <ContainerBorderRounded className="h-[var(--c-sec-height)]">
+      <ContainerBorderRounded className="h-[var(--c-lg-height)]">
         <div className="flex items-center justify-between">
           <div>
             <Title title="Your Work Summary" />

@@ -30,7 +30,7 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
               show: true,
               icon: "circle",
               width: 10,
-              offsetCenter: [0, -73],
+              offsetCenter: [0, -73.5],
               itemStyle: {
                 color: "white",
               },
@@ -68,13 +68,15 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
             detail: {
               valueAnimation: true,
               formatter: function (value: number) {
-                return "{value|" + value.toFixed(2) + "}%";
+                return `${value.toFixed(2)}%`;
               },
-              fontSize: 24,
+              fontSize: 20,
               color: "#2f49d1",
+              height: 30,
+              lineHeight: 10,
               rich: {
                 value: {
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: "bolder",
                   color: "#2f49d1",
                 },

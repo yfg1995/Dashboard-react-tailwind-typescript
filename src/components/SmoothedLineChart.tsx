@@ -30,18 +30,21 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           },
           borderWidth: 0,
           formatter: function (params: any) {
-            const dataPoint = params[0];
-            return `<div class="rounded-xl text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
-                      <div class="flex items-center text-center w-full justify-between p-2 bg-[#1d1d1d]">
-                        <div>Revenue</div>
-                      </div>
+            const dataPoint = params[1];
+            if (dataPoint) {
+              return `<div class="rounded-xl text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
+                        <div class="flex items-center text-center w-full justify-between p-2 bg-[#1d1d1d]">
+                          <div>Revenue</div>
+                        </div>
 
-                      <div class="text-center w-full p-3 bg-brandCharcoalGrey">
-                        <div class="text-white font-bold text-lg">$${dataPoint.value}</div>
-                        <div>Revenue from 230 sales</div>
+                        <div class="text-center w-full p-3 bg-brandCharcoalGrey">
+                          <div class="text-white font-bold text-lg">$${dataPoint.value}</div>
+                          <div>Revenue from 230 sales</div>
+                        </div>
                       </div>
-                    </div>
-            `;
+              `;
+            }
+            return "";
           },
         },
         xAxis: {
@@ -90,7 +93,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         },
         series: [
           {
-            data: [300, 450, 600, 900, 500, 650, 300, 700, 450],
+            data: [
+              850.42, 1700.11, 1500.68, 2050.75, 700.46, 1450.21, 2500.88,
+              1550.64, 700.43,
+            ],
             type: "line",
             smooth: true,
             lineStyle: {
@@ -100,14 +106,18 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             },
             showSymbol: false,
             emphasis: {
-              focus: "none",
               itemStyle: {
                 opacity: 0,
               },
             },
+            silent: true,
+            z: 1,
           },
           {
-            data: [150, 550, 800, 1150, 700, 750, 350, 850, 500],
+            data: [
+              800.54, 2250.86, 800.36, 1150.94, 700.06, 750.45, 2000.75, 700.43,
+              1500.31,
+            ],
             type: "line",
             smooth: true,
             lineStyle: {
@@ -117,7 +127,17 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
               ]),
               width: 4,
             },
+
+            emphasis: {
+              itemStyle: {
+                color: "#334ed8",
+                borderWidth: 2,
+                borderColor: "#fff",
+              },
+              symbolSize: 20,
+            },
             showSymbol: false,
+            z: 2,
           },
         ],
       };
