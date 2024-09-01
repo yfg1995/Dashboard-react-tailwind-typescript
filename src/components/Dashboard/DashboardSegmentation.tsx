@@ -4,6 +4,7 @@ import { Title } from "../Title";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { CardBgSvg } from "../../svg/CardBgSvg";
 import { SelectDropdown } from "../SelectDropdown";
+import { formatNumberWithCommas } from "../../helpers/helpers";
 
 const allUsers = [
   {
@@ -54,7 +55,9 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
               <div style={{ color: user.textColor }}>{user.title}</div>
 
               <div className="flex items-center gap-4 mr-24">
-                <span style={{ color: user.textColor }}>{user.value}</span>
+                <span style={{ color: user.textColor }}>
+                  {formatNumberWithCommas(user.value)}
+                </span>
                 <div className="w-12 h-0.5 bg-brandTextGray" />
 
                 {index === allUsers.length - 1 ? (

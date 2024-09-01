@@ -8,6 +8,7 @@ import { StepsCompleted } from "../StepsCompleted";
 import { Title } from "../Title";
 import { CheckmarkSvg } from "../../svg/CheckmarkSvg";
 import { TrendingSvg } from "../../svg/TrendingSvg";
+import { formatNumberWithCommas } from "../../helpers/helpers";
 
 export interface IDashboardUsersProfitUpdates
   extends HTMLAttributes<HTMLDivElement> {}
@@ -87,7 +88,7 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
                       : "text-brandRed"
                   )}
                 >
-                  ${user.profit.updatedProfit}
+                  ${formatNumberWithCommas(user.profit.updatedProfit)}
                 </div>
 
                 <div className="text-brandTextGray text-sm">

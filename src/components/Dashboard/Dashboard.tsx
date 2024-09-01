@@ -26,7 +26,7 @@ export const Dashboard: FC<IDashboard> = () => {
           gap: "1rem",
           "--c-sm-height": "80px",
           "--c-md-height": "128px",
-          "--c-lg-height": "336px",
+          "--c-lg-height": "315px",
         } as CSSProperties
       }
     >

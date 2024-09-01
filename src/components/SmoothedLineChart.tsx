@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import * as echarts from "echarts";
+import { formatNumberWithCommas } from "../helpers/helpers";
 
 export interface ISmoothedLineChart {}
 
@@ -16,7 +17,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         grid: {
           width: "90%",
           height: "175px",
-          top: "15%",
+          top: "12%",
           left: "7%",
         },
         tooltip: {
@@ -38,7 +39,9 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
                         </div>
 
                         <div class="text-center w-full p-3 bg-brandCharcoalGrey">
-                          <div class="text-white font-bold text-lg">$${dataPoint.value}</div>
+                          <div class="text-white font-bold text-lg">$${formatNumberWithCommas(
+                            dataPoint.value
+                          )}</div>
                           <div>Revenue from 230 sales</div>
                         </div>
                       </div>

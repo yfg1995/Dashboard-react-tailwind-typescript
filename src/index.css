@@ -29,7 +29,7 @@ body {
 .embla {
   width: 100%;
   margin: auto;
-  --slide-spacing: 0px;
+  --slide-spacing: 20px;
   --slide-count: 3;
   --slide-size: calc(
     (100% - (var(--slide-count) + 1) * var(--slide-spacing)) /
@@ -40,10 +40,9 @@ body {
   overflow: hidden;
 }
 .embla__container {
-  width: calc(100% + 1rem);
-  margin-left: -0.5rem;
+  width: calc(100% + 2.2rem);
+  margin-left: -1rem;
   display: flex;
-  gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
 .embla__slide {
@@ -51,55 +50,6 @@ body {
   flex: 0 0 calc(var(--slide-size));
   min-width: 0;
   margin-right: var(--slide-spacing);
-}
-
-/* SATISFICATION PROGRESS */
-
-.satiscfication {
-  --progress: 0;
-  --w: 240px;
-  --cW: 30px;
-  --tr: all 1.3s linear;
-
-  position: relative;
-  display: block;
-  width: var(--w);
-  height: calc(var(--w) * 0.66);
-  overflow: hidden;
-}
-
-.satiscfication:before {
-  position: absolute;
-  content: "";
-  width: var(--cW);
-  height: var(--cW);
-  background: white;
-  border-radius: 9999px;
-  bottom: 0;
-  left: 0;
-  transform-origin: calc(var(--w) * 0.5) var(--cW);
-  transform: rotate(calc(180deg * var(--progress)));
-  transition: var(--tr);
-  z-index: 2;
-}
-
-.satiscfication:after {
-  position: absolute;
-  content: "";
-  width: calc(var(--w) - var(--cW) * 0.5);
-  height: calc(var(--w) - var(--cW) * 0.5);
-  top: calc(100% - var(--w) * 0.5 + calc(var(--cW) * 0.25));
-  left: calc(var(--cW) * 0.25);
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-  border-radius: 9999px;
-  z-index: 1;
-  box-shadow: inset 0 0 0 10px yellow;
-  transform: rotate(calc(-180deg * (1 - var(--progress))));
-  transition: var(--tr);
-}
-
-.satiscfication:hover {
-  --progress: 0.905;
 }
 
 /* STEPS COMPLETED */
