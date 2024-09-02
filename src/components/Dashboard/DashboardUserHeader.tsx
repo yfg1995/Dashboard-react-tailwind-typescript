@@ -2,14 +2,14 @@ import { FC, HTMLAttributes } from "react";
 import { StarSvg } from "../../svg/StarSvg";
 import { ChevronArrowsSvg } from "../../svg/ChevronArrowsSvg";
 import { SearchInput } from "../SearchInput";
-import { day, month } from "../../helpers/helpers";
+import { currentDay, currentMonth } from "../../helpers/helpers";
 
 export interface IDashboardUserHeader extends HTMLAttributes<HTMLDivElement> {}
 
 export const DashboardUserHeader: FC<IDashboardUserHeader> = (props) => {
   return (
     <div
-      className="flex items-center justify-between h-[var(--c-sm-height)]"
+      className="flex items-end justify-between h-[var(--c-sm-height)]"
       {...props}
     >
       <div className="flex flex-col gap-1">
@@ -28,11 +28,11 @@ export const DashboardUserHeader: FC<IDashboardUserHeader> = (props) => {
             width="12"
             height="12"
             strokeColor="var(--clr-text-grey)"
-            className="mt-0.5"
+            className="mt-[3px]"
           />
 
           <div className="text-brandTextGray">
-            {day} {month}
+            {currentDay} {currentMonth}
           </div>
         </div>
       </div>

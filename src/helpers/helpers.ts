@@ -12,7 +12,7 @@ export const formatNumberWithCommas = (number: number): string => {
 };
 
 const date = new Date();
-export const day = date.getDate();
+export const currentDay = date.getDate();
 
 const monthNames = [
   "January",
@@ -29,4 +29,5 @@ const monthNames = [
   "December",
 ];
 
-export const month = monthNames[date.getMonth()];
+export const currentMonth = monthNames[date.getMonth()];
+export const currentYear = date.getFullYear();

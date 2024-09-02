@@ -30,6 +30,8 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             color: "#fff",
           },
           borderWidth: 0,
+          // shadowOffsetX: 0,
+          // shadowOffsetY: 0,
           formatter: function (params: any) {
             const dataPoint = params[1];
             if (dataPoint) {
@@ -38,7 +40,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
                           <div>Revenue</div>
                         </div>
 
-                        <div class="text-center w-full p-3 bg-brandCharcoalGrey">
+                        <div class="text-center w-full p-3 bg-[#252525]">
                           <div class="text-white font-bold text-lg">$${formatNumberWithCommas(
                             dataPoint.value
                           )}</div>

@@ -32,7 +32,7 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
               icon: "circle",
               width: 10,
               zLevel: 2,
-              offsetCenter: [0, -88.5],
+              offsetCenter: [0, -84.5],
               itemStyle: {
                 color: "white",
               },

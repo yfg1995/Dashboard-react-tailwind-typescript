@@ -51,6 +51,9 @@ body {
   flex: 0 0 calc(var(--slide-size));
   min-width: 0;
 }
+.embla__slide:last-of-type {
+  margin-right: var(--slide-spacing);
+}
 
 /* STEPS COMPLETED */
 .steps-completed {

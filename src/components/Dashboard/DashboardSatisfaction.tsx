@@ -9,7 +9,7 @@ export interface IDashboardSatisfaction
   extends HTMLAttributes<HTMLDivElement> {}
 
 export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
-  const progress = 22.26;
+  const progress = 72.56;
 
   return (
     <div {...props}>
