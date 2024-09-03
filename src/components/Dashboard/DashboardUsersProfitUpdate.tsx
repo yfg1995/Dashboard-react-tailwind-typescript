@@ -45,8 +45,8 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
                       {user.profile.verified && (
                         <CheckmarkSvg
                           className="mt-0.5"
-                          width={14}
-                          height={14}
+                          width="14"
+                          height="14"
                           fill="#2D44BC"
                         />
                       )}
@@ -70,11 +70,11 @@ export const DashboardUsersProfitUpdates: FC<IDashboardUsersProfitUpdates> = (
 
               <div className="flex flex-col items-center">
                 {user.profit.updatedProfit > 1500 ? (
-                  <TrendingSvg width={30} height={30} strokeColor="#51b045" />
+                  <TrendingSvg width="30" height="30" strokeColor="#51b045" />
                 ) : (
                   <TrendingSvg
-                    width={30}
-                    height={30}
+                    width="30"
+                    height="30"
                     strokeColor="#d42626"
                     className="-scale-y-100"
                   />

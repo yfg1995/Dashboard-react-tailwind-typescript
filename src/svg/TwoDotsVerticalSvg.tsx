@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 export interface ITwoDotsVerticalSvg {
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
   strokeColor: string;
   className?: string;
   onClick?: () => void;

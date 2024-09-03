@@ -101,10 +101,9 @@ export const GaugeProgress: FC<IGaugeProgress> = ({ progress }) => {
       const handleResize = () => {
         if (chartRef.current) {
           chartRef.current.resize();
+          window.addEventListener("resize", handleResize);
         }
       };
-
-      window.addEventListener("resize", handleResize);
 
       return () => {
         if (chartRef.current) {

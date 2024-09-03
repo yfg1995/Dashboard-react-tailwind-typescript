@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 export interface ICheckmarkSvg {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   fill: string;
   className?: string;
 }

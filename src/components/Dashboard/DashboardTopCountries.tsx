@@ -37,14 +37,13 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
           </div>
 
           <PlusCircleSvg
-            width={22}
-            height={22}
-            strokeColor="white"
-            fill="#333"
+            width="24"
+            height="24"
+            strokeColor="var(--clr-charcoal-grey)"
           />
         </div>
 
-        <ul className="overflow-y-auto mt-4 max-h-[300px] h-full space-y-4">
+        <ul className="overflow-y-auto my-4 max-h-[300px] h-full space-y-4">
           {displayedCountries.map((country, index) => (
             <li className={cn(showAll && "mr-3")} key={country.country + index}>
               <div className="flex items-center justify-between text-brandTextGray">
@@ -62,8 +61,8 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
                   <span>{formatNumberWithCommas(country.price)}</span>
 
                   <ArrowSvg
-                    width={16}
-                    height={16}
+                    width="16"
+                    height="16"
                     strokeColor={
                       country.price < 15000
                         ? "var(--clr-red)"
@@ -73,8 +72,8 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
                   />
 
                   <TwoDotsVerticalSvg
-                    width={12}
-                    height={12}
+                    width="12"
+                    height="12"
                     strokeColor="var(--clr-text-grey)"
                     className="mt-1.5"
                   />
@@ -88,7 +87,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
           className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
           onClick={handleToggle}
         >
-          {showAll ? "Show Less" : "Show All"}
+          {showAll ? "Show Favorites" : "Show All"}
         </div>
       </ContainerBorderRounded>
     </div>

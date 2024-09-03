@@ -12,14 +12,14 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
   return (
     <div {...props}>
       <ContainerBorderRounded className="h-[var(--c-lg-height)]">
-        <div className="flex items-center justify-between">
+        <div className="flex justify-between items-start">
           <div>
             <Title title="Your Work Summary" />
             <div className="text-brandTextGray">Nov - July</div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <GradientCircleSvg width={16} height={16} className="mt-0.5" />
+          <div className="flex items-center gap-4 mt-[3px]">
+            <GradientCircleSvg width="16" height="16" className="mt-0.5" />
 
             <span>Last 9 months</span>
 
@@ -36,9 +36,9 @@ export const DashboardWorkSummary: FC<IDashboardWorkSummary> = (props) => {
             >
               <span>
                 <QuestionMarkCircleSvg
-                  width={20}
-                  height={20}
-                  strokeColor="#fff"
+                  width="22"
+                  height="22"
+                  strokeColor="var(--clr-charcoal-grey)"
                 />
               </span>
             </Tippy>

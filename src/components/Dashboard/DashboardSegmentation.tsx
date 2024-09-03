@@ -2,7 +2,7 @@ import { FC, HTMLAttributes } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
-import { CardBgSvg } from "../../svg/CardBgSvg";
+import { SegmentationCardBgSvg } from "../../svg/SegmentationCardBgSvg";
 import { SelectDropdown } from "../SelectDropdown";
 import { formatNumberWithCommas } from "../../helpers/helpers";
 
@@ -40,14 +40,14 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
           <Title title="Segmentation" />
 
           <TwoDotsVerticalSvg
-            width={12}
-            height={12}
+            width="12"
+            height="12"
             strokeColor="var(--clr-text-grey)"
             className="mt-1.5"
           />
         </div>
 
-        <div className="text-brandTextGray mb-3">All users</div>
+        <div className="text-brandTextGray mt-3">All users</div>
 
         <ul className="[&>*]:flex [&>*]:items-center [&>*]:justify-between [&>*]:relative [&>*]:space-y-2 mb-5">
           {allUsers.map((user, index) => (
@@ -65,7 +65,7 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = (props) => {
                     className="absolute top-0 right-0 w-20 h-28 rounded-lg overflow-hidden"
                     style={{ background: user.textColor }}
                   >
-                    <CardBgSvg />
+                    <SegmentationCardBgSvg />
                   </div>
                 ) : (
                   <div

@@ -15,10 +15,9 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const option = {
         grid: {
-          width: "90%",
+          width: "85%",
           height: "175px",
-          top: "12%",
-          left: "7%",
+          top: "11%",
         },
         tooltip: {
           trigger: "axis",
@@ -30,14 +29,12 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             color: "#fff",
           },
           borderWidth: 0,
-          // shadowOffsetX: 0,
-          // shadowOffsetY: 0,
           formatter: function (params: any) {
             const dataPoint = params[1];
             if (dataPoint) {
               return `<div class="rounded-xl text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
-                        <div class="flex items-center text-center w-full justify-between p-2 bg-[#1d1d1d]">
-                          <div>Revenue</div>
+                        <div class="flex items-center text-center w-full text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
+                          Revenue
                         </div>
 
                         <div class="text-center w-full p-3 bg-[#252525]">
@@ -150,17 +147,13 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       chart.setOption(option);
 
       const handleResize = () => {
-        if (chartRef.current) {
-          chartRef.current.resize();
-        }
+        chart.resize();
       };
 
       window.addEventListener("resize", handleResize);
 
       return () => {
-        if (chartRef.current) {
-          chartRef.current.dispose();
-        }
+        chart.dispose();
         window.removeEventListener("resize", handleResize);
       };
     }

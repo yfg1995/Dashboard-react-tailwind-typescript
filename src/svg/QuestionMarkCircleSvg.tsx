@@ -1,18 +1,16 @@
 import { FC } from "react";
 
 export interface IQuestionMarkCircleSvg {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   strokeColor: string;
   className?: string;
-  fill?: string;
 }
 
 export const QuestionMarkCircleSvg: FC<IQuestionMarkCircleSvg> = ({
   width,
   height,
   strokeColor,
-  fill = "#333",
   className,
 }) => {
   return (
@@ -20,7 +18,7 @@ export const QuestionMarkCircleSvg: FC<IQuestionMarkCircleSvg> = ({
       className={className}
       width={width}
       height={height}
-      fill={fill}
+      fill="transparent"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke={strokeColor}

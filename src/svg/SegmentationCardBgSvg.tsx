@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-export interface ICardBgSvg {}
+export interface ISegmentationCardBgSvg {}
 
-export const CardBgSvg: FC<ICardBgSvg> = () => {
+export const SegmentationCardBgSvg: FC<ISegmentationCardBgSvg> = () => {
   return (
     <svg
       width="80"

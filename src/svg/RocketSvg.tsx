@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 export interface IRocketSvg {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   className?: string;
 }
 

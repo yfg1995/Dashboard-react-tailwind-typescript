@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 export interface ITrendingSvg {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   strokeColor: string;
   className?: string;
 }
