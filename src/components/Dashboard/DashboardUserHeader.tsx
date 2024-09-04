@@ -1,17 +1,14 @@
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 import { StarSvg } from "../../svg/StarSvg";
 import { ChevronArrowsSvg } from "../../svg/ChevronArrowsSvg";
 import { SearchInput } from "../SearchInput";
 import { currentDay, currentMonth } from "../../helpers/helpers";
 
-export interface IDashboardUserHeader extends HTMLAttributes<HTMLDivElement> {}
+export interface IDashboardUserHeader {}
 
-export const DashboardUserHeader: FC<IDashboardUserHeader> = (props) => {
+export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
   return (
-    <div
-      className="flex items-end justify-between h-[var(--c-sm-height)]"
-      {...props}
-    >
+    <div className="flex items-end justify-between pb-4">
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
           <div className="font-bold text-3xl">Hello David</div>

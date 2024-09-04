@@ -38,7 +38,7 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
 
         <div className="text-brandTextGray">From all projects</div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mt-2.5">
           <CircleProgressComponent initialProgress={decimalProgress} />
 
           <div className="relative max-w-[260px] w-full text-brandTextGray text-center select-none">
@@ -56,7 +56,7 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
                   </span>
                 </span>
 
-                <div>Based on likes</div>
+                <div className="mt-0.5">Based on Likes</div>
               </div>
 
               <div className="w-[40px] text-right">100%</div>
