@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useEffect, useRef } from "react";
+import { FC, HTMLAttributes, useEffect } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
@@ -11,7 +11,16 @@ export interface IDashboardSatisfaction
 export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
   const decimalProgress = 72.56 * 0.01;
   const progressPercentage = 72.56;
-  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.to(".number-counter", {
+      innerText: progressPercentage,
+      duration: 1,
+      snap: {
+        innerText: 0.01,
+      },
+    });
+  }, []);
 
   return (
     <div {...props}>
@@ -37,12 +46,15 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = (props) => {
               <div className="w-[40px] text-right">0%</div>
 
               <div className="absolute left-1/2 top-0 -translate-x-[48.5%] w-full">
-                <div
-                  className="text-lg text-brandCeruleanBlue font-bold"
-                  ref={ref}
-                >
-                  {progressPercentage}%
-                </div>
+                <span className="relative text-lg font-bold text-[var(--clr-cerulean-blue)] text-center">
+                  <span className="absolute inset-0">
+                    <span className="number-counter">0</span>%
+                  </span>
+
+                  <span className="opacity-0 pointer-events-none">
+                    <span>100.99</span>%
+                  </span>
+                </span>
 
                 <div>Based on likes</div>
               </div>

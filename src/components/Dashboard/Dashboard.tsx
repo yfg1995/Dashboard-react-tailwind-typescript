@@ -12,7 +12,10 @@ export interface IDashboard {}
 export const Dashboard: FC<IDashboard> = () => {
   return (
     <div
-      className="grid h-full p-4"
+      className="grid h-full p-4 grid-cols-1
+                    md:grid-cols-2 
+                    lg:grid-cols-3
+                    auto-rows-auto"
       style={
         {
           gridTemplateColumns: "repeat(3, 1fr)",
@@ -30,6 +33,8 @@ export const Dashboard: FC<IDashboard> = () => {
         } as CSSProperties
       }
     >
+      <div className="fixed top-0 left-0 max-w-[240px] w-full h-screen bg-brandCharcoalBlack py-[24px] px-[12px] flex flex-col items-center" />
+
       <DashboardUserHeader style={{ gridArea: "a" }} />
 
       <DashboardUsersProfitUpdates style={{ gridArea: "b" }} />
