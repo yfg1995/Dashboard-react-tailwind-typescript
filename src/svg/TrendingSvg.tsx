@@ -1,16 +1,16 @@
 import { FC } from "react";
 
 export interface ITrendingSvg {
-  width: string;
-  height: string;
-  strokeColor: string;
+  width?: string;
+  height?: string;
+  strokeColor?: string;
   className?: string;
 }
 
 export const TrendingSvg: FC<ITrendingSvg> = ({
-  width,
-  height,
-  strokeColor,
+  width = "30",
+  height = "30",
+  strokeColor = "#51b045",
   className,
 }) => {
   return (

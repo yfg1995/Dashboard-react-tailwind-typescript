@@ -2,17 +2,17 @@ import { FC } from "react";
 import { cn } from "../utils/utils";
 
 export interface IChevronArrowSvg {
-  strokeColor: string;
+  width?: string;
+  height?: string;
+  strokeColor?: string;
   className?: string;
-  width: string;
-  height: string;
 }
 
 export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
-  strokeColor,
+  width = "16",
+  height = "16",
+  strokeColor = "var(--clr-text-grey)",
   className,
-  width,
-  height,
 }) => {
   return (
     <svg
@@ -22,7 +22,7 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke={strokeColor}
-      className={cn("transition-all", className)}
+      className={cn("transition-all mt-0.5", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

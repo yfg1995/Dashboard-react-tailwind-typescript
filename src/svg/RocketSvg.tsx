@@ -1,12 +1,16 @@
 import { FC } from "react";
 
 export interface IRocketSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   className?: string;
 }
 
-export const RocketSvg: FC<IRocketSvg> = ({ width, height, className }) => {
+export const RocketSvg: FC<IRocketSvg> = ({
+  width = "80",
+  height = "80",
+  className,
+}) => {
   return (
     <svg
       className={className}

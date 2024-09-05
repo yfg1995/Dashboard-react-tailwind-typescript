@@ -46,6 +46,13 @@ body {
   gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
+
+@media (max-width: 787px) {
+  .embla__container {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}
 .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 calc(var(--slide-size));

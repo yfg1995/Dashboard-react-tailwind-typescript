@@ -1,19 +1,20 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface IGradientCircleSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   className?: string;
 }
 
 export const GradientCircleSvg: FC<IGradientCircleSvg> = ({
-  width,
-  height,
+  width = "16",
+  height = "16",
   className,
 }) => {
   return (
     <svg
-      className={className}
+      className={cn("mt-0.5", className)}
       width={width}
       height={height}
       viewBox="0 0 158 159"

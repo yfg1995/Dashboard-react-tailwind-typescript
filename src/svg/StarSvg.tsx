@@ -1,17 +1,17 @@
 import { FC } from "react";
 
 export interface IStarSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   className?: string;
-  fill: string;
+  fill?: string;
 }
 
 export const StarSvg: FC<IStarSvg> = ({
-  width,
-  height,
+  width = "16",
+  height = "16",
+  fill = "#F7B91C",
   className,
-  fill = "F7B91C",
 }) => {
   return (
     <svg

@@ -1,18 +1,22 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, HTMLAttributes, PropsWithChildren } from "react";
 import { cn } from "../utils/utils";
 
-export interface IContainerBorderRounded extends PropsWithChildren {
+export interface IContainerBorderRounded
+  extends PropsWithChildren,
+    HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
 export const ContainerBorderRounded: FC<IContainerBorderRounded> = ({
   children,
   className,
+  ...props
 }) => {
   return (
     <div
+      {...props}
       className={cn(
-        "rounded-[12px] p-4 overflow-hidden w-full bg-brandCharcoalBlack",
+        "rounded-[12px] xl:p-4 p-8 overflow-hidden w-full h-full bg-brandCharcoalBlack",
         className
       )}
     >

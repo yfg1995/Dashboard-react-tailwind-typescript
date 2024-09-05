@@ -1,24 +1,25 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface ITwoDotsVerticalSvg {
   width?: string;
   height?: string;
-  strokeColor: string;
+  strokeColor?: string;
   className?: string;
   onClick?: () => void;
 }
 
 export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
-  width,
-  height,
-  strokeColor,
+  width = "12",
+  height = "12",
+  strokeColor = "var(--clr-text-grey)",
   className,
   onClick,
 }) => {
   return (
     <button onClick={onClick}>
       <svg
-        className={className}
+        className={cn("mt-1.5", className)}
         width={width}
         height={height}
         stroke={strokeColor}

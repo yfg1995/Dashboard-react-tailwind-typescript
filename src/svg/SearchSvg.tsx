@@ -1,17 +1,17 @@
 import { FC } from "react";
 
 export interface ISearchSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
+  strokeColor?: string;
   className?: string;
-  strokeColor: string;
 }
 
 export const SearchSvg: FC<ISearchSvg> = ({
-  width,
-  height,
+  width = "20",
+  height = "20",
+  strokeColor = "var(--clr-text-grey)",
   className,
-  strokeColor = "#343434",
 }) => {
   return (
     <svg

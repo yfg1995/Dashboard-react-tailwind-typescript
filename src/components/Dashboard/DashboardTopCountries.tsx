@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useState } from "react";
+import { FC, useState } from "react";
 import { Title } from "../Title";
 import { PlusCircleSvg } from "../../svg/PlusCircleSvg";
 import { countries } from "../../dummyData";
@@ -8,8 +8,7 @@ import { formatNumberWithCommas } from "../../helpers/helpers";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { cn } from "../../utils/utils";
 
-export interface IDashboardTopCountries
-  extends HTMLAttributes<HTMLDivElement> {}
+export interface IDashboardTopCountries {}
 
 export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
   const [showAll, setShowAll] = useState(false);
@@ -21,75 +20,64 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = (props) => {
   };
 
   return (
-    <div {...props}>
-      <ContainerBorderRounded className="flex flex-col h-[var(--c-lg-height)]">
-        <div className="flex justify-between">
-          <div>
-            <Title title="Top Countries" />
-            <div
-              className={cn(
-                "text-brandTextGray transition-all",
-                showAll ? "opacity-0" : "opacity-100"
-              )}
-            >
-              Favorites
-            </div>
+    <ContainerBorderRounded className="flex flex-col h-[320px] xl:max-w-[350px] 2xl:max-w-[530px]">
+      <div className="flex justify-between">
+        <div>
+          <Title title="Top Countries" />
+          <div
+            className={cn(
+              "text-brandTextGray transition-all",
+              showAll ? "opacity-0" : "opacity-100"
+            )}
+          >
+            Favorites
           </div>
-
-          <PlusCircleSvg
-            width="24"
-            height="24"
-            strokeColor="var(--clr-charcoal-grey)"
-          />
         </div>
 
-        <ul className="overflow-y-auto my-4 max-h-[300px] h-full space-y-4">
-          {displayedCountries.map((country, index) => (
-            <li className={cn(showAll && "mr-3")} key={country.country + index}>
-              <div className="flex items-center justify-between text-brandTextGray">
-                <div className="flex items-center gap-2.5">
-                  <span>{index + 1}</span>
+        <PlusCircleSvg />
+      </div>
 
-                  <div className="w-6 h-6 rounded-full overflow-hidden">
-                    <img src={`countries/${country.imgSrc}`} alt="" />
-                  </div>
+      <ul className="overflow-y-auto my-4 max-h-[300px] h-full space-y-4">
+        {displayedCountries.map((country, index) => (
+          <li className={cn(showAll && "mr-3")} key={country.country + index}>
+            <div className="flex items-center justify-between text-brandTextGray">
+              <div className="flex items-center gap-2.5">
+                <span>{index + 1}</span>
 
-                  <span className="text-brandTextGray">{country.country}</span>
+                <div className="w-6 h-6 rounded-full overflow-hidden">
+                  <img src={`countries/${country.imgSrc}`} alt="" />
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <span>{formatNumberWithCommas(country.price)}</span>
-
-                  <ArrowSvg
-                    width="16"
-                    height="16"
-                    strokeColor={
-                      country.price < 15000
-                        ? "var(--clr-red)"
-                        : "var(--clr-green)"
-                    }
-                    className={country.price < 15000 ? "rotate-180" : ""}
-                  />
-
-                  <TwoDotsVerticalSvg
-                    width="12"
-                    height="12"
-                    strokeColor="var(--clr-text-grey)"
-                    className="mt-1.5"
-                  />
-                </div>
+                <span className="text-brandTextGray">{country.country}</span>
               </div>
-            </li>
-          ))}
-        </ul>
 
-        <div
-          className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
-          onClick={handleToggle}
-        >
-          {showAll ? "Show Favorites" : "Show All"}
-        </div>
-      </ContainerBorderRounded>
-    </div>
+              <div className="flex items-center gap-2">
+                <span>{formatNumberWithCommas(country.price)}</span>
+
+                <ArrowSvg
+                  width="16"
+                  height="16"
+                  strokeColor={
+                    country.price < 15000
+                      ? "var(--clr-red)"
+                      : "var(--clr-green)"
+                  }
+                  className={country.price < 15000 ? "rotate-180" : ""}
+                />
+
+                <TwoDotsVerticalSvg />
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <div
+        className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
+        onClick={handleToggle}
+      >
+        {showAll ? "Show Favorites" : "Show All"}
+      </div>
+    </ContainerBorderRounded>
   );
 };

@@ -1,16 +1,16 @@
 import { FC } from "react";
 
 export interface IPlusCircleSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   strokeColor?: string;
   className?: string;
 }
 
 export const PlusCircleSvg: FC<IPlusCircleSvg> = ({
-  width,
-  height,
-  strokeColor,
+  width = "24",
+  height = "24",
+  strokeColor = "var(--clr-charcoal-grey)",
   className,
 }) => {
   return (

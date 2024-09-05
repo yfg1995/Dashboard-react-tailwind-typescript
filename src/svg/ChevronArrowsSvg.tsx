@@ -1,21 +1,22 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface IChevronArrowsSvg {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
+  strokeColor?: string;
   className?: string;
-  strokeColor: string;
 }
 
 export const ChevronArrowsSvg: FC<IChevronArrowsSvg> = ({
-  width,
-  height,
+  width = "12",
+  height = "12",
+  strokeColor = "var(--clr-text-grey)",
   className,
-  strokeColor,
 }) => {
   return (
     <svg
-      className={className}
+      className={cn("mt-0.5", className)}
       width={width}
       height={height}
       viewBox="0 0 311 311"

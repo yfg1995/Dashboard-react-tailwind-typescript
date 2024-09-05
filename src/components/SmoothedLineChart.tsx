@@ -13,12 +13,39 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const chart = echarts.init(ref.current);
       chartRef.current = chart;
 
+      const getResponsiveGrid = () => {
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth < 768) {
+          return {
+            width: "65%",
+            height: "175px",
+            top: "11%",
+          };
+        } else if (windowWidth < 1024) {
+          return {
+            width: "85%",
+            height: "155px",
+            top: "11%",
+            left: "11%",
+          };
+        } else if (windowWidth < 1536) {
+          return {
+            width: "85%",
+            height: "155px",
+            top: "15%",
+          };
+        } else {
+          return {
+            width: "85%",
+            height: "175px",
+            top: "11%",
+          };
+        }
+      };
+
       const option = {
-        grid: {
-          width: "85%",
-          height: "175px",
-          top: "11%",
-        },
+        grid: getResponsiveGrid(),
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -148,6 +175,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const handleResize = () => {
         chart.resize();
+
+        chart.setOption({
+          grid: getResponsiveGrid(),
+        });
       };
 
       window.addEventListener("resize", handleResize);

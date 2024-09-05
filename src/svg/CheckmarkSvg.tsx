@@ -1,21 +1,22 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface ICheckmarkSvg {
-  width: string;
-  height: string;
-  fill: string;
+  width?: string;
+  height?: string;
+  fill?: string;
   className?: string;
 }
 
 export const CheckmarkSvg: FC<ICheckmarkSvg> = ({
-  width,
-  height,
-  fill,
+  width = "14",
+  height = "14",
+  fill = "#2D44BC",
   className,
 }) => {
   return (
     <svg
-      className={className}
+      className={cn("mt-0.5", className)}
       width={width}
       height={height}
       viewBox="0 0 24 24"

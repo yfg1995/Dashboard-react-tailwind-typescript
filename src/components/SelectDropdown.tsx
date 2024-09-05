@@ -65,12 +65,7 @@ export const SelectDropdown: FC<ISelect> = ({
             defaultSelectedId}
         </span>
 
-        <ChevronArrowSvg
-          width="16"
-          height="16"
-          strokeColor="var(--clr-text-grey)"
-          className={cn("mt-0.5", toggle ? "rotate-180" : "")}
-        />
+        <ChevronArrowSvg className={toggle ? "rotate-180" : ""} />
       </div>
 
       {/* {toggle && (
