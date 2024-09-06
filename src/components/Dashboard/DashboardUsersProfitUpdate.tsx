@@ -9,6 +9,7 @@ import { Title } from "../Title";
 import { CheckmarkSvg } from "../../svg/CheckmarkSvg";
 import { TrendingSvg } from "../../svg/TrendingSvg";
 import { formatNumberWithCommas } from "../../helpers/helpers";
+import { ImageRoundedContent } from "../ImageRoundedContent";
 
 export interface IDashboardUsersProfitUpdates {}
 
@@ -28,15 +29,11 @@ export const DashboardUsersProfitUpdates: FC<
         >
           <div className="flex items-center justify-between px-4 rounded-[12px] h-full">
             <div className="flex flex-col gap-2">
-              <div className="flex items-center">
-                <div className="flex items-center overflow-hidden w-10 h-10 rounded-full mr-2">
-                  <img
-                    src={`users/${user.imgSrc}`}
-                    alt={`User - ${user.profile.userName}`}
-                  />
-                </div>
-
-                <div className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <ImageRoundedContent
+                  imgSrc={`users/${user.imgSrc}`}
+                  altSrc={`User - ${user.profile.userName}`}
+                >
                   <div className="flex items-center">
                     <Title title={user.profile.userName} className="mr-2" />
 
@@ -46,7 +43,7 @@ export const DashboardUsersProfitUpdates: FC<
                   <div className="text-brandTextGray text-sm">
                     {user.position}
                   </div>
-                </div>
+                </ImageRoundedContent>
               </div>
 
               <div className="flex flex-col gap-2">

@@ -23,15 +23,12 @@ export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
         width={width}
         height={height}
         stroke={strokeColor}
-        viewBox="0 0 24 24"
-        fill="none"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 200 200"
+        fill="none"
       >
-        <circle cx="12" cy="2" r="2" width={10} />
-        <circle cx="12" cy="15" r="2" width={10} />
+        <circle cx="100" cy="40" r="40" fill="#737373" />
+        <circle cx="100" cy="160" r="40" fill="#737373" />
       </svg>
     </button>
   );
