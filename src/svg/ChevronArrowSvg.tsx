@@ -5,6 +5,7 @@ export interface IChevronArrowSvg {
   width?: string;
   height?: string;
   strokeColor?: string;
+  strokeWidth?: string;
   className?: string;
 }
 
@@ -12,6 +13,7 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
   width = "16",
   height = "16",
   strokeColor = "var(--clr-text-grey)",
+  strokeWidth = "1.5",
   className,
 }) => {
   return (
@@ -20,7 +22,7 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
       height={height}
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth="1.5"
+      strokeWidth={strokeWidth}
       stroke={strokeColor}
       className={cn("transition-all mt-0.5", className)}
       xmlns="http://www.w3.org/2000/svg"

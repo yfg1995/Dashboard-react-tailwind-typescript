@@ -8,7 +8,7 @@ export interface IDashboardUserHeader {}
 
 export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
   return (
-    <div className="flex items-end justify-between">
+    <div className="flex gap-4 justify-between flex-col md:flex-row md:items-end">
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
           <div className="font-bold text-3xl">Hello David</div>

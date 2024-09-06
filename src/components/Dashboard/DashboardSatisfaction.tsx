@@ -11,15 +11,15 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = () => {
   const decimalProgress = 72.56 * 0.01;
   const progressPercentage = 72.56;
 
-  // useEffect(() => {
-  //   gsap.to(".number-counter", {
-  //     innerText: progressPercentage,
-  //     duration: 1,
-  //     snap: {
-  //       innerText: 0.01,
-  //     },
-  //   });
-  // }, []);
+  useEffect(() => {
+    gsap.to(".number-counter", {
+      innerText: progressPercentage,
+      duration: 1,
+      snap: {
+        innerText: 0.01,
+      },
+    });
+  }, []);
 
   return (
     <ContainerBorderRounded className="xl:max-w-[532px] h-[320px]">
