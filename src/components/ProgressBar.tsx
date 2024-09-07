@@ -1,5 +1,6 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 
 export interface IProgressBar {
   progress: number;
@@ -8,25 +9,40 @@ export interface IProgressBar {
 export const ProgressBar: FC<IProgressBar> = ({ progress }) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (progressBarRef.current) {
-      gsap.to(progressBarRef.current, {
-        width: `${progress}%`,
-        duration: 1,
-      });
-    }
-  }, [progress]);
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          ease: "none",
+          duration: 1,
+        })
+        .to(".number-progress", {
+          scaleX: progress * 0.01,
+        })
+
+        .to(
+          ".number-counter-nav",
+          {
+            innerText: progress,
+            snap: {
+              innerText: 1,
+            },
+          },
+          "<"
+        );
+    },
+    { scope: progressBarRef }
+  );
 
   return (
-    <div className="w-full bg-brandLavandedGray rounded-full h-2 overflow-hidden bg-brandCharcoalGrey">
-      <div
-        ref={progressBarRef}
-        className="h-full rounded-full"
-        style={{
-          width: "0%",
-          background: "white",
-        }}
-      />
+    <div ref={progressBarRef} className="flex flex-col items-end gap-2">
+      <span className="text-xs">
+        <span className="number-counter-nav">0</span>%
+      </span>
+
+      <div className="w-full bg-brandLavandedGray rounded-full h-2 overflow-hidden bg-brandCharcoalGrey">
+        <div className="number-progress h-full w-full scale-x-0 origin-left rounded-full bg-white" />
+      </div>
     </div>
   );
 };

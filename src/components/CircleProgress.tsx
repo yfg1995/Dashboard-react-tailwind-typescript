@@ -1,6 +1,7 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import gsap from "gsap";
 import { CircleProgress } from "../helpers/classes";
+import { useGSAP } from "@gsap/react";
 
 interface ICircleProgress {
   initialProgress: number;
@@ -11,20 +12,17 @@ export const CircleProgressComponent: FC<ICircleProgress> = ({
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
-    if (svgRef.current) {
-      const circleProgress = new CircleProgress(svgRef.current, 0);
+  useGSAP(() => {
+    if (!svgRef.current) return;
 
-      gsap.to(circleProgress, {
-        progress: initialProgress,
-        duration: 1,
-        ease: "none",
-        onUpdate: function () {
-          circleProgress.progress = this.targets()[0].progress;
-        },
-      });
-    }
-  }, [initialProgress]);
+    const circleProgress = new CircleProgress(svgRef.current, 0);
+
+    gsap.to(circleProgress, {
+      progress: initialProgress,
+      duration: 1,
+      ease: "none",
+    });
+  }, [svgRef]);
 
   return (
     <svg

@@ -41,16 +41,15 @@ body {
 }
 .embla__container {
   width: calc(100% + 2 * var(--slide-spacing));
-  margin-left: calc(var(--slide-spacing) * -1);
   display: flex;
+  justify-content: flex-start;
   gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
 
-@media (max-width: 787px) {
-  .embla__container {
-    flex-wrap: nowrap;
-    width: 100%;
+@media (max-width: 991px) {
+  .embla {
+    --slide-count: 2;
   }
 }
 .embla__slide {

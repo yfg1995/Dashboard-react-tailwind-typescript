@@ -1,5 +1,5 @@
 import { Dashboard } from "./components/Dashboard/Dashboard";
-import { Nav } from "./components/Nav";
+import { Nav } from "./components/Nav/Nav";
 
 function App() {
   return (

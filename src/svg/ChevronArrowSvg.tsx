@@ -22,12 +22,12 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
       height={height}
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={strokeWidth}
-      stroke={strokeColor}
       className={cn("transition-all mt-0.5", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        stroke={strokeColor}
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
         d="m8.25 4.5 7.5 7.5-7.5 7.5"

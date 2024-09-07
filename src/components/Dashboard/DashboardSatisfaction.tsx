@@ -1,9 +1,10 @@
-import { FC, useEffect } from "react";
+import { FC, useRef } from "react";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
 import { Title } from "../Title";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { CircleProgressComponent } from "../CircleProgress";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export interface IDashboardSatisfaction {}
 
@@ -11,15 +12,20 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = () => {
   const decimalProgress = 72.56 * 0.01;
   const progressPercentage = 72.56;
 
-  useEffect(() => {
-    gsap.to(".number-counter", {
-      innerText: progressPercentage,
-      duration: 1,
-      snap: {
-        innerText: 0.01,
-      },
-    });
-  }, []);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.to(".number-counter", {
+        innerText: progressPercentage,
+        duration: 1,
+        snap: {
+          innerText: 0.01,
+        },
+      });
+    },
+    { scope: ref }
+  );
 
   return (
     <ContainerBorderRounded className="xl:max-w-[532px] h-[320px]">
@@ -40,7 +46,7 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = () => {
 
             <div className="absolute left-1/2 top-0 -translate-x-[48.5%] w-full">
               <span className="relative text-lg font-bold text-[var(--clr-cerulean-blue)] text-center">
-                <span className="absolute inset-0">
+                <span className="absolute inset-0" ref={ref}>
                   <span className="number-counter">0</span>%
                 </span>
 

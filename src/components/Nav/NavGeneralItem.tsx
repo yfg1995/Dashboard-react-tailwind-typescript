@@ -1,0 +1,39 @@
+import { FC } from "react";
+import { ChevronArrowSvg } from "../../svg/ChevronArrowSvg";
+import { MoonSvg } from "../../svg/MoonSvg";
+
+export interface INavGeneralItem {}
+
+export const NavGeneralItem: FC<INavGeneralItem> = () => {
+  return (
+    <div className="bg-[#353535] rounded-xl px-2.5 py-3.5 select-none w-full cursor-pointer hidden lg:block">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <MoonSvg />
+
+          <div className="text-sm">
+            <div className="font-bold">Sales House</div>
+            <div className="text-[var(--clr-text-grey)]">General Item</div>
+          </div>
+        </div>
+
+        <div>
+          <ChevronArrowSvg
+            width="12"
+            height="12"
+            strokeColor="white"
+            strokeWidth="2.5"
+            className="-rotate-90"
+          />
+          <ChevronArrowSvg
+            width="12"
+            height="12"
+            strokeColor="white"
+            strokeWidth="2.5"
+            className="rotate-90"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

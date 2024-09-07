@@ -15,7 +15,7 @@ export const UsersProfitUpdate = [
     },
     tasks: {
       tasksCompleted: 3,
-      totalTasks: 5,
+      totalTasks: 15,
     },
   },
   {

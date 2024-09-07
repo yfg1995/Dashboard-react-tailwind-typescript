@@ -134,12 +134,6 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
               type: "dashed",
             },
             showSymbol: false,
-            emphasis: {
-              itemStyle: {
-                opacity: 0,
-              },
-            },
-            silent: true,
             z: 1,
           },
           {
