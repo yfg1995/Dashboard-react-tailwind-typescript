@@ -2,9 +2,9 @@ import { FC } from "react";
 import { ChevronArrowSvg } from "../../svg/ChevronArrowSvg";
 import { MoonSvg } from "../../svg/MoonSvg";
 
-export interface INavGeneralItem {}
+export interface ISidebarGeneralItem {}
 
-export const NavGeneralItem: FC<INavGeneralItem> = () => {
+export const SidebarGeneralItem: FC<ISidebarGeneralItem> = () => {
   return (
     <div className="bg-[#353535] rounded-xl px-2.5 py-3.5 select-none w-full cursor-pointer hidden lg:block">
       <div className="flex items-center justify-between">

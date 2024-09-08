@@ -3,28 +3,28 @@ import { DashboardSvg } from "../../svg/DashboardSvg";
 import { OverviewSvg } from "../../svg/OverviewSvg";
 import { ChatSvg } from "../../svg/ChatSvg";
 import { TeamSvg } from "../../svg/TeamSvg";
-import { NavLink } from "../NavLink";
+import { SidebarLink } from "../SidebarLink";
 
-export interface INavLinks {}
+export interface ISidebarLinks {}
 
-export const NavLinks: FC<INavLinks> = () => {
+export const SidebarLinks: FC<ISidebarLinks> = () => {
   return (
     <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 lg:mt-6 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300 w-full">
-      <NavLink title="Dashboard">
+      <SidebarLink title="Dashboard">
         <DashboardSvg />
-      </NavLink>
+      </SidebarLink>
 
-      <NavLink title="Overview">
+      <SidebarLink title="Overview">
         <OverviewSvg />
-      </NavLink>
+      </SidebarLink>
 
-      <NavLink title="Chat" notificationCounter={7}>
+      <SidebarLink title="Chat" notificationCounter={7}>
         <ChatSvg />
-      </NavLink>
+      </SidebarLink>
 
-      <NavLink title="Team">
+      <SidebarLink title="Team">
         <TeamSvg />
-      </NavLink>
+      </SidebarLink>
     </div>
   );
 };

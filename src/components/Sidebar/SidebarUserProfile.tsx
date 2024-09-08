@@ -2,9 +2,9 @@ import { FC } from "react";
 import { ImageRoundedContent } from "../ImageRoundedContent";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 
-export interface INavUserProfile {}
+export interface ISidebarUserProfile {}
 
-export const NavUserProfile: FC<INavUserProfile> = () => {
+export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
   return (
     <div className="flex items-center justify-between w-full px-2 py-4 border-t border-[var(--clr-text-grey)]">
       <div className="flex items-center justify-center gap-2 text-[var(--clr-text-grey)] font-bold">

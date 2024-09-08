@@ -2,14 +2,14 @@ import { FC, PropsWithChildren } from "react";
 import { cn } from "../utils/utils";
 import { NotificationCounter } from "./NotificationCounter";
 
-export interface INavLink extends PropsWithChildren {
+export interface ISidebarLink extends PropsWithChildren {
   title: string;
   classNameWrap?: string;
   classNameTitle?: string;
   notificationCounter?: number;
 }
 
-export const NavLink: FC<INavLink> = ({
+export const SidebarLink: FC<ISidebarLink> = ({
   title,
   classNameWrap,
   classNameTitle,

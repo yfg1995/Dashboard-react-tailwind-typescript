@@ -1,10 +1,10 @@
 import { Dashboard } from "./components/Dashboard/Dashboard";
-import { Nav } from "./components/Nav/Nav";
+import { Sidebar } from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
     <div className="bg-[#1e1e1e] overflow-hidden">
-      <Nav />
+      <Sidebar />
 
       <main className="md:pl-20 lg:pl-60">
         <Dashboard />

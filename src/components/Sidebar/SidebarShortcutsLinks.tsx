@@ -2,11 +2,11 @@ import { FC } from "react";
 import { TasksSvg } from "../../svg/TasksSvg";
 import { ReportsSvg } from "../../svg/ReportsSvg";
 import { SettingsSvg } from "../../svg/SettingsSvg";
-import { NavLink } from "../NavLink";
+import { SidebarLink } from "../SidebarLink";
 
-export interface INavShortcutsLinks {}
+export interface ISidebarShortcutsLinks {}
 
-export const NavShortcutsLinks: FC<INavShortcutsLinks> = () => {
+export const SidebarShortcutsLinks: FC<ISidebarShortcutsLinks> = () => {
   return (
     <div className="lg:mt-8 mb-4 w-full">
       <span className="uppercase font-bold text-[var(--clr-text-grey)] select-none hidden lg:block">
@@ -14,17 +14,17 @@ export const NavShortcutsLinks: FC<INavShortcutsLinks> = () => {
       </span>
 
       <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
-        <NavLink title="Tasks">
+        <SidebarLink title="Tasks">
           <TasksSvg />
-        </NavLink>
+        </SidebarLink>
 
-        <NavLink title="Reports">
+        <SidebarLink title="Reports">
           <ReportsSvg />
-        </NavLink>
+        </SidebarLink>
 
-        <NavLink title="Settings">
+        <SidebarLink title="Settings">
           <SettingsSvg />
-        </NavLink>
+        </SidebarLink>
       </div>
     </div>
   );

@@ -3,11 +3,11 @@ import { currentDate, currentTime } from "../../helpers/helpers";
 import { NavCardBgSvg } from "../../svg/NavCardBgSvg";
 import { ProgressBar } from "../ProgressBar";
 
-export interface INavUsedSpace {
+export interface ISidebarUsedSpace {
   progressNav: number;
 }
 
-export const NavUsedSpace: FC<INavUsedSpace> = ({ progressNav }) => {
+export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progressNav }) => {
   return (
     <div className="mt-auto hidden lg:block w-full">
       <div className="relative flex flex-col w-full h-full overflow-hidden rounded-xl p-3">

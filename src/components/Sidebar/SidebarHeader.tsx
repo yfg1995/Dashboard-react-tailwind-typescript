@@ -2,9 +2,9 @@ import { FC, useState } from "react";
 import { XCircleSvg } from "../../svg/XCircleSvg";
 import { HamburgerSvg } from "../../svg/HamburgerSvg";
 
-export interface INavHeader {}
+export interface ISidebarHeader {}
 
-export const NavHeader: FC<INavHeader> = () => {
+export const SidebarHeader: FC<ISidebarHeader> = () => {
   const [activeDropdown, setActiveDropdown] = useState<boolean>(false);
 
   const handleActiveDropdown = () => {
