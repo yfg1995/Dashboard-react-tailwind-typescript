@@ -61,6 +61,8 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
 
   const handleToggle = () => {
     setShowAll(!showAll);
+    setIsSortedByPrice(false);
+    setIsSortedByProfit(false);
   };
 
   return (
@@ -128,7 +130,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
       </ul>
 
       <div
-        className="grid place-content-center text-brandTextGray mt-auto cursor-pointer"
+        className="grid place-content-center text-brandTextGray mt-auto cursor-pointer select-none"
         onClick={handleToggle}
       >
         {showAll ? "Show Favorites" : "Show All"}

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
 export interface IArrowSvg {
   width: string;
@@ -16,7 +17,7 @@ export const ArrowSvg: FC<IArrowSvg> = ({
 }) => {
   return (
     <svg
-      className={className}
+      className={cn("mt-0.5", className)}
       width={width}
       height={height}
       stroke={strokeColor}
