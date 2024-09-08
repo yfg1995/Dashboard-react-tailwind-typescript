@@ -2,7 +2,7 @@ import { FC } from "react";
 import { NavHeader } from "./NavHeader";
 import { NavGeneralItem } from "./NavGeneralItem";
 import { NavLinks } from "./NavLinks";
-import { NavShortcuts } from "./NavShortcuts";
+import { NavShortcutsLinks } from "./NavShortcutsLinks";
 import { NavUsedSpace } from "./NavUsedSpace";
 import { NavUserProfile } from "./NavUserProfile";
 
@@ -18,7 +18,7 @@ export const Nav: FC<INav> = () => {
       <div className="flex flex-col items-center lg:items-start h-full w-full md:auto lg:w-full px-1 py-5 overflow-y-auto ">
         <NavGeneralItem />
         <NavLinks />
-        <NavShortcuts />
+        <NavShortcutsLinks />
 
         <NavUsedSpace progressNav={progressNav} />
       </div>
