@@ -115,11 +115,11 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
                   width="16"
                   height="16"
                   strokeColor={
-                    country.price < 15000
+                    country.price < 10000
                       ? "var(--clr-red)"
                       : "var(--clr-green)"
                   }
-                  className={country.price < 15000 ? "rotate-180" : ""}
+                  className={country.price < 10000 ? "rotate-180" : ""}
                 />
 
                 <TwoDotsVerticalSvg />

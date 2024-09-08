@@ -14,10 +14,10 @@ export const ProgressBar: FC<IProgressBar> = ({ progress }) => {
       gsap
         .timeline({
           ease: "none",
-          duration: 1,
         })
         .to(".number-progress", {
           scaleX: progress * 0.01,
+          duration: 1,
         })
 
         .to(
@@ -27,6 +27,7 @@ export const ProgressBar: FC<IProgressBar> = ({ progress }) => {
             snap: {
               innerText: 1,
             },
+            duration: 1,
           },
           "<"
         );

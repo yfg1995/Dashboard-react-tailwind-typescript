@@ -118,7 +118,7 @@ export const countriesData = [
   },
   {
     country: "Ukraine",
-    price: 19547.24,
+    price: 6547.24,
     imgSrc: "/ukraine-flag.jpg",
   },
   {
