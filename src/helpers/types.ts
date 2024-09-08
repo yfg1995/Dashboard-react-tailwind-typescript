@@ -10,3 +10,9 @@ export type UserProfitUpdate = {
     totalTasks: number;
   };
 };
+
+export type CountriesData = {
+  country: string;
+  price: number;
+  imgSrc: string;
+};

@@ -12,20 +12,20 @@ export const NavShortcuts: FC<INavShortcuts> = () => {
         shortcuts
       </span>
 
-      <ul className="text-[var(--clr-text-grey)] lg:[&>*]:flex lg:[&>*]:items-center lg:[&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
+      <ul className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
         <li className="hover:text-white">
           <TasksSvg />
-          <div className="hidden lg:block">Tasks</div>
+          <div className="md:hidden lg:block">Tasks</div>
         </li>
 
         <li className="hover:text-white">
           <ReportsSvg />
-          <div className="hidden lg:block">Reports</div>
+          <div className="md:hidden lg:block">Reports</div>
         </li>
 
         <li className="hover:text-white">
           <SettingsSvg />
-          <div className="hidden lg:block">Settings</div>
+          <div className="md:hidden lg:block">Settings</div>
         </li>
       </ul>
     </div>

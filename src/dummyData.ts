@@ -105,7 +105,7 @@ export const UsersProfitUpdate = [
   },
 ];
 
-export const countries = [
+export const countriesData = [
   {
     country: "USA",
     price: 21547.24,
@@ -128,42 +128,42 @@ export const countries = [
   },
   {
     country: "USA",
-    price: 21547.24,
+    price: 1547.24,
     imgSrc: "/usa-flag.jpg",
   },
   {
     country: "Ireland",
-    price: 9547.24,
+    price: 7547.24,
     imgSrc: "/ireland-flag.jpg",
   },
   {
     country: "Ukraine",
-    price: 19547.24,
+    price: 12547.24,
     imgSrc: "/ukraine-flag.jpg",
   },
   {
     country: "Sweden",
-    price: 12547.24,
+    price: 7597.24,
     imgSrc: "/sweden-flag.jpg",
   },
   {
     country: "USA",
-    price: 21547.24,
+    price: 17588.24,
     imgSrc: "/usa-flag.jpg",
   },
   {
     country: "Ireland",
-    price: 9547.24,
+    price: 9007.24,
     imgSrc: "/ireland-flag.jpg",
   },
   {
     country: "Ukraine",
-    price: 19547.24,
+    price: 6425.24,
     imgSrc: "/ukraine-flag.jpg",
   },
   {
     country: "Sweden",
-    price: 12547.24,
+    price: 2547.24,
     imgSrc: "/sweden-flag.jpg",
   },
 ];

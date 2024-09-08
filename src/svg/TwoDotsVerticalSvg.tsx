@@ -19,7 +19,7 @@ export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
   return (
     <button onClick={onClick}>
       <svg
-        className={cn("mt-1.5", className)}
+        className={cn("mt-0.5", className)}
         width={width}
         height={height}
         stroke={strokeColor}

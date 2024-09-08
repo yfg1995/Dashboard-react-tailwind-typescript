@@ -13,7 +13,7 @@ export const NavUserProfile: FC<INavUserProfile> = () => {
         </ImageRoundedContent>
       </div>
 
-      <TwoDotsVerticalSvg className="hidden lg:block mt-0" />
+      <TwoDotsVerticalSvg className="hidden lg:block" />
     </div>
   );
 };

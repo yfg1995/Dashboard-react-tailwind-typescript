@@ -22,7 +22,7 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
       height={height}
       fill="none"
       viewBox="0 0 24 24"
-      className={cn("transition-all mt-0.5", className)}
+      className={cn("ease-in-out duration-300 mt-0.5", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

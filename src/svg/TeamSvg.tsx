@@ -5,7 +5,7 @@ export interface ITeamSvg {}
 export const TeamSvg: FC<ITeamSvg> = () => {
   return (
     <svg
-      className="md:w-8 md:h-8 lg:w-5 lg:h-5 mt-0.5"
+      className="w-8 h-8 lg:w-5 lg:h-5 mt-0.5"
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
