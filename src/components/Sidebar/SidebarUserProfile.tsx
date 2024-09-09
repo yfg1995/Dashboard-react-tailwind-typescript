@@ -13,7 +13,7 @@ export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
         </ImageRoundedContent>
       </div>
 
-      <TwoDotsVerticalSvg className="hidden lg:block" />
+      <TwoDotsVerticalSvg className="md:hidden lg:block" />
     </div>
   );
 };

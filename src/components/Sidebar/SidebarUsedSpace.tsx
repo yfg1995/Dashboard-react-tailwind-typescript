@@ -9,17 +9,17 @@ export interface ISidebarUsedSpace {
 
 export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
   return (
-    <div className="mt-auto hidden lg:block w-full">
-      <div className="relative flex flex-col w-full h-full overflow-hidden rounded-xl p-3">
+    <div className="mt-auto hidden lg:block w-full overflow-hidden">
+      <div className="relative rounded-xl p-3">
+        <div className="absolute inset-0 w-full -z-10">
+          <NavCardBgSvg />
+        </div>
+
         <div className="text-sm">Used Space</div>
 
         <div className="text-xs text-[var(--clr-text-grey)]">
           <div>Admin updated: {currentTime}</div>
           <div>{currentDate}</div>
-        </div>
-
-        <div className="absolute top-0 left-0 w-full rounded-lg overflow-hidden -z-10">
-          <NavCardBgSvg />
         </div>
 
         <ProgressBar progress={progress} />
