@@ -4,10 +4,10 @@ import { NavCardBgSvg } from "../../svg/NavCardBgSvg";
 import { ProgressBar } from "../ProgressBar";
 
 export interface ISidebarUsedSpace {
-  progressNav: number;
+  progress: number;
 }
 
-export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progressNav }) => {
+export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
   return (
     <div className="mt-auto hidden lg:block w-full">
       <div className="relative flex flex-col w-full h-full overflow-hidden rounded-xl p-3">
@@ -22,7 +22,7 @@ export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progressNav }) => {
           <NavCardBgSvg />
         </div>
 
-        <ProgressBar progress={progressNav} />
+        <ProgressBar progress={progress} />
       </div>
     </div>
   );

@@ -25,6 +25,25 @@ body {
   background: var(--clr-charcoal-grey);
 }
 
+/* SCROLLBAR */
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--clr-charcoal-black);
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--clr-charcoal-grey);
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* EMBLA CAROUSEL */
 .embla {
   width: 100%;

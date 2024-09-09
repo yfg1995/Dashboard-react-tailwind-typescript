@@ -8,7 +8,7 @@ export interface IDashboardNewComponent {}
 
 export const DashboardNewComponent: FC<IDashboardNewComponent> = () => {
   return (
-    <ContainerBorderRounded className="text-center p-0 xl:max-w-[530px] h-[320px]">
+    <ContainerBorderRounded className="text-center !p-0 xl:max-w-[530px] h-[320px]">
       <div className="w-full h-20 bg-black" />
 
       <div className="flex flex-col justify-center items-center p-4 -mt-[60px] gap-4 pb-12">

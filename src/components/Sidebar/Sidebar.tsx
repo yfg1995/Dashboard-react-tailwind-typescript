@@ -12,15 +12,15 @@ export const Sidebar: FC<ISidebar> = () => {
   const progress = 77;
 
   return (
-    <div className="fixed top-0 left-0 z-10 w-full h-full bg-brandCharcoalBlack md:pt-[24px] px-2 flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]">
+    <div className="fixed inset-y-0 left-0 z-10 w-full bg-brandCharcoalBlack md:pt-[24px] px-2 flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]">
       <SidebarHeader />
 
-      <div className="flex flex-col items-center lg:items-start h-full w-full md:auto lg:w-full px-1 py-5 overflow-y-auto ">
+      <div className="flex flex-col items-center lg:items-start h-full w-full md:auto lg:w-full px-1 py-5 overflow-y-auto scrollbar">
         <SidebarGeneralItem />
         <SidebarLinks />
         <SidebarShortcutsLinks />
 
-        <SidebarUsedSpace progressNav={progress} />
+        <SidebarUsedSpace progress={progress} />
       </div>
 
       <SidebarUserProfile />

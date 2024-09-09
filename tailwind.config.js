@@ -16,7 +16,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      color: customColors,
+      colors: customColors,
       backgroundColor: customColors,
       borderColor: customColors,
       textColor: customColors,

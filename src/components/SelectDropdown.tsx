@@ -71,7 +71,7 @@ export const SelectDropdown: FC<ISelect> = ({
       {/* {toggle && (
         <div
           className={cn(
-            "absolute top-full left-0 border bg-white border-brandStrokeGray rounded-lg overflow-x-hidden overflow-y-auto max-h-[var(--item-height)] divide-y divide-y-brandStrokeGray text-center px-4 w-full",
+            "absolute top-full left-0 border bg-white border-brandStrokeGray rounded-lg overflow-x-hidden overflow-y-auto scrollbar max-h-[var(--item-height)] divide-y divide-y-brandStrokeGray text-center px-4 w-full",
             className
           )}
           style={

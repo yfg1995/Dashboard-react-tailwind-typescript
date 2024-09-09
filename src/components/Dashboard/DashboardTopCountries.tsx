@@ -94,7 +94,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         )}
       </div>
 
-      <ul className="overflow-y-auto my-4 h-full space-y-4">
+      <ul className="overflow-y-auto my-4 h-full space-y-4 scrollbar">
         {sortedCountries.map((country, index) => (
           <li className={cn(showAll && "mr-3")} key={country.country + index}>
             <div className="flex items-center justify-between text-brandTextGray">
