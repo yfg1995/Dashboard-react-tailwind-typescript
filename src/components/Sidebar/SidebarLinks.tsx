@@ -10,19 +10,19 @@ export interface ISidebarLinks {}
 export const SidebarLinks: FC<ISidebarLinks> = () => {
   return (
     <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 lg:mt-6 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300 w-full">
-      <SidebarLink title="Dashboard">
+      <SidebarLink title="Dashboard" link="/dashboard">
         <DashboardSvg />
       </SidebarLink>
 
-      <SidebarLink title="Overview">
+      <SidebarLink title="Overview" link="/overview">
         <OverviewSvg />
       </SidebarLink>
 
-      <SidebarLink title="Chat" notificationCounter={7}>
+      <SidebarLink title="Chat" notificationCounter={7} link="/chat">
         <ChatSvg />
       </SidebarLink>
 
-      <SidebarLink title="Team">
+      <SidebarLink title="Team" link="/team">
         <TeamSvg />
       </SidebarLink>
     </div>

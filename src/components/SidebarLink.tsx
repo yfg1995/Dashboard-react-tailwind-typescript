@@ -1,9 +1,11 @@
 import { FC, PropsWithChildren } from "react";
 import { cn } from "../utils/utils";
 import { NotificationCounter } from "./NotificationCounter";
+import { NavLink } from "react-router-dom";
 
 export interface ISidebarLink extends PropsWithChildren {
   title: string;
+  link: string;
   classNameWrap?: string;
   classNameTitle?: string;
   notificationCounter?: number;
@@ -11,13 +13,17 @@ export interface ISidebarLink extends PropsWithChildren {
 
 export const SidebarLink: FC<ISidebarLink> = ({
   title,
+  link,
   classNameWrap,
   classNameTitle,
   notificationCounter,
   children,
 }) => {
   return (
-    <div className={cn("relative hover:text-white", classNameWrap)}>
+    <NavLink
+      to={link}
+      className={cn("relative hover:text-white", classNameWrap)}
+    >
       {children}
 
       <div className="flex items-center justify-between">
@@ -27,6 +33,6 @@ export const SidebarLink: FC<ISidebarLink> = ({
           <NotificationCounter numCounter={notificationCounter} />
         )}
       </div>
-    </div>
+    </NavLink>
   );
 };

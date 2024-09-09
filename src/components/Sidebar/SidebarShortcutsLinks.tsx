@@ -14,15 +14,15 @@ export const SidebarShortcutsLinks: FC<ISidebarShortcutsLinks> = () => {
       </span>
 
       <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
-        <SidebarLink title="Tasks">
+        <SidebarLink title="Tasks" link="/tasks">
           <TasksSvg />
         </SidebarLink>
 
-        <SidebarLink title="Reports">
+        <SidebarLink title="Reports" link="/reports">
           <ReportsSvg />
         </SidebarLink>
 
-        <SidebarLink title="Settings">
+        <SidebarLink title="Settings" link="/settings">
           <SettingsSvg />
         </SidebarLink>
       </div>

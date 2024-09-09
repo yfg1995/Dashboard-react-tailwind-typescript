@@ -23,8 +23,8 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
 
   const sortByProfit = (countries: CountriesData[]) => {
     return countries.sort((a, b) => {
-      if (a.price >= 15000 && b.price < 15000) return -1;
-      if (a.price < 15000 && b.price >= 15000) return 1;
+      if (a.price >= 10000 && b.price < 10000) return -1;
+      if (a.price < 10000 && b.price >= 10000) return 1;
       return 0;
     });
   };
