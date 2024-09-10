@@ -62,9 +62,14 @@ body {
   gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
-@media (max-width: 991px) {
+@media (max-width: 1280px) {
   .embla {
     --slide-count: 2;
+  }
+}
+@media (max-width: 768px) {
+  .embla {
+    --slide-count: 1;
   }
 }
 .embla__slide {

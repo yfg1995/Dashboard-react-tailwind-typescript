@@ -10,7 +10,7 @@ export interface IDashboardWorkSummary {}
 
 export const DashboardWorkSummary: FC<IDashboardWorkSummary> = () => {
   return (
-    <ContainerBorderRounded className="h-[320px] xl:max-w-[1080px]">
+    <ContainerBorderRounded className="h-[320px] xl:max-w-[1088px]">
       <div className="flex justify-between items-start">
         <div>
           <Title title="Your Work Summary" />

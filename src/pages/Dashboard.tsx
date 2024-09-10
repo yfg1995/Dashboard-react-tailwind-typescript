@@ -16,12 +16,12 @@ export const Dashboard: FC<IDashboard> = () => {
 
       <DashboardUsersProfitUpdates />
 
-      <div className="flex flex-wrap xl:flex-nowrap gap-4">
+      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4">
         <DashboardWorkSummary />
         <DashboardTopCountries />
       </div>
 
-      <div className="flex flex-wrap xl:flex-nowrap gap-4">
+      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4">
         <DashboardSegmentation />
         <DashboardSatisfaction />
         <DashboardNewComponent />
