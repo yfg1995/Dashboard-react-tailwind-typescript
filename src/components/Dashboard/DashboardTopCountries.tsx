@@ -1,11 +1,7 @@
 import { FC, useState } from "react";
 import { Title } from "../Title";
 import { PlusCircleSvg } from "../../svg/PlusCircleSvg";
-import { ArrowSvg } from "../../svg/ArrowSvg";
-import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
-import { formatNumberWithCommas } from "../../helpers/helpers";
 import { ContainerBorderRounded } from "../ContainerBorderRounded";
-import { cn } from "../../utils/utils";
 import { CountriesData } from "../../helpers/types";
 import { countriesData } from "../../dummyData";
 import { SortTextArrow } from "../SortTextArrow";

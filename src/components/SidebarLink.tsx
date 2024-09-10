@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { cn } from "../utils/utils";
 import { NotificationCounter } from "./NotificationCounter";
 import { NavLink, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export interface ISidebarLink extends PropsWithChildren {
   title: string;
