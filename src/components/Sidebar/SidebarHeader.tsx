@@ -13,7 +13,7 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
   };
 
   return (
-    <div className="flex items-center justify-between w-full px-3 py-4 border-b border-[var(--clr-text-grey)]">
+    <div className="flex items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
       <div className="flex items-center gap-2">
         <LogoSvg />
         <div className="font-bold text-xl md:hidden lg:block">React</div>

@@ -9,6 +9,7 @@ import { cn } from "../../utils/utils";
 import { CountriesData } from "../../helpers/types";
 import { countriesData } from "../../dummyData";
 import { SortTextArrow } from "../SortTextArrow";
+import { DashboardSortList } from "./DashboardSortList";
 
 export interface IDashboardTopCountries {}
 
@@ -94,40 +95,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         )}
       </div>
 
-      <ul className="overflow-y-auto my-4 h-full space-y-4 scrollbar">
-        {sortedCountries.map((country, index) => (
-          <li className={cn(showAll && "mr-3")} key={country.country + index}>
-            <div className="flex items-center justify-between text-brandTextGray">
-              <div className="flex items-center gap-2.5">
-                <span>{index + 1}</span>
-
-                <div className="w-6 h-6 rounded-full overflow-hidden">
-                  <img src={`countries/${country.imgSrc}`} alt="" />
-                </div>
-
-                <span className="text-brandTextGray">{country.country}</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span>{formatNumberWithCommas(country.price)}</span>
-
-                <ArrowSvg
-                  width="16"
-                  height="16"
-                  strokeColor={
-                    country.price < 10000
-                      ? "var(--clr-red)"
-                      : "var(--clr-green)"
-                  }
-                  className={country.price < 10000 ? "rotate-180" : ""}
-                />
-
-                <TwoDotsVerticalSvg />
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <DashboardSortList items={sortedCountries} showAll={showAll} />
 
       <div
         className="grid place-content-center text-brandTextGray mt-auto cursor-pointer select-none"
