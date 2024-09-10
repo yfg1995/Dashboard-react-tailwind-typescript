@@ -9,9 +9,9 @@ export interface ISidebarUsedSpace {
 
 export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
   return (
-    <div className="mt-auto hidden lg:block w-full overflow-hidden shrink-0">
-      <div className="relative rounded-xl p-3">
-        <div className="absolute inset-0 w-full -z-10">
+    <div className="mt-auto mb-4 hidden lg:block w-full shrink-0">
+      <div className="relative p-3">
+        <div className="absolute inset-0 w-full -z-10 overflow-hidden rounded-xl">
           <NavCardBgSvg />
         </div>
 

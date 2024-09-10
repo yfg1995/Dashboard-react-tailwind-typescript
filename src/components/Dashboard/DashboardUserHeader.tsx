@@ -20,7 +20,7 @@ export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
-            <div className="font-bold text-3xl">Hello David</div>
+            <div className="font-bold text-3xl">Hello Jerry</div>
 
             <div className="flex items-center gap-2 rounded-xl p-2 bg-brandCharcoalBlack">
               <StarSvg />
