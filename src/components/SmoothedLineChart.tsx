@@ -10,6 +10,10 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
   useEffect(() => {
     if (ref.current) {
+      if (chartRef.current) {
+        chartRef.current.dispose();
+      }
+
       const chart = echarts.init(ref.current);
       chartRef.current = chart;
 

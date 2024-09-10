@@ -1,44 +1,39 @@
 import { FC } from "react";
 import { Reorder } from "framer-motion";
-import { cn } from "../../utils/utils";
 import { ArrowSvg } from "../../svg/ArrowSvg";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { formatNumberWithCommas } from "../../helpers/helpers";
+import { CountriesData } from "../../helpers/types";
 
 export interface IDashboardSortList {
-  items: any[];
-  showAll: boolean;
+  items: CountriesData[];
 }
 
-export const DashboardSortList: FC<IDashboardSortList> = ({
-  items,
-  showAll,
-}) => {
+export const DashboardSortList: FC<IDashboardSortList> = ({ items }) => {
   return (
     <Reorder.Group
       axis="y"
       values={items}
       onReorder={() => {}}
-      className="overflow-y-auto my-4 h-full space-y-4"
+      className="overflow-y-auto my-4 h-full space-y-4 overflow-x-hidden"
     >
       {items.map((country, index) => (
-        <Reorder.Item
-          value={country}
-          className={cn(showAll && "mr-3")}
-          key={country.id}
-        >
-          <div className="flex items-center justify-between text-brandTextGray">
+        <Reorder.Item drag={false} value={country} key={country.id}>
+          <div className="relative flex items-center justify-between text-brandTextGray">
             <div className="flex items-center gap-2.5">
-              <span>{index + 1}</span>
+              <span className="w-6 text-right">{index + 1}</span>
 
               <div className="w-6 h-6 rounded-full overflow-hidden">
-                <img src={`countries/${country.imgSrc}`} alt="" />
+                <img
+                  src={`countries/${country.imgSrc}`}
+                  alt={`${country.country}`}
+                />
               </div>
 
               <span className="text-brandTextGray">{country.country}</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="absolute right-2 flex items-center gap-2">
               <span>{formatNumberWithCommas(country.price)}</span>
 
               <ArrowSvg

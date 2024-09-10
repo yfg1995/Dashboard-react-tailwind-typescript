@@ -12,6 +12,7 @@ export type UserProfitUpdate = {
 };
 
 export type CountriesData = {
+  id: string;
   country: string;
   price: number;
   imgSrc: string;

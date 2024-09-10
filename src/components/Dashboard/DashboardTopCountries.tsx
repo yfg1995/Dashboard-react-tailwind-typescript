@@ -70,7 +70,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         <PlusCircleSvg />
       </div>
 
-      <div className="mt-1 text-brandTextGray transition-all">
+      <div className="mt-1 text-brandTextGray">
         {showAll ? (
           <div className="flex items-center gap-3">
             <div>Sort by:</div>
@@ -91,10 +91,10 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
         )}
       </div>
 
-      <DashboardSortList items={sortedCountries} showAll={showAll} />
+      <DashboardSortList items={sortedCountries} />
 
       <div
-        className="grid place-content-center text-brandTextGray mt-auto cursor-pointer select-none"
+        className="text-center text-brandTextGray mt-auto cursor-pointer select-none"
         onClick={handleToggle}
       >
         {showAll ? "Show Favorites" : "Show All"}

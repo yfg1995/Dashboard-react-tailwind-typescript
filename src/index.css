@@ -29,17 +29,14 @@ body {
 ::-webkit-scrollbar {
   width: 7px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--clr-charcoal-black);
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--clr-charcoal-grey);
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -65,7 +62,6 @@ body {
   gap: var(--slide-spacing);
   touch-action: pan-y pinch-zoom;
 }
-
 @media (max-width: 991px) {
   .embla {
     --slide-count: 2;
@@ -102,7 +98,6 @@ body {
   background: var(--main-clr);
   border-radius: 9999px;
 }
-
 .steps-completed:before {
   position: absolute;
   content: "";
@@ -116,7 +111,6 @@ body {
     calc(var(--w) / var(--steps) * 3) 0 0 0 var(--dash-clr);
   z-index: 1;
 }
-
 .steps-completed:after {
   position: absolute;
   content: "";
