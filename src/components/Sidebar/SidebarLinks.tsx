@@ -3,7 +3,7 @@ import { DashboardSvg } from "../../svg/DashboardSvg";
 import { OverviewSvg } from "../../svg/OverviewSvg";
 import { ChatSvg } from "../../svg/ChatSvg";
 import { TeamSvg } from "../../svg/TeamSvg";
-import { SidebarLink } from "../SidebarLink";
+import { SidebarLink } from "./SidebarLink";
 
 export interface ISidebarLinks {}
 

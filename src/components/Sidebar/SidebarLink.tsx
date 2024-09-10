@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from "react";
-import { cn } from "../utils/utils";
-import { NotificationCounter } from "./NotificationCounter";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { cn } from "../../utils/utils";
+import { NotificationCounter } from "../NotificationCounter";
 
 export interface ISidebarLink extends PropsWithChildren {
   title: string;
@@ -37,7 +37,7 @@ export const SidebarLink: FC<ISidebarLink> = ({
         <motion.span
           layout
           layoutId="tabItemLine"
-          className="absolute top-0 right-0 w-px h-full bg-white"
+          className="absolute top-0 right-0 w-[2px] h-full bg-white"
         />
       )}
 

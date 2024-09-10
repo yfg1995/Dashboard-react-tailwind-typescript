@@ -2,7 +2,7 @@ import { FC } from "react";
 import { TasksSvg } from "../../svg/TasksSvg";
 import { ReportsSvg } from "../../svg/ReportsSvg";
 import { SettingsSvg } from "../../svg/SettingsSvg";
-import { SidebarLink } from "../SidebarLink";
+import { SidebarLink } from "./SidebarLink";
 
 export interface ISidebarShortcutsLinks {}
 
