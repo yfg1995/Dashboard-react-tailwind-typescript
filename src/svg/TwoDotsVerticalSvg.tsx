@@ -17,7 +17,7 @@ export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
   onClick,
 }) => {
   return (
-    <button onClick={onClick}>
+    <button className="p-2" onClick={onClick}>
       <svg
         className={cn("mt-0.5", className)}
         width={width}

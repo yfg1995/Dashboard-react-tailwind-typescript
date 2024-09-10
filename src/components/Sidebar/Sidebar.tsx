@@ -23,6 +23,7 @@ export const Sidebar: FC<ISidebar> = () => {
       <SidebarHeader />
 
       <SidebarGeneralItem />
+
       <div className="flex flex-col items-center lg:items-start h-full w-[calc(100%_+_1rem)] pl-2 py-5 mb-4 overflow-y-auto">
         <SidebarLinks />
         <SidebarShortcutsLinks />

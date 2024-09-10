@@ -9,7 +9,7 @@ export interface ISidebarLinks {}
 
 export const SidebarLinks: FC<ISidebarLinks> = () => {
   return (
-    <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300 w-full">
+    <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center md:[&>*]:justify-center lg:[&>*]:justify-start [&>*]:gap-2 space-y-6 lg:space-y-3 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300 w-full">
       <SidebarLink title="Dashboard" link="/">
         <DashboardSvg />
       </SidebarLink>

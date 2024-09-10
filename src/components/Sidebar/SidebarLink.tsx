@@ -37,6 +37,7 @@ export const SidebarLink: FC<ISidebarLink> = ({
         <motion.span
           layout
           layoutId="tabItemLine"
+          transition={{ layout: { duration: 0 } }}
           className="absolute top-0 right-0 w-[2px] h-full bg-white"
         />
       )}

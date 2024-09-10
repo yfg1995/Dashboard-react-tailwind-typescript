@@ -13,7 +13,7 @@ export const SidebarShortcutsLinks: FC<ISidebarShortcutsLinks> = () => {
         shortcuts
       </span>
 
-      <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center [&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
+      <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center md:[&>*]:justify-center lg:[&>*]:justify-start [&>*]:gap-2 space-y-6 lg:space-y-3 mt-6 lg:mt-2 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300">
         <SidebarLink title="Tasks" link="/tasks">
           <TasksSvg />
         </SidebarLink>
