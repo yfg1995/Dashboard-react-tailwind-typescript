@@ -16,7 +16,7 @@ export const ContainerBorderRounded: FC<IContainerBorderRounded> = ({
     <div
       {...props}
       className={cn(
-        "rounded-[12px] xl:p-4 p-8 overflow-hidden w-full h-full bg-brandCharcoalBlack",
+        "rounded-[12px] p-4 overflow-hidden w-full h-full bg-brandCharcoalBlack",
         className
       )}
     >
