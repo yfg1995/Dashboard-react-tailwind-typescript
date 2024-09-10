@@ -75,7 +75,7 @@ export const DashboardSegmentation: FC<IDashboardSegmentation> = () => {
       <SelectDropdown
         options={[]}
         defaultSelectedId="Details"
-        className="w-36"
+        className="max-w-36 w-full"
       />
     </ContainerBorderRounded>
   );
