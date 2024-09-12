@@ -17,6 +17,37 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const chart = echarts.init(ref.current);
       chartRef.current = chart;
 
+      // const getResponsiveGrid = () => {
+      //   const windowWidth = window.innerWidth;
+
+      //   if (windowWidth < 768) {
+      //     return {
+      //       width: "65%",
+      //       height: "175px",
+      //       top: "11%",
+      //     };
+      //   } else if (windowWidth < 1024) {
+      //     return {
+      //       width: "85%",
+      //       height: "155px",
+      //       top: "11%",
+      //       left: "11%",
+      //     };
+      //   } else if (windowWidth < 1536) {
+      //     return {
+      //       width: "85%",
+      //       height: "155px",
+      //       top: "15%",
+      //     };
+      //   } else {
+      //     return {
+      //       width: "85%",
+      //       height: "175px",
+      //       top: "11%",
+      //     };
+      //   }
+      // };
+
       const option = {
         grid: {
           width: "85%",
@@ -144,9 +175,19 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       chart.setOption(option);
 
-      const handleResize = () => {
-        chart.resize();
+      const debounce = (fn: (...args: any) => void, delay: number) => {
+        let timeoutId: NodeJS.Timeout;
+        return (...args: any) => {
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => {
+            fn(...args);
+          }, delay);
+        };
       };
+
+      const handleResize = debounce(() => {
+        chart.resize();
+      }, 1000);
 
       const observer = new ResizeObserver(handleResize);
       observer.observe(ref.current);

@@ -2,24 +2,41 @@ import { FC } from "react";
 import { XCircleSvg } from "../../svg/XCircleSvg";
 import { LogoSvg } from "../../svg/LogoSvg";
 import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { cn } from "../../utils/utils";
+import { BarArrowSvg } from "../../svg/BarArrowSvg";
 
 export interface ISidebarHeader {}
 
 export const SidebarHeader: FC<ISidebarHeader> = () => {
-  const { setIsActive } = useDropdownActiveState();
+  const { isActive, setIsActive } = useDropdownActiveState();
 
-  const handleCloseDropdown = () => {
+  const handleIsActive = () => {
     setIsActive(false);
   };
 
   return (
     <div className="flex items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 cursor-pointer">
         <LogoSvg />
-        <div className="font-bold text-xl md:hidden lg:block">React</div>
+
+        <div
+          className={cn(
+            "font-bold text-xl lg:block",
+            isActive ? "md:block" : "md:hidden"
+          )}
+        >
+          React
+        </div>
       </div>
 
-      <button onClick={handleCloseDropdown} className="md:hidden">
+      <button
+        className={cn("hidden", isActive && "md:block")}
+        onClick={handleIsActive}
+      >
+        <BarArrowSvg />
+      </button>
+
+      <button onClick={handleIsActive} className="md:hidden">
         <XCircleSvg />
       </button>
     </div>

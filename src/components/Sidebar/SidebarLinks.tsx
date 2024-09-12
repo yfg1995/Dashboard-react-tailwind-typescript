@@ -4,26 +4,35 @@ import { OverviewSvg } from "../../svg/OverviewSvg";
 import { ChatSvg } from "../../svg/ChatSvg";
 import { TeamSvg } from "../../svg/TeamSvg";
 import { SidebarLink } from "./SidebarLink";
+import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { cn } from "../../utils/utils";
 
 export interface ISidebarLinks {}
 
 export const SidebarLinks: FC<ISidebarLinks> = () => {
+  const { isActive } = useDropdownActiveState();
+
   return (
-    <div className="text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center md:[&>*]:justify-center lg:[&>*]:justify-start [&>*]:gap-2 space-y-6 lg:space-y-3 [&>*]:cursor-pointer [&>*]:ease-in-out [&>*]:duration-300 w-full">
+    <div
+      className={cn(
+        "text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center lg:[&>*]:justify-start space-y-2 [&>*]:gap-2 lg:space-y-3 [&>*]:cursor-pointer w-full",
+        isActive ? "md:[&>*]:gap-1 md:space-y-1" : "md:[&>*]:justify-center"
+      )}
+    >
       <SidebarLink title="Dashboard" link="/">
-        <DashboardSvg />
+        <DashboardSvg className={cn(isActive && "md:w-5")} />
       </SidebarLink>
 
       <SidebarLink title="Overview" link="/overview">
-        <OverviewSvg />
+        <OverviewSvg className={cn(isActive && "md:w-5")} />
       </SidebarLink>
 
       <SidebarLink title="Chat" notificationCounter={7} link="/chat">
-        <ChatSvg />
+        <ChatSvg className={cn(isActive && "md:w-5")} />
       </SidebarLink>
 
       <SidebarLink title="Team" link="/team">
-        <TeamSvg />
+        <TeamSvg className={cn(isActive && "md:w-5")} />
       </SidebarLink>
     </div>
   );

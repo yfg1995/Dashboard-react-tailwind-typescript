@@ -18,7 +18,12 @@ export const DashboardSortList: FC<IDashboardSortList> = ({ items }) => {
       className="overflow-y-auto my-4 h-full space-y-4 overflow-x-hidden"
     >
       {items.map((country, index) => (
-        <Reorder.Item drag={false} value={country} key={country.id}>
+        <Reorder.Item
+          drag={false}
+          value={country}
+          key={country.id}
+          style={{ originX: "0px" }}
+        >
           <div className="relative flex items-center justify-between text-brandTextGray">
             <div className="flex items-center gap-2.5">
               <span className="w-6 text-right">{index + 1}</span>

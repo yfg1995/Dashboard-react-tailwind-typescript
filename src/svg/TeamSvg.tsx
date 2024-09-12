@@ -1,11 +1,17 @@
 import { FC } from "react";
+import { cn } from "../utils/utils";
 
-export interface ITeamSvg {}
+export interface ITeamSvg {
+  className?: string;
+}
 
-export const TeamSvg: FC<ITeamSvg> = () => {
+export const TeamSvg: FC<ITeamSvg> = ({ className }) => {
   return (
     <svg
-      className="w-8 h-8 lg:w-5 lg:h-5 mt-0.5"
+      className={cn(
+        "w-6 h-6 md:w-8 md:h-8 lg:w-5 lg:h-5 mt-0.5 ease-in-out duration-300",
+        className
+      )}
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

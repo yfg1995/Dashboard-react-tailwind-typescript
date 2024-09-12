@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/utils";
 import { NotificationCounter } from "../NotificationCounter";
+import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
 
 export interface ISidebarLink extends PropsWithChildren {
   title: string;
@@ -20,8 +21,10 @@ export const SidebarLink: FC<ISidebarLink> = ({
   notificationCounter,
   children,
 }) => {
+  const { isActive } = useDropdownActiveState();
+
   const location = useLocation();
-  const isActive = location.pathname === link;
+  const isActiveLink = location.pathname === link;
 
   return (
     <NavLink
@@ -29,26 +32,35 @@ export const SidebarLink: FC<ISidebarLink> = ({
       className={cn(
         "relative hover:text-white",
         classNameWrap,
-        isActive && "text-white"
+        isActiveLink && "text-white"
       )}
     >
       {children}
-      {isActive && (
-        <motion.span
-          layout
-          layoutId="tabItemLine"
-          transition={{ layout: { duration: 0 } }}
-          className="absolute top-0 right-0 w-[2px] h-full bg-white"
-        />
-      )}
 
-      <div className="flex items-center justify-between">
-        <div className={cn("md:hidden lg:block", classNameTitle)}>{title}</div>
-
-        {notificationCounter !== undefined && (
-          <NotificationCounter numCounter={notificationCounter} />
+      <motion.div layout layoutRoot>
+        {isActiveLink && (
+          <motion.span
+            layout
+            layoutId="tabItemLine"
+            style={{ originX: "0px" }}
+            className="absolute top-0 right-0 w-[2px] h-full bg-white"
+          />
         )}
+      </motion.div>
+
+      <div
+        className={cn(
+          "lg:block",
+          classNameTitle,
+          isActive ? "block" : "hidden"
+        )}
+      >
+        {title}
       </div>
+
+      {notificationCounter !== undefined && (
+        <NotificationCounter numCounter={notificationCounter} />
+      )}
     </NavLink>
   );
 };

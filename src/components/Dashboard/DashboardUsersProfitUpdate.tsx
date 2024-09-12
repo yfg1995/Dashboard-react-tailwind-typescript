@@ -35,14 +35,16 @@ export const DashboardUsersProfitUpdates: FC<
                   imgSrc={`users/${user.imgSrc}`}
                   altSrc={`User - ${user.profile.userName}`}
                 >
-                  <div className="flex items-center">
-                    <Title title={user.profile.userName} className="mr-2" />
+                  <div className="flex flex-col">
+                    <div className="flex items-center">
+                      <Title title={user.profile.userName} className="mr-2" />
 
-                    {user.profile.verified && <CheckmarkSvg />}
-                  </div>
+                      {user.profile.verified && <CheckmarkSvg />}
+                    </div>
 
-                  <div className="text-brandTextGray text-sm">
-                    {user.position}
+                    <div className="text-brandTextGray text-sm">
+                      {user.position}
+                    </div>
                   </div>
                 </ImageRoundedContent>
               </div>
