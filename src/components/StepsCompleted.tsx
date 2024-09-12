@@ -15,7 +15,7 @@ export const StepsCompleted: FC<TStepsCompleted> = ({ completedTasks }) => {
         ref.current.style.setProperty("--steps-completed", `${completedTasks}`);
       }
     }, 200);
-  }, [ref]);
+  }, [ref, completedTasks]);
 
   return <div ref={ref} className="steps-completed" />;
 };

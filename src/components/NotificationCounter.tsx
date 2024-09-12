@@ -3,7 +3,7 @@ import { cn } from "../utils/utils";
 import { useDropdownActiveState } from "../zustand/useDropdownActiveState";
 
 export interface INotificationCounter {
-  numCounter: number | undefined;
+  numCounter: number;
   className?: string;
 }
 
