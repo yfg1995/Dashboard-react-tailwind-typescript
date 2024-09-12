@@ -33,7 +33,7 @@ export const Sidebar: FC<ISidebar> = () => {
 
       <div
         className={cn(
-          "flex flex-col items-center lg:items-start h-full w-[calc(100%_+_1rem)] pl-4 md:pl-0 lg:pl-2 py-2 overflow-y-auto",
+          "flex flex-col items-center lg:items-start h-full w-[calc(100%_+_1rem)] pl-4 md:pl-0 lg:pl-2 py-2 overflow-y-auto lg:my-2",
           isActive && "md:py-0 md:pl-4"
         )}
       >

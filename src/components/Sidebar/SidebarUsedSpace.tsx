@@ -15,7 +15,7 @@ export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
   return (
     <div
       className={cn(
-        "mt-auto mb-4 w-full shrink-0",
+        "mt-auto mb-4 w-full shrink-0 lg:block",
         isActive ? "block" : "md:hidden"
       )}
     >
