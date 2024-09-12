@@ -23,8 +23,8 @@ export const Sidebar: FC<ISidebar> = () => {
   return (
     <div
       className={cn(
-        "fixed inset-y-0 left-0 z-10 w-full bg-brandCharcoalBlack px-4 md:px-2 md:flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]",
-        isActive ? "flex md:max-w-[240px]" : "hidden"
+        "fixed inset-y-0 left-0 z-10 w-full bg-brandCharcoalBlack md:px-2 md:flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]",
+        isActive ? "md:max-w-[240px]" : "hidden"
       )}
     >
       <SidebarHeader />
