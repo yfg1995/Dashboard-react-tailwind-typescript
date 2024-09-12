@@ -3,13 +3,13 @@ import { TasksSvg } from "../../svg/TasksSvg";
 import { ReportsSvg } from "../../svg/ReportsSvg";
 import { SettingsSvg } from "../../svg/SettingsSvg";
 import { SidebarLink } from "./SidebarLink";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { cn } from "../../utils/utils";
 
 export interface ISidebarShortcutsLinks {}
 
 export const SidebarShortcutsLinks: FC<ISidebarShortcutsLinks> = () => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   return (
     <div className={cn("lg:mt-8 mb-4 w-full", isActive && "mt-6")}>

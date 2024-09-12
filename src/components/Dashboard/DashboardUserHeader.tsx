@@ -4,12 +4,12 @@ import { ChevronArrowsSvg } from "../../svg/ChevronArrowsSvg";
 import { SearchInput } from "../SearchInput";
 import { currentDay, currentMonth } from "../../helpers/helpers";
 import { HamburgerSvg } from "../../svg/HamburgerSvg";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 
 export interface IDashboardUserHeader {}
 
 export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
-  const { setIsActive } = useDropdownActiveState();
+  const { setIsActive } = useSidebarActiveState();
 
   const handleCloseDropdown = () => {
     setIsActive(true);

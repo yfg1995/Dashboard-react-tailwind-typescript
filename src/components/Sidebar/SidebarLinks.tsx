@@ -4,13 +4,13 @@ import { OverviewSvg } from "../../svg/OverviewSvg";
 import { ChatSvg } from "../../svg/ChatSvg";
 import { TeamSvg } from "../../svg/TeamSvg";
 import { SidebarLink } from "./SidebarLink";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { cn } from "../../utils/utils";
 
 export interface ISidebarLinks {}
 
 export const SidebarLinks: FC<ISidebarLinks> = () => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   return (
     <div

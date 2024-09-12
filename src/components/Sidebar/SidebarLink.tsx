@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/utils";
 import { NotificationCounter } from "../NotificationCounter";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 
 export interface ISidebarLink extends PropsWithChildren {
   title: string;
@@ -21,7 +21,7 @@ export const SidebarLink: FC<ISidebarLink> = ({
   notificationCounter,
   children,
 }) => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   const location = useLocation();
   const isActiveLink = location.pathname === link;

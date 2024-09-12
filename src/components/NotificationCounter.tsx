@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { cn } from "../utils/utils";
-import { useDropdownActiveState } from "../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../zustand/useSidebarActiveState";
 
 export interface INotificationCounter {
   numCounter: number;
@@ -11,7 +11,7 @@ export const NotificationCounter: FC<INotificationCounter> = ({
   numCounter,
   className,
 }) => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   return (
     <div

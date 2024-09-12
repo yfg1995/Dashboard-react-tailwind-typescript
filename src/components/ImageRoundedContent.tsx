@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { cn } from "../utils/utils";
-import { useDropdownActiveState } from "../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../zustand/useSidebarActiveState";
 
 export interface IImageRoundedContent extends PropsWithChildren {
   imgSrc: string;
@@ -14,7 +14,7 @@ export const ImageRoundedContent: FC<IImageRoundedContent> = ({
   className,
   children,
 }) => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   return (
     <>

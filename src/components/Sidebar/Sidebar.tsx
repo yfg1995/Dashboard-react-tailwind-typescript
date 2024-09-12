@@ -5,7 +5,7 @@ import { SidebarLinks } from "./SidebarLinks";
 import { SidebarShortcutsLinks } from "./SidebarShortcutsLinks";
 import { SidebarUsedSpace } from "./SidebarUsedSpace";
 import { SidebarUserProfile } from "./SidebarUserProfile";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { BarArrowSvg } from "../../svg/BarArrowSvg";
 import { cn } from "../../utils/utils";
 
@@ -14,7 +14,7 @@ export interface ISidebar {}
 const progress = 77;
 
 export const Sidebar: FC<ISidebar> = () => {
-  const { isActive, setIsActive } = useDropdownActiveState();
+  const { isActive, setIsActive } = useSidebarActiveState();
 
   const handleSidebar = () => {
     setIsActive(!isActive);

@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { XCircleSvg } from "../../svg/XCircleSvg";
 import { LogoSvg } from "../../svg/LogoSvg";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { cn } from "../../utils/utils";
 import { BarArrowSvg } from "../../svg/BarArrowSvg";
 
 export interface ISidebarHeader {}
 
 export const SidebarHeader: FC<ISidebarHeader> = () => {
-  const { isActive, setIsActive } = useDropdownActiveState();
+  const { isActive, setIsActive } = useSidebarActiveState();
 
   const handleIsActive = () => {
     setIsActive(false);

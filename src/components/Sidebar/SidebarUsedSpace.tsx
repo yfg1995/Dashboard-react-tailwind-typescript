@@ -2,7 +2,7 @@ import { FC } from "react";
 import { currentDate, currentTime } from "../../helpers/helpers";
 import { NavCardBgSvg } from "../../svg/NavCardBgSvg";
 import { ProgressBar } from "../ProgressBar";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { cn } from "../../utils/utils";
 
 export interface ISidebarUsedSpace {
@@ -10,7 +10,7 @@ export interface ISidebarUsedSpace {
 }
 
 export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
 
   return (
     <div

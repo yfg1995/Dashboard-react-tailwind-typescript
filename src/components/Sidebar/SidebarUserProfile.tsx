@@ -1,13 +1,15 @@
 import { FC } from "react";
+import { cn } from "../../utils/utils";
 import { ImageRoundedContent } from "../ImageRoundedContent";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
-import { useDropdownActiveState } from "../../zustand/useDropdownActiveState";
-import { cn } from "../../utils/utils";
+import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
+import { useProfileActiveState } from "../../zustand/useProfileActiveState";
 
 export interface ISidebarUserProfile {}
 
 export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
-  const { isActive } = useDropdownActiveState();
+  const { isActive } = useSidebarActiveState();
+  const { setIsActive } = useProfileActiveState();
 
   return (
     <div
@@ -15,6 +17,7 @@ export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
         "flex items-center w-full px-2 py-4 border-t border-[var(--clr-text-grey)] cursor-pointer",
         isActive ? "justify-between" : "justify-center"
       )}
+      onClick={() => setIsActive(true)}
     >
       <div className="flex items-center gap-2 text-[var(--clr-text-grey)] font-bold w-full">
         <ImageRoundedContent imgSrc="users/user.jpg">
