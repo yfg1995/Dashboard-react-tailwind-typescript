@@ -15,7 +15,7 @@ export const DashboardSortList: FC<IDashboardSortList> = ({ items }) => {
       axis="y"
       values={items}
       onReorder={() => {}}
-      className="overflow-y-auto my-4 h-full space-y-4 overflow-x-hidden"
+      className="overflow-y-auto my-4 h-full space-y-4"
     >
       {items.map((country, index) => (
         <Reorder.Item

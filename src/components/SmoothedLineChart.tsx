@@ -17,36 +17,53 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const chart = echarts.init(ref.current);
       chartRef.current = chart;
 
-      // const getResponsiveGrid = () => {
-      //   const windowWidth = window.innerWidth;
+      const windowWidth = window.innerWidth;
 
-      //   if (windowWidth < 768) {
+      // const getResponsiveGrid = () => {
+      //   if (windowWidth < 450) {
       //     return {
-      //       width: "65%",
-      //       height: "175px",
-      //       top: "11%",
+      //       width: "78%",
+      //       height: "130px",
+      //       top: "20%",
+      //       left: "16%",
       //     };
-      //   } else if (windowWidth < 1024) {
+      //   } else if (windowWidth < 500) {
       //     return {
-      //       width: "85%",
-      //       height: "155px",
-      //       top: "11%",
-      //       left: "11%",
+      //       width: "82%",
+      //       height: "130px",
+      //       top: "16%",
+      //       left: "14%",
       //     };
-      //   } else if (windowWidth < 1536) {
+      //   } else if (windowWidth < 700) {
       //     return {
-      //       width: "85%",
-      //       height: "155px",
-      //       top: "15%",
+      //       width: "80%",
+      //       height: "160px",
+      //       top: "14%",
+      //       left: "14%",
       //     };
       //   } else {
       //     return {
-      //       width: "85%",
+      //       width: "100%",
       //       height: "175px",
       //       top: "11%",
+      //       left: "8%",
       //     };
       //   }
       // };
+
+      const getResponsiveLabel = () => {
+        if (windowWidth < 500) {
+          return {
+            fontSize: 14,
+            padding: [0, 12, 0, 0],
+          };
+        } else {
+          return {
+            fontSize: 16,
+            padding: [0, 12, 0, 0],
+          };
+        }
+      };
 
       const option = {
         grid: {
@@ -123,10 +140,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           splitLine: {
             show: false,
           },
-          axisLabel: {
-            fontSize: 16,
-            padding: [0, 12, 0, 0],
-          },
+          axisLabel: getResponsiveLabel(),
         },
         series: [
           {

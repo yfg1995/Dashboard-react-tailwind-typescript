@@ -13,40 +13,43 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const [isSortedByProfit, setIsSortedByProfit] = useState<boolean>(false);
   const [isSortedByPrice, setIsSortedByPrice] = useState<boolean>(false);
+  const [descendingOrder, setDescendingOrder] = useState<boolean>(false);
 
   const displayedCountries = showAll
     ? countriesData
     : countriesData.slice(0, 4);
 
   const sortByProfit = (countries: CountriesData[]) => {
-    return countries.sort((a, b) => {
+    const sorted = countries.sort((a, b) => {
       if (a.price >= 10000 && b.price < 10000) return -1;
       if (a.price < 10000 && b.price >= 10000) return 1;
       return 0;
     });
+    return descendingOrder ? sorted.reverse() : sorted;
   };
 
   const sortByPrice = (countries: CountriesData[]) => {
-    return countries.sort((a, b) => b.price - a.price);
+    const sorted = countries.sort((a, b) => b.price - a.price);
+    return descendingOrder ? sorted.reverse() : sorted;
   };
 
   const handleSortingProfit = () => {
     if (isSortedByProfit) {
-      setIsSortedByProfit(false);
-      setIsSortedByPrice(false);
+      setDescendingOrder(!descendingOrder);
     } else {
       setIsSortedByProfit(true);
       setIsSortedByPrice(false);
+      setDescendingOrder(false);
     }
   };
 
   const handleSortingPrice = () => {
     if (isSortedByPrice) {
-      setIsSortedByPrice(false);
-      setIsSortedByProfit(false);
+      setDescendingOrder(!descendingOrder);
     } else {
       setIsSortedByPrice(true);
       setIsSortedByProfit(false);
+      setDescendingOrder(false);
     }
   };
 
@@ -60,6 +63,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
     setShowAll(!showAll);
     setIsSortedByPrice(false);
     setIsSortedByProfit(false);
+    setDescendingOrder(false);
   };
 
   return (
