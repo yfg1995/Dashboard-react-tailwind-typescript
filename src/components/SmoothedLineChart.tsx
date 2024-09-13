@@ -20,38 +20,6 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const { innerWidth } = window;
 
-      const getResponsiveGrid = () => {
-        if (innerWidth < 450) {
-          return {
-            width: "78%",
-            height: "130px",
-            top: "20%",
-            left: "16%",
-          };
-        } else if (innerWidth < 500) {
-          return {
-            width: "82%",
-            height: "130px",
-            top: "16%",
-            left: "14%",
-          };
-        } else if (innerWidth < 700) {
-          return {
-            width: "80%",
-            height: "160px",
-            top: "14%",
-            left: "14%",
-          };
-        } else {
-          return {
-            width: "100%",
-            height: "175px",
-            top: "11%",
-            left: "8%",
-          };
-        }
-      };
-
       const getResponsiveLabel = () => {
         if (innerWidth < 500) {
           return {
@@ -68,10 +36,9 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const option = {
         grid: {
-          // width: "100%",
           height: "175px",
           top: "11%",
-          left: "5%",
+          left: "7%",
           containLabel: true,
         },
         tooltip: {
@@ -191,20 +158,6 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       };
 
       chart.setOption(option);
-
-      // const debounce = (fn: (...args: any) => void, delay: number) => {
-      //   let timeoutId: NodeJS.Timeout;
-      //   return (...args: any) => {
-      //     clearTimeout(timeoutId);
-      //     timeoutId = setTimeout(() => {
-      //       fn(...args);
-      //     }, delay);
-      //   };
-      // };
-
-      // const handleResize = debounce(() => {
-      //   chart.resize();
-      // }, 1000);
 
       const handleResize = () => {
         if (!isFirstRender.current) {
