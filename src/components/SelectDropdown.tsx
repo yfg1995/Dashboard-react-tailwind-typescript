@@ -26,9 +26,9 @@ export const SelectDropdown: FC<ISelect> = ({
   onSelect,
   onSave,
 }) => {
-  // const [selectedId, setSelectedId] = useState(
-  //   isEmptyInit ? undefined || null : defaultSelectedId || options[0]?.id
-  // );
+  const [selectedId, setSelectedId] = useState(
+    isEmptyInit ? undefined || null : defaultSelectedId || options[0]?.id
+  );
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -60,10 +60,10 @@ export const SelectDropdown: FC<ISelect> = ({
         )}
         onClick={handleToggle}
       >
-        {/* <span>
+        <span>
           {options.find((option) => option.id === selectedId)?.value ||
             defaultSelectedId}
-        </span> */}
+        </span>
 
         <ChevronArrowSvg className={toggle ? "rotate-180" : ""} />
       </div>

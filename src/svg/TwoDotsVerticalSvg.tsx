@@ -12,7 +12,7 @@ export interface ITwoDotsVerticalSvg {
 export const TwoDotsVerticalSvg: FC<ITwoDotsVerticalSvg> = ({
   width = "12",
   height = "12",
-  strokeColor = "var(--clr-text-grey)",
+  strokeColor = "var(--clr-charcoal-grey)",
   className,
   onClick,
 }) => {

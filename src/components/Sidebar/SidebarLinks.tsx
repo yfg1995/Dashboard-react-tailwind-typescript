@@ -15,7 +15,7 @@ export const SidebarLinks: FC<ISidebarLinks> = () => {
   return (
     <div
       className={cn(
-        "text-[var(--clr-text-grey)] [&>*]:flex [&>*]:items-center lg:[&>*]:justify-start space-y-2 [&>*]:gap-2 lg:space-y-3 [&>*]:cursor-pointer w-full",
+        "text-[var(--clr-charcoal-grey)] [&>*]:flex [&>*]:items-center lg:[&>*]:justify-start space-y-2 [&>*]:gap-2 lg:space-y-3 [&>*]:cursor-pointer w-full",
         isActive ? "md:[&>*]:gap-1 md:space-y-1" : "md:[&>*]:justify-center"
       )}
     >

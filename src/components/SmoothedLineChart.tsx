@@ -36,8 +36,8 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const option = {
         grid: {
-          height: "175px",
-          top: "11%",
+          height: "180px",
+          top: "14%",
           left: "7%",
           containLabel: true,
         },

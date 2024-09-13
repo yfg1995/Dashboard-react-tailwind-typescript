@@ -31,7 +31,7 @@ export const SortTextArrow: FC<ISortTextArrow> = ({
         <ChevronArrowSvg
           width="12"
           height="12"
-          strokeColor="var(--clr-text-grey)"
+          strokeColor="var(--clr-charcoal-grey)"
           strokeWidth="2.5"
           className="rotate-90"
         />
@@ -39,7 +39,7 @@ export const SortTextArrow: FC<ISortTextArrow> = ({
         <ChevronArrowSvg
           width="12"
           height="12"
-          strokeColor="var(--clr-text-grey)"
+          strokeColor="var(--clr-charcoal-grey)"
           strokeWidth="2.5"
           className="-rotate-90"
         />

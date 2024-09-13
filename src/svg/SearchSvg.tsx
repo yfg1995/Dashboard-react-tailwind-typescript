@@ -10,7 +10,7 @@ export interface ISearchSvg {
 export const SearchSvg: FC<ISearchSvg> = ({
   width = "20",
   height = "20",
-  strokeColor = "var(--clr-text-grey)",
+  strokeColor = "var(--clr-charcoal-grey)",
   className,
 }) => {
   return (

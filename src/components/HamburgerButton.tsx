@@ -18,7 +18,7 @@ export const HamburgerButton: FC<IHamburgerButton> = ({ className }) => {
     <button
       onClick={handleCloseDropdown}
       className={cn(
-        "md:hidden ml-auto p-2 rounded-full bg-[#1e1e1e] aspect-square w-12 z-[2]",
+        "md:hidden ml-auto p-2 rounded-full bg-[#1e1e1e] border-[var(--clr-charcoal-grey)] border-2 aspect-square w-12 z-[2]",
         className
       )}
     >

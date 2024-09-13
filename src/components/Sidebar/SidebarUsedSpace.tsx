@@ -13,12 +13,7 @@ export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
   const { isActive } = useSidebarActiveState();
 
   return (
-    <div
-      className={cn(
-        "mt-auto mb-4 w-full shrink-0 lg:block z-10",
-        isActive ? "block" : "md:hidden"
-      )}
-    >
+    <div className={"mt-auto mb-4 w-full shrink-0 lg:block hidden z-10"}>
       <div className="relative p-3">
         <div className="absolute inset-0 w-full -z-10 overflow-hidden rounded-xl">
           <NavCardBgSvg />
@@ -26,7 +21,7 @@ export const SidebarUsedSpace: FC<ISidebarUsedSpace> = ({ progress }) => {
 
         <div className="text-sm">Used Space</div>
 
-        <div className="text-xs text-[var(--clr-text-grey)]">
+        <div className="text-xs text-[var(--clr-charcoal-grey)]">
           <div>Admin updated: {currentTime}</div>
           <div>{currentDate}</div>
         </div>

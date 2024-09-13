@@ -3,7 +3,6 @@ import { XCircleSvg } from "../../svg/XCircleSvg";
 import { LogoSvg } from "../../svg/LogoSvg";
 import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 import { cn } from "../../utils/utils";
-import { BarArrowSvg } from "../../svg/BarArrowSvg";
 
 export interface ISidebarHeader {}
 
@@ -15,8 +14,8 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
   };
 
   return (
-    <div className="flex z-10 items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
-      <div className="flex items-center gap-2 cursor-pointer">
+    <div className="flex z-10 items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-charcoal-grey)]">
+      <div className="flex items-center gap-2 cursor-pointer z-10">
         <LogoSvg />
 
         <div
@@ -28,13 +27,6 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
           React
         </div>
       </div>
-
-      <button
-        className={cn("hidden z-10", isActive && "md:block")}
-        onClick={handleIsActive}
-      >
-        <BarArrowSvg />
-      </button>
 
       <button onClick={handleIsActive} className="md:hidden z-10">
         <XCircleSvg />

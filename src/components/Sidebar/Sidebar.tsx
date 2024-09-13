@@ -58,13 +58,12 @@ export const Sidebar: FC<ISidebar> = () => {
       </div>
 
       <button
-        className={cn(
-          "place-content-center w-full mb-4 hidden md:flex lg:hidden z-10",
-          isActive && "md:hidden"
-        )}
+        className={
+          "place-content-center w-full mb-4 hidden md:flex lg:hidden z-10 px-2"
+        }
         onClick={handleSidebar}
       >
-        <BarArrowSvg className="rotate-180" />
+        <BarArrowSvg className={cn(isActive ? "ml-auto" : "rotate-180")} />
       </button>
 
       <SidebarUsedSpace progress={progress} />

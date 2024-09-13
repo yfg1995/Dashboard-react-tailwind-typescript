@@ -11,7 +11,7 @@ export interface IChevronArrowsSvg {
 export const ChevronArrowsSvg: FC<IChevronArrowsSvg> = ({
   width = "12",
   height = "12",
-  strokeColor = "var(--clr-text-grey)",
+  strokeColor = "var(--clr-charcoal-grey)",
   className,
 }) => {
   return (

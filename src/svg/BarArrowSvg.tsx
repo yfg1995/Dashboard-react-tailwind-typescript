@@ -11,7 +11,7 @@ export interface IBarArrowSvg {
 export const BarArrowSvg: FC<IBarArrowSvg> = ({
   width = "30",
   height = "30",
-  fillColor = "var(--clr-text-grey)",
+  fillColor = "var(--clr-charcoal-grey)",
   className,
 }) => {
   return (
