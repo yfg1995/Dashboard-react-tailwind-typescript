@@ -67,7 +67,7 @@ export const DashboardTopCountries: FC<IDashboardTopCountries> = () => {
   };
 
   return (
-    <ContainerBorderRounded className="flex flex-col min-h-[320px] xl:max-w-[350px] 2xl:max-w-[530px]">
+    <ContainerBorderRounded className="flex flex-col h-full xl:max-w-[350px] 2xl:max-w-[530px]">
       <div className="flex justify-between">
         <Title title="Top Countries" />
 

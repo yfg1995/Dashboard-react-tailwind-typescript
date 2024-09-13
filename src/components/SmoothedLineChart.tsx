@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import { formatNumberWithCommas } from "../helpers/helpers";
 
@@ -8,12 +8,6 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const chartRef = useRef<echarts.EChartsType | null>(null);
   const isFirstRender = useRef(true);
-
-  const [tooltipEnabled, setTooltipEnabled] = useState(true);
-
-  const toggleTooltip = () => {
-    setTooltipEnabled(!tooltipEnabled);
-  };
 
   useEffect(() => {
     if (ref.current) {
@@ -56,7 +50,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           textStyle: {
             color: "#fff",
           },
-          show: tooltipEnabled,
+          z: -1,
           borderWidth: 0,
           formatter: function (params: any) {
             const dataPoint = params[1];
@@ -182,7 +176,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         isFirstRender.current = true;
       };
     }
-  }, [tooltipEnabled]);
+  }, [isFirstRender]);
 
-  return <div className="min-h-[240px]" ref={ref} />;
+  return <div className="h-[240px]" ref={ref} />;
 };

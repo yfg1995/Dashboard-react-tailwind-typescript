@@ -28,7 +28,7 @@ export const DashboardSatisfaction: FC<IDashboardSatisfaction> = () => {
   );
 
   return (
-    <ContainerBorderRounded className="xl:max-w-[532px] min-h-[320px]">
+    <ContainerBorderRounded className="xl:max-w-[532px] h-full">
       <div className="flex items-center justify-between mb-2">
         <Title title="Satisfaction" />
 
