@@ -184,12 +184,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, [tooltipEnabled]);
 
-  return (
-    <>
-      <div className="h-[240px]" ref={ref} />
-      <button onClick={toggleTooltip}>
-        {tooltipEnabled ? "Disable" : "Enable"} Tooltip
-      </button>
-    </>
-  );
+  return <div className="min-h-[240px]" ref={ref} />;
 };
