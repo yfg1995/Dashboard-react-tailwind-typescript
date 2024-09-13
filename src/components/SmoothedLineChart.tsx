@@ -50,7 +50,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           textStyle: {
             color: "#fff",
           },
-          z: 0,
+          z: -1,
           borderWidth: 0,
           formatter: function (params: any) {
             const dataPoint = params[1];
