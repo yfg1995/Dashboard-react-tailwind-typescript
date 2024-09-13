@@ -14,7 +14,7 @@ export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
   return (
     <div
       className={cn(
-        "flex items-center w-full px-2 py-4 border-t border-[var(--clr-text-grey)] cursor-pointer",
+        "flex items-center w-full px-2 py-4 border-t border-[var(--clr-text-grey)] cursor-pointer z-10",
         isActive ? "justify-between" : "justify-center"
       )}
       onClick={() => setIsActive(true)}

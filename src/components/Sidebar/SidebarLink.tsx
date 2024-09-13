@@ -21,10 +21,14 @@ export const SidebarLink: FC<ISidebarLink> = ({
   notificationCounter,
   children,
 }) => {
-  const { isActive } = useSidebarActiveState();
+  const { isActive, setIsActive } = useSidebarActiveState();
 
   const location = useLocation();
   const isActiveLink = location.pathname === link;
+
+  const onLinkClick = () => {
+    setIsActive(false);
+  };
 
   return (
     <NavLink
@@ -34,6 +38,7 @@ export const SidebarLink: FC<ISidebarLink> = ({
         classNameWrap,
         isActiveLink && "text-white"
       )}
+      onClick={onLinkClick}
     >
       {children}
 

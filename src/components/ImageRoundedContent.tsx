@@ -25,7 +25,7 @@ export const ImageRoundedContent: FC<IImageRoundedContent> = ({
           isActive ? "mx-0" : "md:mx-auto"
         )}
       >
-        <img src={imgSrc} alt={altSrc} />
+        <img src={imgSrc} alt={altSrc} className="w-full h-auto" />
       </div>
 
       {children}

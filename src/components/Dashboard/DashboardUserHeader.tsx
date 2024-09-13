@@ -3,18 +3,10 @@ import { StarSvg } from "../../svg/StarSvg";
 import { ChevronArrowsSvg } from "../../svg/ChevronArrowsSvg";
 import { SearchInput } from "../SearchInput";
 import { currentDay, currentMonth } from "../../helpers/helpers";
-import { HamburgerSvg } from "../../svg/HamburgerSvg";
-import { useSidebarActiveState } from "../../zustand/useSidebarActiveState";
 
 export interface IDashboardUserHeader {}
 
 export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
-  const { setIsActive } = useSidebarActiveState();
-
-  const handleCloseDropdown = () => {
-    setIsActive(true);
-  };
-
   return (
     <div className="flex gap-4 justify-between flex-col md:flex-row md:items-end">
       <div className="flex items-center justify-between">
@@ -39,10 +31,6 @@ export const DashboardUserHeader: FC<IDashboardUserHeader> = () => {
             </div>
           </div>
         </div>
-
-        <button onClick={handleCloseDropdown} className="md:hidden ml-auto">
-          <HamburgerSvg />
-        </button>
       </div>
 
       <SearchInput />

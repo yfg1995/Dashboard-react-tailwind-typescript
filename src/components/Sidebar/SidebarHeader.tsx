@@ -15,7 +15,7 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
   };
 
   return (
-    <div className="flex items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
+    <div className="flex z-10 items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
       <div className="flex items-center gap-2 cursor-pointer">
         <LogoSvg />
 

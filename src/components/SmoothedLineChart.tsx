@@ -7,6 +7,7 @@ export interface ISmoothedLineChart {}
 export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const chartRef = useRef<echarts.EChartsType | null>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     if (ref.current) {
@@ -17,42 +18,42 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
       const chart = echarts.init(ref.current);
       chartRef.current = chart;
 
-      const windowWidth = window.innerWidth;
+      const { innerWidth } = window;
 
-      // const getResponsiveGrid = () => {
-      //   if (windowWidth < 450) {
-      //     return {
-      //       width: "78%",
-      //       height: "130px",
-      //       top: "20%",
-      //       left: "16%",
-      //     };
-      //   } else if (windowWidth < 500) {
-      //     return {
-      //       width: "82%",
-      //       height: "130px",
-      //       top: "16%",
-      //       left: "14%",
-      //     };
-      //   } else if (windowWidth < 700) {
-      //     return {
-      //       width: "80%",
-      //       height: "160px",
-      //       top: "14%",
-      //       left: "14%",
-      //     };
-      //   } else {
-      //     return {
-      //       width: "100%",
-      //       height: "175px",
-      //       top: "11%",
-      //       left: "8%",
-      //     };
-      //   }
-      // };
+      const getResponsiveGrid = () => {
+        if (innerWidth < 450) {
+          return {
+            width: "78%",
+            height: "130px",
+            top: "20%",
+            left: "16%",
+          };
+        } else if (innerWidth < 500) {
+          return {
+            width: "82%",
+            height: "130px",
+            top: "16%",
+            left: "14%",
+          };
+        } else if (innerWidth < 700) {
+          return {
+            width: "80%",
+            height: "160px",
+            top: "14%",
+            left: "14%",
+          };
+        } else {
+          return {
+            width: "100%",
+            height: "175px",
+            top: "11%",
+            left: "8%",
+          };
+        }
+      };
 
       const getResponsiveLabel = () => {
-        if (windowWidth < 500) {
+        if (innerWidth < 500) {
           return {
             fontSize: 14,
             padding: [0, 12, 0, 0],
@@ -67,9 +68,11 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       const option = {
         grid: {
-          width: "85%",
+          // width: "100%",
           height: "175px",
           top: "11%",
+          left: "5%",
+          containLabel: true,
         },
         tooltip: {
           trigger: "axis",
@@ -189,28 +192,37 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
 
       chart.setOption(option);
 
-      const debounce = (fn: (...args: any) => void, delay: number) => {
-        let timeoutId: NodeJS.Timeout;
-        return (...args: any) => {
-          clearTimeout(timeoutId);
-          timeoutId = setTimeout(() => {
-            fn(...args);
-          }, delay);
-        };
-      };
+      // const debounce = (fn: (...args: any) => void, delay: number) => {
+      //   let timeoutId: NodeJS.Timeout;
+      //   return (...args: any) => {
+      //     clearTimeout(timeoutId);
+      //     timeoutId = setTimeout(() => {
+      //       fn(...args);
+      //     }, delay);
+      //   };
+      // };
 
-      const handleResize = debounce(() => {
-        chart.resize();
-      }, 1000);
+      // const handleResize = debounce(() => {
+      //   chart.resize();
+      // }, 1000);
+
+      const handleResize = () => {
+        if (!isFirstRender.current) {
+          chart.resize();
+        } else {
+          isFirstRender.current = false;
+        }
+      };
 
       const observer = new ResizeObserver(handleResize);
       observer.observe(ref.current);
 
       return () => {
         observer.disconnect();
+        isFirstRender.current = true;
       };
     }
-  }, []);
+  }, [isFirstRender]);
 
   return <div className="h-[240px]" ref={ref} />;
 };
