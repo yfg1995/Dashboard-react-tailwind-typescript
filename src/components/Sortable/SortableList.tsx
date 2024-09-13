@@ -1,15 +1,16 @@
-import { FC } from "react";
 import { Reorder } from "framer-motion";
 import { ArrowSvg } from "../../svg/ArrowSvg";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { formatNumberWithCommas } from "../../helpers/helpers";
-import { CountriesData } from "../../helpers/types";
+import { SortableData } from "../Sortable/Sortable";
 
-export interface IDashboardSortList {
-  items: CountriesData[];
+export interface ISortableList<T extends Partial<SortableData>> {
+  items: T[];
 }
 
-export const DashboardSortList: FC<IDashboardSortList> = ({ items }) => {
+export const SortableList = <T extends Partial<SortableData>>({
+  items,
+}: ISortableList<T>) => {
   return (
     <Reorder.Group
       axis="y"
@@ -39,15 +40,15 @@ export const DashboardSortList: FC<IDashboardSortList> = ({ items }) => {
             </div>
 
             <div className="absolute right-2 flex items-center gap-2">
-              <span>{formatNumberWithCommas(country.price)}</span>
+              <span>{formatNumberWithCommas(country.price ?? 0)}</span>
 
               <ArrowSvg
                 width="16"
                 height="16"
                 strokeColor={
-                  country.price < 10000 ? "var(--clr-red)" : "var(--clr-green)"
+                  country.profit ? "var(--clr-red)" : "var(--clr-green)"
                 }
-                className={country.price < 10000 ? "rotate-180" : ""}
+                className={country.profit ? "rotate-180" : ""}
               />
 
               <TwoDotsVerticalSvg />

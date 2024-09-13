@@ -1,5 +1,10 @@
-export type UserProfitUpdate = {
-  userName: string;
+export type TUserProfitUpdate = {
+  id: string;
+  imgSrc: string;
+  profile: {
+    userName: string;
+    verified: boolean;
+  };
   position: string;
   profit: {
     updatedProfit: number;
@@ -11,9 +16,10 @@ export type UserProfitUpdate = {
   };
 };
 
-export type CountriesData = {
+export type TCountriesData = {
   id: string;
   country: string;
   price: number;
+  profit: boolean;
   imgSrc: string;
 };

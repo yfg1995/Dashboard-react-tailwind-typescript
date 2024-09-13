@@ -3,7 +3,7 @@ import { ChevronArrowSvg } from "../svg/ChevronArrowSvg";
 import { cn } from "../utils/utils";
 
 export interface ISortTextArrow {
-  isSorted: boolean;
+  isSorted?: boolean;
   title: string;
   classNameWrap?: string;
   classNameText?: string;
@@ -25,7 +25,7 @@ export const SortTextArrow: FC<ISortTextArrow> = ({
       )}
       onClick={onClick}
     >
-      <div className={cn("", classNameText)}>{title}</div>
+      <div className={classNameText}>{title}</div>
 
       {isSorted ? (
         <ChevronArrowSvg
