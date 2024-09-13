@@ -25,7 +25,7 @@ export const DashboardUsersProfitUpdates: FC<
     <CarouselAutoplay options={options}>
       {UsersProfitUpdate.map((user) => (
         <ContainerBorderRounded
-          className="embla__slide w-full p-0 px-2 bg-brandCharcoalBlack select-none h-[128px]"
+          className="embla__slide w-full p-0 px-2 bg-brandCharcoalBlack select-none min-h-[128px]"
           key={user.id}
         >
           <div className="flex items-center justify-between px-4 md:px-2 2xl:px-4 rounded-[12px] h-full">

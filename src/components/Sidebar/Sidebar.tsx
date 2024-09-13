@@ -24,7 +24,7 @@ export const Sidebar: FC<ISidebar> = () => {
   return (
     <div
       className={cn(
-        "fixed inset-y-0 left-0 z-50 w-full bg-brandCharcoalBlack md:px-2 md:flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]",
+        "fixed inset-y-0 left-0 !z-50 w-full h-full bg-brandCharcoalBlack md:px-2 md:flex flex-col items-center md:max-w-[80px] lg:max-w-[240px]",
         isActive ? "md:max-w-[240px]" : "hidden"
       )}
     >
@@ -33,7 +33,7 @@ export const Sidebar: FC<ISidebar> = () => {
           <>
             <motion.div
               onClick={() => setIsActive(false)}
-              className="fixed left-[240px] h-screen w-full cursor-pointer"
+              className="fixed left-[240px] h-full w-full cursor-pointer"
               style={{ backdropFilter: "blur(10px)" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

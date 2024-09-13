@@ -15,7 +15,7 @@ export const Modal: FC<IModal> = ({ children }) => {
         <>
           <motion.div
             onClick={() => setIsActive(false)}
-            className="fixed top-0 left-0 h-screen w-full z-40 cursor-pointer"
+            className="fixed inset-0 h-full w-full z-40 cursor-pointer"
             style={{ backdropFilter: "blur(10px)" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
