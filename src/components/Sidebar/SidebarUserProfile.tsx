@@ -19,16 +19,16 @@ export const SidebarUserProfile: FC<ISidebarUserProfile> = () => {
       )}
       onClick={() => setIsActive(true)}
     >
-      <div className="flex items-center gap-2 text-[var(--clr-charcoal-grey)] font-bold w-full">
+      <div className="flex items-center gap-2 text-[var(--clr-charcoal-grey)] font-bold w-full z-10">
         <ImageRoundedContent imgSrc="users/user.jpg">
-          <div className={cn("lg:block", isActive ? "block" : "hidden")}>
+          <div className={cn("lg:flex", isActive ? "md:flex" : "md:hidden")}>
             Jerry Wilson
           </div>
         </ImageRoundedContent>
       </div>
 
       <TwoDotsVerticalSvg
-        className={cn("lg:block", isActive ? "block" : "hidden")}
+        className={cn("lg:block", isActive ? "md:block" : "md:hidden")}
       />
     </div>
   );

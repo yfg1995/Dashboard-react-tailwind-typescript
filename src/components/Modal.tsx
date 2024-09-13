@@ -20,6 +20,7 @@ export const Modal: FC<IModal> = ({ children }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           />
 
           <ModalBody setIsActive={setIsActive}>{children}</ModalBody>
@@ -35,6 +36,7 @@ export interface IModalBody extends PropsWithChildren {
 
 const ModalBody: FC<IModalBody> = ({ children, setIsActive }) => {
   useLockBodyScroll();
+
   return (
     <motion.div
       className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-[#1e1e1e] max-w-[600px] w-full p-[20px] rounded-xl"
