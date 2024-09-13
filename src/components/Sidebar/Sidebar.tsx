@@ -33,7 +33,7 @@ export const Sidebar: FC<ISidebar> = () => {
           <>
             <motion.div
               onClick={() => setIsActive(false)}
-              className="fixed top-0 left-0 h-screen w-full cursor-pointer"
+              className="fixed left-[240px] h-screen w-full cursor-pointer"
               style={{ backdropFilter: "blur(10px)" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
