@@ -15,13 +15,13 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
   };
 
   return (
-    <div className="flex z-20 items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
+    <div className="flex z-10 items-center justify-between w-full px-3 py-4 mb-4 border-b border-[var(--clr-text-grey)]">
       <div className="flex items-center gap-2 cursor-pointer">
         <LogoSvg />
 
         <div
           className={cn(
-            "font-bold text-xl lg:block",
+            "font-bold text-xl lg:block z-10",
             isActive ? "md:block" : "md:hidden"
           )}
         >
@@ -30,13 +30,13 @@ export const SidebarHeader: FC<ISidebarHeader> = () => {
       </div>
 
       <button
-        className={cn("hidden", isActive && "md:block")}
+        className={cn("hidden z-10", isActive && "md:block")}
         onClick={handleIsActive}
       >
         <BarArrowSvg />
       </button>
 
-      <button onClick={handleIsActive} className="md:hidden">
+      <button onClick={handleIsActive} className="md:hidden z-10">
         <XCircleSvg />
       </button>
     </div>
