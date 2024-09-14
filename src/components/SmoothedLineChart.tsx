@@ -57,11 +57,12 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           formatter: function (params: any) {
             const prevDataPoint = params[0];
             const currentDataPoint = params[1];
+
             if (currentDataPoint) {
-              return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center ${
-                isActive ? "hidden" : ""
+              return `<div class="text-brandTextGray overflow-hidden lg:flex flex-col justify-center items-center ${
+                isActive ? "hidden" : "flex"
               }">
-                  <div class="flex items-center text-center w-full h-auto text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
+                  <div class="flex items-center text-center w-full h-full text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
                     Revenue
                   </div>
 
