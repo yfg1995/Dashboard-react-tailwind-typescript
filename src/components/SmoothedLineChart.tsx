@@ -11,7 +11,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const chartRef = useRef<echarts.EChartsType | null>(null);
   const isFirstRender = useRef(true);
-
+  console.log(isActive);
   useEffect(() => {
     if (ref.current) {
       if (chartRef.current) {
@@ -54,11 +54,12 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             color: "#fff",
           },
           borderWidth: 0,
+          show: !isActive,
           formatter: function (params: any) {
             const prevDataPoint = params[0];
             const currentDataPoint = params[1];
 
-            if (currentDataPoint && !isActive) {
+            if (currentDataPoint) {
               return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
                   <div class="flex items-center text-center w-full h-full rounded-tr-lg rounded-tl-lg text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
                     Revenue
@@ -186,7 +187,7 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
         isFirstRender.current = true;
       };
     }
-  }, [isFirstRender]);
+  }, [isFirstRender, isActive]);
 
-  return <div className="relative h-[240px]" ref={ref} />;
+  return <div className="h-[240px]" ref={ref} />;
 };
