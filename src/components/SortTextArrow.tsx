@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ChevronArrowSvg } from "../svg/ChevronArrowSvg";
 import { cn } from "../utils/utils";
 
 export interface ISortTextArrow {
-  isSorted?: boolean;
+  objectKey: string;
+  selectedObjKey: string;
   title: string;
   classNameWrap?: string;
   classNameText?: string;
@@ -11,39 +12,39 @@ export interface ISortTextArrow {
 }
 
 export const SortTextArrow: FC<ISortTextArrow> = ({
-  isSorted,
+  objectKey,
+  selectedObjKey,
   title,
   classNameWrap,
   classNameText,
   onClick,
 }) => {
+  const [mode, setMode] = useState(false);
+
+  const onClickHandler = () => {
+    setMode((prev) => !prev);
+    onClick?.();
+  };
+
+  const isRotated = mode && objectKey === selectedObjKey;
+
   return (
     <div
       className={cn(
         "flex items-center gap-1 cursor-pointer select-none",
         classNameWrap
       )}
-      onClick={onClick}
+      onClick={onClickHandler}
     >
       <div className={classNameText}>{title}</div>
 
-      {isSorted ? (
-        <ChevronArrowSvg
-          width="12"
-          height="12"
-          strokeColor="var(--clr-charcoal-grey)"
-          strokeWidth="2.5"
-          className="rotate-90"
-        />
-      ) : (
-        <ChevronArrowSvg
-          width="12"
-          height="12"
-          strokeColor="var(--clr-charcoal-grey)"
-          strokeWidth="2.5"
-          className="-rotate-90"
-        />
-      )}
+      <ChevronArrowSvg
+        width="12"
+        height="12"
+        strokeColor="var(--clr-charcoal-grey)"
+        strokeWidth="2.5"
+        className={isRotated ? "rotate-90" : "-rotate-90"}
+      />
     </div>
   );
 };

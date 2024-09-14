@@ -34,7 +34,7 @@ export const Sortable = <T extends Partial<SortableData>>({
   };
 
   const handleSorting = (objectKey: string) => {
-    setDescendingOrder(!descendingOrder);
+    setDescendingOrder((prev) => !prev);
     setCurrentKey(objectKey);
   };
 
@@ -64,6 +64,8 @@ export const Sortable = <T extends Partial<SortableData>>({
               <SortTextArrow
                 key={String(key)}
                 title={String(key)[0].toUpperCase() + String(key).slice(1)}
+                objectKey={String(key)}
+                selectedObjKey={String(currentKey)}
                 onClick={() => handleSorting(String(key))}
               />
             ))}

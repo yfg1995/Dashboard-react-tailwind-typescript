@@ -1,10 +1,13 @@
 import { FC, useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import { formatNumberWithCommas } from "../helpers/helpers";
+import { useSidebarActiveState } from "../zustand/useSidebarActiveState";
 
 export interface ISmoothedLineChart {}
 
 export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
+  const { isActive } = useSidebarActiveState();
+
   const ref = useRef<HTMLDivElement>(null);
   const chartRef = useRef<echarts.EChartsType | null>(null);
   const isFirstRender = useRef(true);
@@ -50,25 +53,33 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
           textStyle: {
             color: "#fff",
           },
-          z: -1,
           borderWidth: 0,
           formatter: function (params: any) {
-            const dataPoint = params[1];
-            if (dataPoint) {
-              return `<div class="rounded-xl text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
-                        <div class="flex items-center text-center w-full text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
-                          Revenue
-                        </div>
+            const prevDataPoint = params[0];
+            const currentDataPoint = params[1];
+            if (currentDataPoint) {
+              return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center ${
+                isActive ? "hidden" : ""
+              }">
+                  <div class="flex items-center text-center w-full h-auto text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
+                    Revenue
+                  </div>
 
-                        <div class="text-center w-full p-3 bg-[#252525]">
-                          <div class="text-white font-bold text-lg">$${formatNumberWithCommas(
-                            dataPoint.value
-                          )}</div>
-                          <div>Revenue from 230 sales</div>
-                        </div>
-                      </div>
+                  <div class="flex flex-col gap-1 items-center w-full p-3 bg-[#252525]">
+                    <div class="text-sm font-medium">$${formatNumberWithCommas(
+                      prevDataPoint.value
+                    )}</div>
+
+                    <div class="text-white text-base font-bold">$${formatNumberWithCommas(
+                      currentDataPoint.value
+                    )}</div>
+
+                    <div>Revenue from 230 sales</div>
+                  </div>
+                </div>
               `;
             }
+
             return "";
           },
         },

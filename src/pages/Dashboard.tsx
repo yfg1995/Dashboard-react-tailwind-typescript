@@ -25,7 +25,7 @@ export const Dashboard: FC<IDashboard> = () => {
         <ContainerBorderRounded className="flex flex-col h-full xl:max-w-[350px] 2xl:max-w-[530px]">
           <Sortable<TCountriesData>
             data={countriesData}
-            keysToSortBy={["price", "profit"]}
+            keysToSortBy={["profit", "price"]}
             title="Top Countries"
           />
         </ContainerBorderRounded>
