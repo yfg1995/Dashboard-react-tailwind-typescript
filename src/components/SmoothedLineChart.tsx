@@ -58,10 +58,8 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
             const prevDataPoint = params[0];
             const currentDataPoint = params[1];
 
-            if (currentDataPoint) {
-              return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center ${
-                isActive ? "!hidden" : ""
-              }">
+            if (currentDataPoint && !isActive) {
+              return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center">
                   <div class="flex items-center text-center w-full h-full rounded-tr-lg rounded-tl-lg text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
                     Revenue
                   </div>
@@ -190,5 +188,5 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
     }
   }, [isFirstRender]);
 
-  return <div className="h-[240px]" ref={ref} />;
+  return <div className="relative h-[240px]" ref={ref} />;
 };

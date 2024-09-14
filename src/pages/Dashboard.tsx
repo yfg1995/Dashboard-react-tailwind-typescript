@@ -19,10 +19,10 @@ export const Dashboard: FC<IDashboard> = () => {
 
       <DashboardUsersProfitUpdates />
 
-      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4 h-[320px]">
+      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4">
         <DashboardWorkSummary />
 
-        <ContainerBorderRounded className="flex flex-col h-full xl:max-w-[350px] 2xl:max-w-[530px]">
+        <ContainerBorderRounded className="flex flex-col h-[320px] xl:max-w-[350px] 2xl:max-w-[530px]">
           <Sortable<TCountriesData>
             data={countriesData}
             keysToSortBy={["profit", "price"]}
@@ -31,7 +31,7 @@ export const Dashboard: FC<IDashboard> = () => {
         </ContainerBorderRounded>
       </div>
 
-      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4 h-[320px]">
+      <div className="flex justify-between flex-wrap xl:flex-nowrap gap-4">
         <DashboardSegmentation />
         <DashboardSatisfaction />
         <DashboardNewComponent />
