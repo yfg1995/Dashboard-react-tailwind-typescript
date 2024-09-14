@@ -62,11 +62,11 @@ export const SmoothedLineChart: FC<ISmoothedLineChart> = () => {
               return `<div class="text-brandTextGray overflow-hidden flex flex-col justify-center items-center ${
                 isActive ? "!hidden" : ""
               }">
-                  <div class="flex items-center text-center w-full h-full text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
+                  <div class="flex items-center text-center w-full h-full rounded-tr-lg rounded-tl-lg text-sm justify-between px-3 py-2 bg-[#1d1d1d]">
                     Revenue
                   </div>
 
-                  <div class="flex flex-col gap-1 items-center w-full p-3 bg-[#252525]">
+                  <div class="flex flex-col gap-1 items-center w-full p-3 rounded-br-lg rounded-bl-lg bg-[#252525]">
                     <div class="text-sm font-medium">$${formatNumberWithCommas(
                       prevDataPoint.value
                     )}</div>
