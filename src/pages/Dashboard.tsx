@@ -9,6 +9,7 @@ import { countriesData } from "../dummyData";
 import { Sortable } from "../components/Sortable/Sortable";
 import { TCountriesData } from "../helpers/types";
 import { ContainerBorderRounded } from "../components/ContainerBorderRounded";
+import { DashboardCountriesListItem } from "../components/Dashboard/DashboardCountriesListItem";
 
 export interface IDashboard {}
 
@@ -27,6 +28,9 @@ export const Dashboard: FC<IDashboard> = () => {
             data={countriesData}
             keysToSortBy={["profit", "price"]}
             title="Top Countries"
+            renderItem={(item, index) => (
+              <DashboardCountriesListItem item={item} index={index} />
+            )}
           />
         </ContainerBorderRounded>
       </div>

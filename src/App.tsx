@@ -48,9 +48,12 @@ const routes = [
       return {
         path,
         element: children,
-        errorElement: <ErrorPage />,
       };
     }),
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ];
 

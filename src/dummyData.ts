@@ -1,9 +1,8 @@
-import { generateRandomUniqueIdStr } from "./helpers/helpers";
 import { TCountriesData, TUserProfitUpdate } from "./helpers/types";
 
 export const UsersProfitUpdate: TUserProfitUpdate[] = [
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-1.jpg",
     profile: {
       userName: "Esther Howard",
@@ -20,7 +19,7 @@ export const UsersProfitUpdate: TUserProfitUpdate[] = [
     },
   },
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-2.jpg",
     profile: {
       userName: "Eleanor Pena",
@@ -37,7 +36,7 @@ export const UsersProfitUpdate: TUserProfitUpdate[] = [
     },
   },
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-3.jpg",
     profile: {
       userName: "Robert Fox",
@@ -54,7 +53,7 @@ export const UsersProfitUpdate: TUserProfitUpdate[] = [
     },
   },
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-1.jpg",
     profile: {
       userName: "Esther Howard",
@@ -71,7 +70,7 @@ export const UsersProfitUpdate: TUserProfitUpdate[] = [
     },
   },
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-2.jpg",
     profile: {
       userName: "Eleanor Pena",
@@ -88,7 +87,7 @@ export const UsersProfitUpdate: TUserProfitUpdate[] = [
     },
   },
   {
-    id: generateRandomUniqueIdStr(),
+    id: crypto.randomUUID(),
     imgSrc: "user-3.jpg",
     profile: {
       userName: "Robert Fox",
@@ -145,7 +144,7 @@ export const countriesData: TCountriesData[] = [
   {
     id: "country-6",
     country: "Ireland",
-    profit: true,
+    profit: false,
     price: 7547.24,
     imgSrc: "ireland-flag.jpg",
   },
@@ -166,7 +165,7 @@ export const countriesData: TCountriesData[] = [
   {
     id: "country-9",
     country: "USA",
-    profit: true,
+    profit: false,
     price: 17588.24,
     imgSrc: "usa-flag.jpg",
   },
@@ -180,7 +179,7 @@ export const countriesData: TCountriesData[] = [
   {
     id: "country-11",
     country: "Ukraine",
-    profit: true,
+    profit: false,
     price: 6425.24,
     imgSrc: "ukraine-flag.jpg",
   },

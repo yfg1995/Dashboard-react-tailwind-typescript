@@ -18,11 +18,11 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
 }) => {
   return (
     <svg
-      width={width}
-      height={height}
+      width="24"
+      height="24"
       fill="none"
       viewBox="0 0 24 24"
-      className={cn("ease-in-out duration-300 mt-0.5", className)}
+      className={cn(className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -1,23 +1,25 @@
 import _ from "lodash";
-import { useMemo, useState } from "react";
+import { ReactElement, useMemo, useState } from "react";
 import { Title } from "../Title";
 import { PlusCircleSvg } from "../../svg/PlusCircleSvg";
-import { SortTextArrow } from "../SortTextArrow";
 import { TCountriesData } from "../../helpers/types";
 import { SortableList } from "./SortableList";
+import { SortableSortButton } from "./SortableSortButton";
 
-export type SortableData = TCountriesData;
+export type TSortableData = TCountriesData;
 
-export interface ISortable<T extends Partial<SortableData>> {
+export interface ISortable<T extends Partial<TSortableData>> {
   data: T[];
   keysToSortBy?: Array<keyof T>;
   title: string;
+  renderItem: (item: T, index: number) => ReactElement;
 }
 
-export const Sortable = <T extends Partial<SortableData>>({
+export const Sortable = <T extends Partial<TSortableData>>({
   data,
   keysToSortBy,
   title,
+  renderItem,
 }: ISortable<T>) => {
   const [showAll, setShowAll] = useState<boolean>(false);
   const [descendingOrder, setDescendingOrder] = useState<boolean>(false);
@@ -43,7 +45,12 @@ export const Sortable = <T extends Partial<SortableData>>({
     : [...displayedData];
 
   const handleToggle = () => {
-    setShowAll(!showAll);
+    setShowAll((prev) => {
+      if (prev) {
+        setCurrentKey(undefined);
+      }
+      return !prev;
+    });
     setDescendingOrder(false);
   };
 
@@ -61,7 +68,7 @@ export const Sortable = <T extends Partial<SortableData>>({
             <div>Sort by:</div>
 
             {keysToSortBy?.map((key) => (
-              <SortTextArrow
+              <SortableSortButton
                 key={String(key)}
                 title={String(key)[0].toUpperCase() + String(key).slice(1)}
                 objectKey={String(key)}
@@ -75,7 +82,7 @@ export const Sortable = <T extends Partial<SortableData>>({
         )}
       </div>
 
-      <SortableList items={sortedData} />
+      <SortableList items={sortedData} renderItem={renderItem} />
 
       <div
         className="text-center text-brandTextGray mt-auto cursor-pointer select-none"
