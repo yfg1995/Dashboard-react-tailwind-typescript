@@ -1,6 +1,6 @@
 # Responsive Dashboard
 
-Responsive dashboard built using **React**, **TypeScript**, **Tailwind CSS**, **useGSAP** for animations, and **ECharts** for data visualization. The application includes multiple pages and navigation using **React Router**.
+Responsive dashboard built using **React**, **TypeScript**, **Tailwind CSS**, **useGSAP** for animations and **ECharts** for data visualization. The application includes multiple pages and navigation using **React Router**.
 
 You can view a live demo of the project [here](https://dashboard-seven-bice.vercel.app/).
 
