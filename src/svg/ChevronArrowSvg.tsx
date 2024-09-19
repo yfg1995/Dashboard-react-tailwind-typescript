@@ -12,7 +12,7 @@ export const ChevronArrowSvg: FC<IChevronArrowSvg> = ({
   width = "12",
   height = "12",
   strokeColor = "white",
-  strokeWidth = "1.5",
+  strokeWidth = "2.5",
   className,
 }) => {
   return (

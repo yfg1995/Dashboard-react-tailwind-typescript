@@ -18,8 +18,8 @@ export const SidebarGeneralItem: FC<ISidebarGeneralItem> = () => {
         </div>
 
         <div>
-          <ChevronArrowSvg strokeWidth="2.5" className="-rotate-90" />
-          <ChevronArrowSvg strokeWidth="2.5" className="rotate-90" />
+          <ChevronArrowSvg className="-rotate-90" />
+          <ChevronArrowSvg className="rotate-90" />
         </div>
       </div>
     </div>
