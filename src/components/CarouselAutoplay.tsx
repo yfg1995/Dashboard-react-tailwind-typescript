@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren, useEffect, useRef } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 
 interface TCarouselAutoplay extends PropsWithChildren {
   options?: EmblaOptionsType;
@@ -11,8 +10,7 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
   options,
   children,
 }) => {
-  const autoplayRef = useRef(Autoplay({ playOnInit: false, delay: 3000 }));
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplayRef.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
@@ -23,14 +21,12 @@ export const CarouselAutoplay: FC<TCarouselAutoplay> = ({
       if (viewportRef.current) {
         viewportRef.current.style.cursor = "grabbing";
       }
-      autoplayRef.current.stop();
     };
 
     const onDragEnd = () => {
       if (viewportRef.current) {
         viewportRef.current.style.cursor = "grab";
       }
-      // autoplayRef.current.play();
     };
 
     emblaApi.on("pointerDown", onDragStart);

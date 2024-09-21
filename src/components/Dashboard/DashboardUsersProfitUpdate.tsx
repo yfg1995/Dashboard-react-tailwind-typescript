@@ -17,7 +17,6 @@ export const DashboardUsersProfitUpdates: FC<
   IDashboardUsersProfitUpdates
 > = () => {
   const options: EmblaOptionsType = {
-    loop: false,
     align: "start",
   };
 
