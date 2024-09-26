@@ -2,20 +2,21 @@ import _ from "lodash";
 import { ReactElement, useMemo, useState } from "react";
 import { Title } from "../Title";
 import { PlusCircleSvg } from "../../svg/PlusCircleSvg";
-import { TCountriesData } from "../../helpers/types";
 import { SortableList } from "./SortableList";
 import { SortableSortButton } from "./SortableSortButton";
 
-export type TSortableData = TCountriesData;
+export type TSortableData = {
+  id: string | number;
+};
 
-export interface ISortable<T extends Partial<TSortableData>> {
+export interface ISortable<T extends TSortableData> {
   data: T[];
   keysToSortBy?: Array<keyof T>;
   title: string;
   renderItem: (item: T, index: number) => ReactElement;
 }
 
-export const Sortable = <T extends Partial<TSortableData>>({
+export const Sortable = <T extends TSortableData>({
   data,
   keysToSortBy,
   title,

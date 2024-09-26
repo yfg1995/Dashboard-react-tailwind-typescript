@@ -2,12 +2,12 @@ import { Reorder } from "framer-motion";
 import { TSortableData } from "../Sortable/Sortable";
 import { ReactElement } from "react";
 
-export interface ISortableList<T extends Partial<TSortableData>> {
+export interface ISortableList<T extends TSortableData> {
   items: T[];
   renderItem: (item: T, index: number) => ReactElement;
 }
 
-export const SortableList = <T extends Partial<TSortableData>>({
+export const SortableList = <T extends TSortableData>({
   items,
   renderItem,
 }: ISortableList<T>) => {
