@@ -1,6 +1,7 @@
+import { cn } from "../../utils/utils";
+import { formatNumberWithCommas } from "../../helpers/helpers";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { ArrowSvg } from "../../svg/ArrowSvg";
-import { formatNumberWithCommas } from "../../helpers/helpers";
 import { TSortableData } from "../Sortable/Sortable";
 
 export interface IDashboardCountriesListItem<T extends Partial<TSortableData>> {
@@ -33,7 +34,7 @@ export const DashboardCountriesListItem = <T extends Partial<TSortableData>>({
           width="16"
           height="16"
           strokeColor={profit ? "var(--clr-red)" : "var(--clr-green)"}
-          className={profit ? "rotate-180" : ""}
+          className={cn(profit && "rotate-180")}
         />
 
         <TwoDotsVerticalSvg />
