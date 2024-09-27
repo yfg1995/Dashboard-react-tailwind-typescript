@@ -3,16 +3,17 @@ import { formatNumberWithCommas } from "../../helpers/helpers";
 import { TwoDotsVerticalSvg } from "../../svg/TwoDotsVerticalSvg";
 import { ArrowSvg } from "../../svg/ArrowSvg";
 import { TSortableData } from "../Sortable/Sortable";
+import { TCountriesData } from "../../helpers/types";
 
-export interface IDashboardCountriesListItem<T extends Partial<TSortableData>> {
+export interface IDashboardCountriesListItem {
   index: number;
-  item: T;
+  item: TCountriesData;
 }
 
-export const DashboardCountriesListItem = <T extends Partial<TSortableData>>({
+export const DashboardCountriesListItem = ({
   item,
   index,
-}: IDashboardCountriesListItem<T>) => {
+}: IDashboardCountriesListItem) => {
   const { country, imgSrc, price, profit } = item;
 
   return (
